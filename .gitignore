@@ -8,6 +8,10 @@ out/
 # Build outputs
 dist/
 build/
+*.tsbuildinfo
+
+# Vercel
+.vercel/
 
 # Environment variables
 .env
