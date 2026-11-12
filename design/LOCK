@@ -1,0 +1,28 @@
+LOCKED 2026-11-11
+Approved by user: "All good you can proceed to the next phase"
+
+Locked files:
+- tokens.css
+- base.css
+- icons/icons.js
+- components/accordion
+- components/badge
+- components/breadcrumb
+- components/button
+- components/card
+- components/footer
+- components/form
+- components/heading
+- components/hero
+- components/list
+- components/modal
+- components/navbar
+- components/reveal
+- components/stat
+- components/tabbar
+- components/tabs
+- components/tile
+- components/toast
+- components/tooltip
+
+Change only on explicit user request. Log every change in CHANGELOG.md.

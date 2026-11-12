@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Chess game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffd28a"/>
+    <stop offset="1" stop-color="#ffa73a"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffe6bf"/>
+    <stop offset="1" stop-color="#ffbf5e"/>
+  </linearGradient>
+  <linearGradient id="piece" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fffaf1"/>
+    <stop offset="1" stop-color="#ffe6bf"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<g filter="url(#soft)">
+  <rect x="180" y="220" width="440" height="280" rx="26" fill="url(#board)"/>
+  <g opacity="0.5">
+    <rect x="180" y="220" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="400" y="220" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="290" y="290" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="510" y="290" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="180" y="360" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="400" y="360" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="290" y="430" width="110" height="70" fill="#7a4a1f"/>
+    <rect x="510" y="430" width="110" height="70" fill="#7a4a1f"/>
+  </g>
+  <g transform="translate(286 126)">
+    <path d="M34 54 L34 20 L54 20 L54 0 L74 0 L74 20 L94 20 L94 54 Z" fill="url(#piece)"/>
+    <path d="M18 60 L110 60 L124 108 L4 108 Z" fill="url(#piece)"/>
+    <path d="M12 112 L116 112 L132 188 L-4 188 Z" fill="url(#piece)"/>
+    <rect x="-14" y="188" width="160" height="26" rx="12" fill="#fffaf1"/>
+    <circle cx="64" cy="78" r="8" fill="#e8871a"/>
+  </g>
+  <g transform="translate(490 286)">
+    <path d="M28 40 C28 14 52 0 76 0 C100 0 124 14 124 40 C124 60 112 76 96 86 L100 112 L52 112 L56 86 C40 76 28 60 28 40 Z" fill="#7b5be0"/>
+    <path d="M34 116 L118 116 L128 178 L24 178 Z" fill="#7b5be0"/>
+    <rect x="14" y="178" width="124" height="24" rx="12" fill="#6244c8"/>
+    <circle cx="76" cy="42" r="16" fill="#ece6fc" opacity="0.7"/>
+  </g>
+</g>
+<path d="M160 134 C162.88 147.12 162.88 147.12 176 150 C162.88 152.88 162.88 152.88 160 166 C157.12 152.88 157.12 152.88 144 150 C157.12 147.12 157.12 147.12 160 134 Z" fill="#fffaf1" opacity="0.85"/>
+<path d="M660 178 C662.16 187.84 662.16 187.84 672 190 C662.16 192.16 662.16 192.16 660 202 C657.84 192.16 657.84 192.16 648 190 C657.84 187.84 657.84 187.84 660 178 Z" fill="#fffaf1" opacity="0.7"/>
+<circle cx="130" cy="400" r="6" fill="#fffaf1" opacity="0.5"/>
+<circle cx="690" cy="360" r="5" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

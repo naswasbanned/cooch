@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Atur sesi Werewolf - Cooch</title>
+  <meta name="description" content="Atur jumlah pemain dan pengaturan Werewolf.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/breadcrumb/breadcrumb.css">
+  <link rel="stylesheet" href="../components/accordion/accordion.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="../components/sticky-cta/sticky-cta.css">
+  <link rel="stylesheet" href="../components/player-row/player-row.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+        <a class="navbar__link" href="settings.html">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Beranda</a></li>
+    <li class="breadcrumb__item"><a class="breadcrumb__link" href="game-werewolf.html">Werewolf</a></li>
+    <li class="breadcrumb__item"><span aria-current="page">Atur sesi</span></li>
+  </ol>
+</nav>
+<div class="page-header">
+  <h1 class="page-header__title">Atur sesi</h1>
+  <p class="page-header__text">Pengaturan terakhir untuk game ini sudah terisi. Mau cepat? Langsung tekan Mulai.</p>
+</div>
+
+<form class="setup" data-setup data-composition='[{"min": 5, "max": 6, "roles": {"wolf": 1, "seer": 1, "doctor": 0}}, {"min": 7, "max": 11, "roles": {"wolf": 2, "seer": 1, "doctor": 1}}, {"min": 12, "max": 15, "roles": {"wolf": 3, "seer": 1, "doctor": 1}}, {"min": 16, "max": 20, "roles": {"wolf": 4, "seer": 1, "doctor": 1}}]' data-sample-names='["Bima", "Rani", "Dimas", "Mira", "Andi", "Eko", "Susi", "Yanti"]' aria-label="Pengaturan sesi Werewolf">
+  <section class="panel" aria-labelledby="p-title">
+    <h2 class="panel__title" id="p-title">Pemain</h2>
+    <div class="field">
+      <span class="field__label" id="lbl-players">Jumlah pemain</span>
+      <div class="stepper" data-stepper role="group" aria-labelledby="lbl-players">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi pemain"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-players" type="number" min="5" max="20" value="8" aria-labelledby="lbl-players" inputmode="numeric" data-players>
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah pemain"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      <span class="field__hint">5 sampai 20 pemain.</span>
+    </div>
+    <div class="field">
+      <span class="field__label">Nama pemain</span>
+      <span class="field__hint">Nama kosong otomatis jadi Pemain 1, Pemain 2, dan seterusnya. Urutan ini dipakai saat bagi kartu.</span>
+    </div>
+    <div class="player-list" data-player-list></div>
+    <div class="cluster">
+      <button class="btn btn--ghost" type="button" data-add-player><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Tambah pemain</button>
+      <button class="btn btn--ghost" type="button" data-shuffle><svg class="icon" aria-hidden="true"><use href="#i-shuffle"></use></svg>Acak urutan</button>
+    </div>
+  </section>
+
+  <!-- game: settings schema -->
+  <section class="panel" aria-labelledby="g-title">
+    <h2 class="panel__title" id="g-title">Komposisi peran</h2>
+    <p class="panel__text">Saran otomatis sesuai jumlah pemain. Boleh diubah.</p>
+    <div class="composition">
+      <div class="composition__row">
+        <span class="field__label" id="lbl-wolf">Werewolf</span>
+        <div class="stepper" data-stepper role="group" aria-labelledby="lbl-wolf">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi Werewolf"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-wolf" type="number" min="1" max="4" value="2" aria-labelledby="lbl-wolf" inputmode="numeric" data-role="wolf">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah Werewolf"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      </div>
+      <div class="composition__row">
+        <span class="field__label" id="lbl-seer">Seer</span>
+        <div class="stepper" data-stepper role="group" aria-labelledby="lbl-seer">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi Seer"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-seer" type="number" min="0" max="1" value="1" aria-labelledby="lbl-seer" inputmode="numeric" data-role="seer">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah Seer"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      </div>
+      <div class="composition__row">
+        <span class="field__label" id="lbl-doctor">Doctor</span>
+        <div class="stepper" data-stepper role="group" aria-labelledby="lbl-doctor">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi Doctor"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-doctor" type="number" min="0" max="1" value="1" aria-labelledby="lbl-doctor" inputmode="numeric" data-role="doctor">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah Doctor"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      </div>
+      <label class="toggle composition__row">Hunter (menggantikan satu Villager)<input class="toggle__input" type="checkbox" role="switch" data-role-toggle="hunter"></label>
+      <div class="composition__row"><span class="field__label">Villager (sisanya)</span><span class="composition__count" data-role-rest>4</span></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-title">
+    <h2 class="panel__title" id="h-title">Pengaturan host</h2>
+    <div class="field">
+      <span class="field__label" id="lbl-day">Timer diskusi siang (menit)</span>
+      <div class="stepper" data-stepper role="group" aria-labelledby="lbl-day">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi menit"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-day" type="number" min="1" max="10" value="4" aria-labelledby="lbl-day" inputmode="numeric">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah menit"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      <span class="field__hint">1 sampai 10 menit.</span>
+    </div>
+    <div class="field">
+      <span class="field__label" id="lbl-vote">Cara voting</span>
+      <div class="segmented" role="radiogroup" aria-labelledby="lbl-vote">
+        <label class="segmented__option"><input type="radio" name="vote-mode" checked><span>Rahasia bergiliran</span></label>
+        <label class="segmented__option"><input type="radio" name="vote-mode"><span>Hitung tangan</span></label>
+      </div>
+      <span class="field__hint">Hitung tangan: semua menunjuk bersama, host memasukkan hasilnya.</span>
+    </div>
+    <label class="toggle">Buka peran saat mati<input class="toggle__input" type="checkbox" role="switch" checked></label>
+  </section>
+
+  <div class="accordion">
+    <details class="accordion__item">
+      <summary class="accordion__summary">Pengaturan lanjutan<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+      <div class="accordion__content">
+        <fieldset class="choice-group">
+          <legend class="field__label">Hasil voting seri</legend>
+          <label class="choice"><input class="choice__input" type="radio" name="tie" checked>Tidak ada eksekusi</label>
+          <label class="choice"><input class="choice__input" type="radio" name="tie">Voting ulang</label>
+        </fieldset>
+        <label class="toggle">Doctor boleh melindungi diri sendiri<input class="toggle__input" type="checkbox" role="switch" checked></label>
+        <label class="toggle">Mode moderator manusia<input class="toggle__input" type="checkbox" role="switch" aria-describedby="mod-hint"></label>
+        <p class="field__hint" id="mod-hint">Host melihat semua peran, website hanya alat bantu.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="sticky-cta">
+    <div class="alert alert--error setup-error" role="alert" data-setup-error hidden><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg><div class="alert__body"><span data-setup-error-text></span></div></div>
+    <div class="sticky-cta__inner">
+      <p class="sticky-cta__info"><strong data-player-count>8 pemain siap</strong>2 Werewolf · Seer · Doctor · siang 4 menit</p>
+      <a class="btn btn--lg" href="play-werewolf.html" data-start><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Mulai</a>
+    </div>
+  </div>
+</form>
+</main>
+<footer class="footer footer--no-tabbar">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+
+
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="../components/form/form.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/setup.js"></script>
+</body>
+</html>

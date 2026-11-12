@@ -1,0 +1,256 @@
+/* Card: cream surface, soft warm shadow. Game card variant for the catalog. */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+  color: var(--color-text);
+}
+
+.card--interactive {
+  text-decoration: none;
+  transition: box-shadow var(--duration-base) var(--ease-out);
+}
+
+.card--interactive:hover {
+  box-shadow: var(--shadow-inner-top), var(--shadow-lg);
+}
+
+.card--interactive:active {
+  box-shadow: var(--shadow-inner-top), var(--shadow-sm);
+}
+
+.card--featured {
+  box-shadow:
+    0 0 0 var(--size-border-thick) var(--color-sun-500),
+    var(--shadow-md);
+}
+
+.card--soon {
+  filter: var(--filter-disabled);
+}
+
+.card__media {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-tile);
+  color: var(--color-text-on-tile);
+  box-shadow: var(--shadow-inner-top);
+}
+
+.card__media::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: var(--gradient-sunburst);
+}
+
+.card__media--grape { background: var(--gradient-grape); }
+.card__media--sun   { background: var(--gradient-button); color: var(--color-cocoa-800); }
+.card__media--night { background: linear-gradient(180deg, var(--color-night-600), var(--color-night-800)); color: var(--color-sun-300); }
+.card__media--leaf  { background: linear-gradient(180deg, var(--color-leaf-400), var(--color-leaf-600)); }
+
+.card__glyph {
+  width: 40%;
+  height: auto;
+  aspect-ratio: 1;
+  stroke-width: var(--stroke-icon-bold);
+  filter: drop-shadow(var(--shadow-text));
+}
+
+.card__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.card__corner,
+.card__fav {
+  z-index: 2;
+}
+
+.card__corner {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+}
+
+.card__fav {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: grid;
+  place-items: center;
+  width: var(--size-tap);
+  height: var(--size-tap);
+  border: 0;
+  border-radius: var(--radius-round);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__fav[aria-pressed="true"] {
+  color: var(--color-sun-600);
+}
+
+.card__fav[aria-pressed="false"] .icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--stroke-icon);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-inline: var(--space-1);
+}
+
+.card__title {
+  font-size: var(--text-lg);
+  color: var(--color-text-title);
+}
+
+.card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Whole-card click target while keeping a real link inside */
+.card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.card__title a:focus-visible {
+  box-shadow: none;
+}
+
+.card:has(.card__title a:focus-visible) {
+  box-shadow: var(--shadow-focus), var(--shadow-md);
+}
+
+.card__text {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-inline: var(--space-1);
+}
+
+/* The whole-card link overlay (.card__title a::after) must not cover the favorite button.
+   Media sits above the overlay but lets clicks through, except on the button. */
+.card--interactive .card__media {
+  z-index: var(--z-raised);
+  pointer-events: none;
+}
+
+.card--interactive .card__fav {
+  pointer-events: auto;
+}
+
+/* Large: featured game on Beranda (DESIGN.md 4 GameCard "besar") */
+.card--large .card__media {
+  aspect-ratio: 16 / 9;
+}
+
+.card--large .card__glyph {
+  width: 28%;
+}
+
+.card--large .card__title {
+  font-size: var(--text-2xl);
+}
+
+.card--large .card__text {
+  font-size: var(--text-base);
+}
+
+/* Horizontal: list rows on Jelajah (DESIGN.md 4 GameCard "horizontal") */
+.card--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+}
+
+.card--horizontal .card__media {
+  flex: none;
+  width: var(--size-tile-lg);
+  border-radius: var(--radius-md);
+  aspect-ratio: 1;
+}
+
+.card--horizontal .card__glyph {
+  width: 50%;
+}
+
+.card__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.card--horizontal .card__body,
+.card--horizontal .card__meta {
+  padding-inline: 0;
+}
+
+.card-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 48em) {
+  .card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 80em) {
+  .card-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

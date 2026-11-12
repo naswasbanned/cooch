@@ -1,0 +1,56 @@
+/* Game bar (new in phase 3): fixed place for Menu and Aturan on every play screen,
+   plus game name and current phase. Text labels next to icons for new players. */
+
+.game-bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  padding-block: var(--space-3);
+}
+
+.game-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+}
+
+.game-bar .btn {
+  --btn-px: var(--space-3);
+  --btn-fs: var(--text-sm);
+  flex: none;
+}
+
+.game-bar__title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+}
+
+.game-bar__game,
+.game-bar__phase {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-bar__game {
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-snug);
+}
+
+.game-bar__phase {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+}

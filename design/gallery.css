@@ -1,0 +1,139 @@
+/* gallery.css - layout for the review page only. Not used by product pages. */
+
+.gallery {
+  padding-bottom: var(--space-24);
+}
+
+.gallery__intro {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.gallery__intro h1 {
+  font-size: var(--text-3xl);
+}
+
+.gallery__intro p {
+  margin-top: var(--space-2);
+  max-width: var(--size-reading);
+}
+
+.gallery__toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.gallery__section {
+  margin-top: var(--space-10);
+  scroll-margin-top: var(--space-24);
+}
+
+.gallery__section > h2 {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-2xl);
+}
+
+.gallery__section > .gallery__note {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  max-width: var(--size-reading);
+}
+
+.gallery__panel {
+  padding: var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+}
+
+.gallery__panel--warm {
+  background: var(--gradient-panel);
+}
+
+.gallery__panel--bare {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.gallery__phone {
+  max-width: var(--size-phone);
+}
+
+.gallery__split {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 64em) {
+  .gallery__split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-avatar-xl), 1fr));
+  gap: var(--space-3);
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.swatch__chip {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  background: var(--swatch);
+  box-shadow: inset 0 0 0 var(--size-border) rgb(var(--rgb-ink) / 0.08);
+}
+
+.swatch__hex {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+}
+
+.swatch-group + .swatch-group {
+  margin-top: var(--space-6);
+}
+
+.swatch-group > h3 {
+  margin-bottom: var(--space-3);
+}
+
+.type-sample {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.type-sample__row {
+  display: grid;
+  gap: var(--space-1);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--size-border) solid var(--color-surface-sunken);
+}
+
+.type-sample__meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.night-demo {
+  padding: var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-page);
+  color: var(--color-text);
+}
+
+.night-demo > * + * {
+  margin-top: var(--space-5);
+}

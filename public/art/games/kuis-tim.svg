@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Team Quiz game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7b5be0"/>
+    <stop offset="1" stop-color="#2b8bd2"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fffaf1"/>
+    <stop offset="1" stop-color="#ffe6bf"/>
+  </linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#4d34a3"/>
+    <stop offset="1" stop-color="#2c2b5e"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<g filter="url(#soft)">
+  <rect x="220" y="118" width="360" height="238" rx="34" fill="url(#card)"/>
+  <path d="M348 232 C348 174 452 174 452 232 C452 276 404 284 404 326" stroke="#7b5be0" stroke-width="30" fill="none" stroke-linecap="round"/>
+  <circle cx="404" cy="360" r="17" fill="#7b5be0"/>
+  <rect x="164" y="396" width="472" height="130" rx="28" fill="url(#panel)"/>
+  <circle cx="252" cy="444" r="52" fill="#fffaf1"/>
+  <circle cx="252" cy="438" r="40" fill="#ef6666"/>
+  <circle cx="400" cy="462" r="58" fill="#fffaf1"/>
+  <circle cx="400" cy="456" r="46" fill="#ffa73a"/>
+  <circle cx="548" cy="444" r="52" fill="#fffaf1"/>
+  <circle cx="548" cy="438" r="40" fill="#2fb344"/>
+</g>
+<path d="M178 112 C181.24 126.76 181.24 126.76 196 130 C181.24 133.24 181.24 133.24 178 148 C174.76 133.24 174.76 133.24 160 130 C174.76 126.76 174.76 126.76 178 112 Z" fill="#fffaf1" opacity="0.85"/>
+<path d="M642 224 C644.52 235.48 644.52 235.48 656 238 C644.52 240.52 644.52 240.52 642 252 C639.48 240.52 639.48 240.52 628 238 C639.48 235.48 639.48 235.48 642 224 Z" fill="#ffd28a" opacity="0.8"/>
+<path d="M660 90 C661.8 98.2 661.8 98.2 670 100 C661.8 101.8 661.8 101.8 660 110 C658.2 101.8 658.2 101.8 650 100 C658.2 98.2 658.2 98.2 660 90 Z" fill="#fffaf1" opacity="0.6"/>
+<circle cx="150" cy="320" r="6" fill="#fffaf1" opacity="0.5"/>
+<circle cx="680" cy="370" r="5" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

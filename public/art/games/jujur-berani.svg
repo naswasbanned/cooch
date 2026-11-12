@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Truth or Dare game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f58a8a"/>
+    <stop offset="1" stop-color="#d24848"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffe6bf"/>
+    <stop offset="0.55" stop-color="#ffa73a"/>
+    <stop offset="1" stop-color="#d24848"/>
+  </linearGradient>
+  <linearGradient id="heart" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fda4af"/>
+    <stop offset="1" stop-color="#d24848"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<ellipse cx="400" cy="510" rx="240" ry="26" fill="#2b1608" opacity="0.16"/>
+<g filter="url(#soft)" transform="rotate(-11 280 310)">
+  <rect x="150" y="150" width="260" height="330" rx="34" fill="#fffaf1"/>
+  <path d="M280 206 C322 268 334 300 310 344 C350 334 362 292 350 246 C396 300 394 382 328 424 C262 466 208 404 230 350 C242 318 264 276 280 206 Z" fill="url(#flame)"/>
+</g>
+<g filter="url(#soft)" transform="rotate(11 520 310)">
+  <rect x="390" y="150" width="260" height="330" rx="34" fill="#ffe6bf"/>
+  <path d="M520 408 C520 408 438 358 438 298 C438 258 466 234 498 234 C512 234 520 242 520 242 C520 242 528 234 542 234 C574 234 602 258 602 298 C602 358 520 408 520 408 Z" fill="url(#heart)"/>
+</g>
+<path d="M130 132 C133.24 146.76 133.24 146.76 148 150 C133.24 153.24 133.24 153.24 130 168 C126.76 153.24 126.76 153.24 112 150 C126.76 146.76 126.76 146.76 130 132 Z" fill="#fffaf1" opacity="0.85"/>
+<path d="M670 162 C672.52 173.48 672.52 173.48 684 176 C672.52 178.52 672.52 178.52 670 190 C667.48 178.52 667.48 178.52 656 176 C667.48 173.48 667.48 173.48 670 162 Z" fill="#fffaf1" opacity="0.8"/>
+<path d="M660 460 C661.8 468.2 661.8 468.2 670 470 C661.8 471.8 661.8 471.8 660 480 C658.2 471.8 658.2 471.8 650 470 C658.2 468.2 658.2 468.2 660 460 Z" fill="#fffaf1" opacity="0.6"/>
+<circle cx="110" cy="380" r="6" fill="#fffaf1" opacity="0.5"/>
+<circle cx="690" cy="340" r="5" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

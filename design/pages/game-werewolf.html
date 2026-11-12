@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Werewolf - Cooch</title>
+  <meta name="description" content="Desa vs serigala. HP ini jadi moderatornya.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/card/card.css">
+  <link rel="stylesheet" href="../components/stat/stat.css">
+  <link rel="stylesheet" href="../components/breadcrumb/breadcrumb.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="../components/sticky-cta/sticky-cta.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+        <a class="navbar__link" href="settings.html">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Beranda</a></li>
+    <li class="breadcrumb__item"><a class="breadcrumb__link" href="games.html">Jelajah</a></li>
+    <li class="breadcrumb__item"><span aria-current="page">Werewolf</span></li>
+  </ol>
+</nav>
+
+<!-- game: header (media variant, icon, copy) -->
+<section class="detail" aria-labelledby="game-title">
+  <div class="detail__media"><div class="card__media card__media--night"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-moon"></use></svg></div></div>
+  <div class="detail__info">
+    <span class="label-tag">Party sosial</span>
+    <h1 class="detail__title" id="game-title">Werewolf</h1>
+    <p class="detail__text">Desa vs serigala. HP ini jadi moderatornya.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="stat__label">Pemain</span><span class="stat__value">5-20</span></div>
+      <div class="stat"><span class="stat__label">Durasi</span><span class="stat__value">30m</span></div>
+      <div class="stat"><span class="stat__label">Level</span><span class="stat__value">Sedang</span></div>
+    </div>
+    <div class="detail__actions">
+      <a class="btn btn--lg" href="setup-werewolf.html"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Mulai</a>
+      <button class="btn btn--lg btn--ghost" type="button" data-modal-open="rules-modal"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>Cara main</button>
+    </div>
+  </div>
+</section>
+
+<!-- game: steps, roles -->
+<section class="page-section" aria-labelledby="steps-title">
+<div class="section-heading">
+  <div class="section-heading__text"><h2 class="section-heading__title" id="steps-title">Cara main</h2><p class="section-heading__sub">Singkat. Bisa dibuka lagi lewat Aturan saat game berjalan.</p></div>
+  
+</div>
+<ol class="role-list">
+    <li class="role"><span class="badge" aria-hidden="true">1</span><div class="role__body"><span class="role__name">Bagi peran</span><span class="text-muted">Edarkan HP. Werewolf melihat nama rekannya di kartu.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">2</span><div class="role__body"><span class="role__name">Malam</span><span class="text-muted">Semua tutup mata. HP dioper ke Werewolf, Doctor, lalu Seer.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">3</span><div class="role__body"><span class="role__name">Pagi</span><span class="text-muted">Website mengumumkan siapa yang meninggal.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">4</span><div class="role__body"><span class="role__name">Siang</span><span class="text-muted">Diskusi dengan timer, lalu voting rahasia. Suara terbanyak dieksekusi.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">5</span><div class="role__body"><span class="role__name">Menang</span><span class="text-muted">Desa menang bila semua Werewolf mati. Werewolf menang bila jumlahnya menyamai warga.</span></div></li>
+</ol>
+</section>
+
+<section class="page-section panel" aria-labelledby="roles-title">
+  <h2 class="panel__title" id="roles-title">Peran</h2>
+  <div class="role-list">
+    <div class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-paw"></use></svg></span><div class="role__body"><span class="role__name">Werewolf</span><span class="cluster"><span class="badge badge--error">Tim Werewolf</span></span><span class="text-muted">Tiap malam memilih satu korban. Sesama Werewolf saling tahu.</span></div></div>
+    <div class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span><div class="role__body"><span class="role__name">Villager</span><span class="cluster"><span class="badge badge--info">Tim Desa</span></span><span class="text-muted">Tidak punya aksi malam. Diskusi dan voting.</span></div></div>
+    <div class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg></span><div class="role__body"><span class="role__name">Seer</span><span class="cluster"><span class="badge badge--info">Tim Desa</span></span><span class="text-muted">Tiap malam mengecek satu pemain: Werewolf atau bukan.</span></div></div>
+    <div class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg></span><div class="role__body"><span class="role__name">Doctor</span><span class="cluster"><span class="badge badge--info">Tim Desa</span></span><span class="text-muted">Melindungi satu pemain tiap malam, tidak boleh orang yang sama dua malam berturut-turut.</span></div></div>
+    <div class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg></span><div class="role__body"><span class="role__name">Hunter</span><span class="cluster"><span class="badge badge--info">Tim Desa</span><span class="badge">Opsional</span></span><span class="text-muted">Saat mati, menembak satu pemain.</span></div></div>
+  </div>
+</section>
+
+<section class="page-section" aria-labelledby="shots-title">
+<div class="section-heading">
+  <div class="section-heading__text"><h2 class="section-heading__title" id="shots-title">Tampilan game</h2></div>
+  
+</div>
+<div class="shots">
+    <figure class="shot"><div class="shot__frame shot__frame--night" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg><span>Malam tiba</span></div><figcaption>Malam</figcaption></figure>
+    <figure class="shot"><div class="shot__frame shot__frame--grape" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-paw"></use></svg><span>Werewolf, buka mata</span></div><figcaption>Aksi malam</figcaption></figure>
+    <figure class="shot"><div class="shot__frame" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-sun"></use></svg><span>Rani meninggal</span></div><figcaption>Pagi</figcaption></figure>
+    <figure class="shot"><div class="shot__frame shot__frame--sky" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span>Voting rahasia</span></div><figcaption>Siang</figcaption></figure>
+</div>
+</section>
+
+<section class="page-section" aria-labelledby="similar-title">
+<div class="section-heading">
+  <div class="section-heading__text"><h2 class="section-heading__title" id="similar-title">Mirip dengan ini</h2></div>
+  <a class="link" href="games.html">Lihat semua<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+</div>
+<div class="card-grid">
+  <article class="card card--interactive card--featured" data-name="Guess the Impostor" data-tags="party" data-min="3" data-max="20" data-minutes="15" data-level="mudah">
+    <div class="card__media"><span class="card__corner badge badge--new">Baru</span><svg class="icon card__glyph" aria-hidden="true"><use href="#i-mask"></use></svg>
+      <button class="card__fav" type="button" aria-pressed="false" aria-label="Tambah ke favorit"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"></use></svg></button></div>
+    <div class="card__body"><h3 class="card__title"><a href="game-impostor.html">Guess the Impostor</a></h3><p class="card__text">Semua dapat kata rahasia, kecuali tim jahat. Temukan mereka.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>15 mnt</span><span class="badge badge--success">Mudah</span></div>
+  </article>
+  <article class="card card--soon" aria-disabled="true" data-name="Misi Rahasia" data-tags="party" data-min="5" data-max="10" data-minutes="30" data-level="sulit">
+    <div class="card__media card__media--night"><span class="card__corner badge">Segera</span><svg class="icon card__glyph" aria-hidden="true"><use href="#i-key"></use></svg></div>
+    <div class="card__body"><h3 class="card__title">Misi Rahasia</h3><p class="card__text">Tim misi dan penyusup. Voting rahasia tiap ronde.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>5-10</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>30 mnt</span></div>
+  </article>
+  <article class="card card--soon" aria-disabled="true" data-name="Spyfall" data-tags="party" data-min="3" data-max="12" data-minutes="15" data-level="sedang">
+    <div class="card__media card__media--grape"><span class="card__corner badge">Segera</span><svg class="icon card__glyph" aria-hidden="true"><use href="#i-eye"></use></svg></div>
+    <div class="card__body"><h3 class="card__title">Spyfall</h3><p class="card__text">Semua tahu lokasi, kecuali mata-mata.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-12</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>15 mnt</span></div>
+  </article>
+  <article class="card card--soon" aria-disabled="true" data-name="Jujur atau Berani" data-tags="party" data-min="3" data-max="12" data-minutes="20" data-level="mudah">
+    <div class="card__media card__media--sun"><span class="card__corner badge">Segera</span><svg class="icon card__glyph" aria-hidden="true"><use href="#i-flame"></use></svg></div>
+    <div class="card__body"><h3 class="card__title">Jujur atau Berani</h3><p class="card__text">Pilih tingkat keberanian, HP yang mengundi.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-12</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>20 mnt</span></div>
+  </article>
+</div>
+</section>
+
+<div class="sticky-cta sticky-cta--mobile">
+  <div class="sticky-cta__inner">
+    <button class="btn btn--lg btn--ghost" type="button" data-modal-open="rules-modal"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>Cara main</button>
+    <a class="btn btn--lg" href="setup-werewolf.html"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Mulai</a>
+  </div>
+</div>
+</main>
+<footer class="footer footer--no-tabbar">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+
+<dialog class="modal" id="rules-modal" aria-labelledby="rules-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="rules-modal-title">Cara main Werewolf</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <div class="modal__body stack"><ol class="role-list">
+    <li class="role"><span class="badge" aria-hidden="true">1</span><div class="role__body"><span class="role__name">Bagi peran</span><span class="text-muted">Edarkan HP. Werewolf melihat nama rekannya di kartu.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">2</span><div class="role__body"><span class="role__name">Malam</span><span class="text-muted">Semua tutup mata. HP dioper ke Werewolf, Doctor, lalu Seer.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">3</span><div class="role__body"><span class="role__name">Pagi</span><span class="text-muted">Website mengumumkan siapa yang meninggal.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">4</span><div class="role__body"><span class="role__name">Siang</span><span class="text-muted">Diskusi dengan timer, lalu voting rahasia. Suara terbanyak dieksekusi.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">5</span><div class="role__body"><span class="role__name">Menang</span><span class="text-muted">Desa menang bila semua Werewolf mati. Werewolf menang bila jumlahnya menyamai warga.</span></div></li>
+    </ol>
+    <ul class="role-list">
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg></span><span class="role__body">Letakkan HP di tengah saat malam supaya semua bisa membaca layar.</span></li>
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg></span><span class="role__body">Peran yang sudah mati tetap dipanggil dengan jeda acak, jadi diam bukan petunjuk.</span></li>
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg></span><span class="role__body">Lupa peran? Tekan Jeda, lalu Lihat peran saya lagi.</span></li>
+    </ul></div>
+    <div class="modal__actions">
+      <button class="btn" type="button" data-modal-close>Mengerti</button>
+    </div>
+  </div>
+</dialog>
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

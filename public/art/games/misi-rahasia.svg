@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Secret Mission game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2c2b5e"/>
+    <stop offset="1" stop-color="#4d34a3"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="folder" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffe6bf"/>
+    <stop offset="1" stop-color="#ffbf5e"/>
+  </linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fffaf1"/>
+    <stop offset="1" stop-color="#fff3df"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<g filter="url(#soft)">
+  <path d="M180 208 L180 178 C180 162 192 150 208 150 L316 150 L342 184 L592 184 C608 184 620 196 620 212 L620 448 C620 464 608 476 592 476 L208 476 C192 476 180 464 180 448 Z" fill="url(#folder)"/>
+  <rect x="228" y="252" width="344" height="190" rx="18" fill="url(#paper)"/>
+  <path d="M228 270 L400 370 L572 270" stroke="#e8871a" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M228 424 L350 340 M572 424 L450 340" stroke="#ffd28a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="400" cy="358" r="46" fill="#d24848"/>
+  <circle cx="400" cy="358" r="32" fill="#ef6666"/>
+  <path d="M388 358 L396 368 L414 346" stroke="#fffaf1" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g filter="url(#soft)" transform="rotate(18 614 228)">
+  <circle cx="614" cy="190" r="34" fill="none" stroke="#ffbf5e" stroke-width="16"/>
+  <path d="M614 224 L614 320" stroke="#ffbf5e" stroke-width="16" stroke-linecap="round"/>
+  <path d="M614 300 L646 300 M614 322 L638 322" stroke="#ffbf5e" stroke-width="14" stroke-linecap="round"/>
+</g>
+<path d="M150 144 C152.88 157.12 152.88 157.12 166 160 C152.88 162.88 152.88 162.88 150 176 C147.12 162.88 147.12 162.88 134 160 C147.12 157.12 147.12 157.12 150 144 Z" fill="#ffd28a" opacity="0.8"/>
+<path d="M668 108 C670.16 117.84 670.16 117.84 680 120 C670.16 122.16 670.16 122.16 668 132 C665.84 122.16 665.84 122.16 656 120 C665.84 117.84 665.84 117.84 668 108 Z" fill="#fffaf1" opacity="0.7"/>
+<circle cx="120" cy="400" r="6" fill="#ffd28a" opacity="0.5"/>
+<circle cx="686" cy="470" r="5" fill="#ffd28a" opacity="0.5"/>
+
+
+</svg>

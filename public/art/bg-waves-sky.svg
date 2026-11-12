@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-label="Decorative sky waves">
+<defs>
+  <linearGradient id="a" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.5"/>
+    <stop offset="0.55" stop-color="#dff0fd" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0.5"/>
+  </linearGradient>
+  <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#bfe2fb" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#fff3df" stop-opacity="0.3"/>
+  </linearGradient>
+  <linearGradient id="c" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ffe6bf" stop-opacity="0.3"/>
+    <stop offset="0.5" stop-color="#fffaf1" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#bfe2fb" stop-opacity="0.35"/>
+  </linearGradient>
+  <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.45"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#ffd28a" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#ffd28a" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1600" height="1200" fill="none"/>
+<circle cx="1220" cy="160" r="330" fill="url(#glow2)"/>
+<circle cx="280" cy="520" r="420" fill="url(#glow1)"/>
+<path d="M0 760 C220 690 370 830 590 790 C810 750 960 650 1190 700 C1350 735 1490 790 1600 770 L1600 1200 L0 1200 Z" fill="url(#a)" opacity="0.8"/>
+<path d="M0 870 C190 800 380 920 610 880 C840 840 1000 760 1230 805 C1390 835 1500 880 1600 860 L1600 1200 L0 1200 Z" fill="url(#b)" opacity="0.75"/>
+<path d="M0 990 C230 920 430 1040 660 1000 C890 960 1060 890 1290 930 C1430 955 1530 985 1600 970 L1600 1200 L0 1200 Z" fill="url(#c)" opacity="0.8"/>
+<path d="M0 1080 C260 1010 470 1120 700 1085 C930 1050 1110 990 1340 1020 C1460 1036 1540 1058 1600 1048 L1600 1200 L0 1200 Z" fill="#fffaf1" opacity="0.28"/>
+<g fill="#fffaf1" opacity="0.5">
+  <circle cx="180" cy="250" r="5"/>
+  <circle cx="1450" cy="340" r="4"/>
+  <circle cx="980" cy="220" r="6"/>
+  <circle cx="520" cy="150" r="4"/>
+</g>
+</svg>

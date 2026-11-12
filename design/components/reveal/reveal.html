@@ -1,0 +1,28 @@
+<div class="stack">
+  <div class="handover">
+    <span class="handover__eyebrow">Serahkan HP ke</span>
+    <h2 class="handover__name">Rani</h2>
+    <p class="field__hint">Pastikan pemain lain tidak melihat layar.</p>
+    <button class="btn btn--xl" type="button">Aku Rani, buka</button>
+  </div>
+  <div class="reveal" data-reveal>
+    <p class="reveal__player">Kartu milik <strong>Rani</strong></p>
+    <button class="reveal-card" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+      <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+      <span class="reveal-card__face"><span class="reveal-card__role">Kata rahasia</span><span class="reveal-card__secret">Rendang</span><span class="reveal-card__note">Kategori: Makanan</span></span>
+    </button>
+    <p class="reveal__hint">Kartu tertutup otomatis setelah 5 detik.</p>
+    <button class="btn btn--lg btn--block" type="button" data-reveal-done disabled>Sudah dibaca</button>
+  </div>
+  <div class="reveal" data-reveal>
+    <p class="reveal__player">Varian impostor</p>
+    <button class="reveal-card reveal-card--impostor" type="button" data-reveal-card aria-pressed="true" aria-label="Kartu impostor">
+      <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+      <span class="reveal-card__face"><span class="reveal-card__role">Peranmu</span><span class="reveal-card__secret">Kamu Impostor</span><span class="reveal-card__note">Kategori: Makanan</span></span>
+    </button>
+  </div>
+  <div class="cluster">
+    <div class="timer" data-timer="15"><span class="timer__label">Diskusi</span><span class="timer__value" data-timer-value>00:15</span><button class="btn btn--sm btn--secondary" type="button" data-timer-toggle>Mulai</button></div>
+    <div class="timer timer--urgent"><span class="timer__label">Voting</span><span class="timer__value">00:08</span></div>
+  </div>
+</div>

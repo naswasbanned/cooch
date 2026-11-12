@@ -1,0 +1,351 @@
+/* ==========================================================================
+   tokens.css - single source of truth for every visual value.
+   Component CSS must read from these variables. No hardcoded colors,
+   fonts, spacing, radius, shadows, or durations elsewhere.
+   Source: moodboard/Screenshot_20261109_183428.png (see DESIGN-GUIDE.md)
+   ========================================================================== */
+
+:root {
+  /* ---------- Raw palette ---------- */
+
+  /* Sky: page backdrop + blue tiles */
+  --color-sky-50: #f0f8ff;
+  --color-sky-100: #dff0fd;
+  --color-sky-200: #bfe2fb;
+  --color-sky-300: #9fd3f8;
+  --color-sky-400: #6dbbf0;
+  --color-sky-500: #2b8bd2;
+  --color-sky-600: #2380c6;
+  --color-sky-700: #1c64a0;
+  --color-sky-800: #1b4e7c;
+  --color-sky-900: #123a5e;
+
+  /* Sun: warm panels, cream cards, orange actions */
+  --color-sun-50: #fffaf1;
+  --color-sun-100: #fff3df;
+  --color-sun-200: #ffe6bf;
+  --color-sun-300: #ffd28a;
+  --color-sun-400: #ffbf5e;
+  --color-sun-500: #ffa73a;
+  --color-sun-600: #e8871a;
+  --color-sun-700: #b8630c;
+  --color-sun-800: #955008;
+
+  /* Cocoa: warm brown text */
+  --color-cocoa-50: #f6ede4;
+  --color-cocoa-300: #c9a98a;
+  --color-cocoa-500: #8a5a2e;
+  --color-cocoa-600: #7a4a1f;
+  --color-cocoa-700: #6b3a12;
+  --color-cocoa-800: #4f2a0c;
+  --color-cocoa-900: #3a1f08;
+
+  /* Grape: purple highlight tiles, rank 1 */
+  --color-grape-100: #ece6fc;
+  --color-grape-400: #9b7bf0;
+  --color-grape-500: #7b5be0;
+  --color-grape-600: #6244c8;
+  --color-grape-700: #4d34a3;
+
+  /* Leaf: success, selection ring, rank up */
+  --color-leaf-100: #dcf6df;
+  --color-leaf-400: #4ccb5b;
+  --color-leaf-500: #2fb344;
+  --color-leaf-600: #1f8f31;
+  --color-leaf-700: #176b25;
+
+  /* Coral: error, rank down, rank 3 */
+  --color-coral-100: #fde3e3;
+  --color-coral-400: #f58a8a;
+  --color-coral-500: #ef6666;
+  --color-coral-600: #d24848;
+  --color-coral-700: #a93030;
+
+  /* Peach: active nav bubble, soft accents */
+  --color-peach-200: #ffd9c4;
+  --color-peach-300: #f9c3a6;
+
+  /* Night: dark phase (Werewolf) */
+  --color-night-50: #e9e8ff;
+  --color-night-200: #b0aee0;
+  --color-night-300: #8f8cc9;
+  --color-night-500: #3b3a78;
+  --color-night-600: #2c2b5e;
+  --color-night-700: #212048;
+  --color-night-800: #181738;
+  --color-night-900: #0f0e26;
+
+  --color-white: #ffffff;
+
+  /* Alpha helpers (RGB triplets for rgb(var(--x) / alpha)) */
+  --rgb-warm-shadow: 150 82 14;
+  --rgb-cool-shadow: 27 78 124;
+  --rgb-white: 255 255 255;
+  --rgb-ink: 58 31 8;
+
+  /* ---------- Semantic roles (light theme) ---------- */
+  --color-bg: var(--color-sky-300);
+  --color-bg-soft: var(--color-sky-100);
+  --color-panel: var(--color-sun-300);        /* large peach areas, hero */
+  --color-panel-strong: var(--color-sun-400);
+  --color-surface: var(--color-sun-50);       /* cream cards, sheets */
+  --color-surface-sunken: var(--color-sun-100);
+  --color-surface-hover: var(--color-sun-200);
+  --color-border: var(--color-sun-300);
+  --color-border-strong: var(--color-sun-600);
+
+  --color-text: var(--color-cocoa-800);
+  --color-text-title: var(--color-cocoa-700);
+  --color-text-muted: var(--color-cocoa-600);
+  --color-text-number: var(--color-sky-800);  /* navy numerals, stats */
+  --color-text-on-primary: var(--color-cocoa-900);
+  --color-text-on-secondary: var(--color-white);
+  --color-text-on-tile: var(--color-white);
+  --color-text-link: var(--color-sky-700);
+
+  --color-primary: var(--color-sun-400);
+  --color-primary-hover: var(--color-sun-500);
+  --color-primary-edge: var(--color-sun-600);   /* chunky bottom edge */
+  --color-secondary: var(--color-sky-700);
+  --color-secondary-hover: var(--color-sky-800);
+  --color-secondary-edge: var(--color-sky-900);
+  --color-accent: var(--color-grape-600);
+  --color-accent-soft: var(--color-grape-100);
+
+  --color-tile: var(--color-sky-600);
+  --color-tile-light: var(--color-sky-500);
+  --color-tile-edge: var(--color-sky-700);
+  --color-tile-selected: var(--color-leaf-500);
+
+  --color-success: var(--color-leaf-700);
+  --color-success-soft: var(--color-leaf-100);
+  --color-warning: var(--color-sun-800);
+  --color-warning-soft: var(--color-sun-200);
+  --color-error: var(--color-coral-700);
+  --color-error-soft: var(--color-coral-100);
+  --color-info: var(--color-sky-700);
+  --color-info-soft: var(--color-sky-100);
+
+  --color-control-border: var(--color-cocoa-500);  /* 3:1+ for checkbox/radio/toggle */
+  --color-input-border: var(--color-cocoa-300);
+  --color-tooltip-bg: var(--color-cocoa-800);
+  --color-tooltip-fg: var(--color-sun-50);
+  --color-focus: var(--color-grape-600);
+  --color-overlay: rgb(var(--rgb-ink) / 0.55);
+  --color-nav-active: var(--color-peach-200);       /* active navbar/tabbar bubble */
+  --color-highlight: var(--color-sun-100);          /* "you" / current-turn row */
+  --color-highlight-ring: var(--color-sun-500);
+  --color-icon-bubble: var(--color-sun-100);        /* round icon behind menu rows */
+  --color-icon-bubble-fg: var(--color-sun-800);
+  --color-icon-bubble-ring: var(--color-sun-200);
+  --color-hold-fill: rgb(var(--rgb-white) / 0.45);  /* hold-to-confirm progress */
+
+  --gradient-page: linear-gradient(180deg, var(--color-sky-200) 0%, var(--color-sky-300) 100%);
+  --gradient-panel: linear-gradient(180deg, var(--color-sun-300) 0%, var(--color-sun-200) 100%);
+  --gradient-tile: linear-gradient(180deg, var(--color-sky-500) 0%, var(--color-sky-600) 100%);
+  --gradient-button: linear-gradient(180deg, var(--color-sun-300) 0%, var(--color-sun-400) 100%);
+  --gradient-grape: linear-gradient(135deg, var(--color-grape-500) 0%, var(--color-grape-700) 100%);  /* white text >= 4.76:1 */
+  --gradient-sky: linear-gradient(135deg, var(--color-sky-500) 0%, var(--color-sky-700) 100%);  /* white large text >= 3.67:1 */
+  --gradient-sunburst: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    rgb(var(--rgb-white) / 0.14) 0deg 8deg,
+    rgb(var(--rgb-white) / 0) 8deg 16deg
+  );
+
+  /* ---------- Typography ---------- */
+  --font-display: "Fredoka", "Baloo 2", ui-rounded, "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --font-weight-regular: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 800;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: clamp(2.5rem, 1.6rem + 4vw, 4rem);
+  --text-display: clamp(3rem, 2rem + 5vw, 5.5rem);
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ---------- Sizes ---------- */
+  --size-tap: 3rem;            /* PRD: min 48px */
+  --size-tap-lg: 3.5rem;
+  --size-icon-sm: 1.125rem;
+  --size-icon-md: 1.5rem;
+  --size-icon-lg: 2rem;
+  --size-avatar-sm: 2.25rem;
+  --size-avatar-md: 3rem;
+  --size-avatar-lg: 5rem;
+  --size-avatar-xl: 6.5rem;
+  --size-container: 72rem;
+  --size-reading: 40rem;
+  --size-phone: 26.875rem;     /* 430px, upper mobile bound in PRD */
+  --size-sheet-handle-w: 3rem;
+  --size-sheet-handle-h: 0.3125rem;
+  --size-toggle-w: 3.5rem;
+  --size-toggle-h: 2rem;
+  --size-reveal-card: 17.5rem;
+  --size-border: 2px;
+  --size-border-thick: 3px;
+  --size-ring: 3px;
+  --size-ring-offset: 2px;
+  --size-tap-sm: 2.75rem;
+  --size-tap-xl: 4.25rem;
+  --size-check: 1.5rem;
+  --size-dot: 0.5rem;
+  --size-tile-lg: 6rem;
+  --size-timer: 10rem;
+  --size-modal: 28rem;
+  --size-toast: 22rem;
+  --size-tooltip: 15rem;
+  --size-textarea: 7.5rem;
+  --size-podium-1: 9rem;
+  --size-podium-2: 6.5rem;
+  --size-podium-3: 5rem;
+  --stroke-icon: 2;
+  --stroke-icon-bold: 2.6;
+  --filter-hover: brightness(1.05);
+  --filter-disabled: grayscale(0.7) opacity(0.55);
+  --opacity-muted: 0.55;
+  --blur-overlay: 4px;
+  --delay-toast: 4000;          /* ms, read by toast.js */
+  --delay-reveal-close: 15000;  /* ms, auto-close for tapped reveal card (DESIGN.md 5.6) */
+  --delay-hold: 500;            /* ms, hold-to-confirm on handoff buttons (DESIGN.md 5.5) */
+  --size-card-sm: 11rem;        /* min width of a card in a horizontal row */
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 0.5rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 2.5rem;
+  --radius-pill: 999px;
+  --radius-round: 50%;
+
+  /* ---------- Elevation ---------- */
+  --shadow-xs: 0 1px 2px rgb(var(--rgb-warm-shadow) / 0.16);
+  --shadow-sm: 0 3px 8px -2px rgb(var(--rgb-warm-shadow) / 0.22);
+  --shadow-md: 0 10px 22px -8px rgb(var(--rgb-warm-shadow) / 0.34);
+  --shadow-lg: 0 22px 40px -14px rgb(var(--rgb-warm-shadow) / 0.42);
+  --shadow-cool: 0 10px 22px -8px rgb(var(--rgb-cool-shadow) / 0.4);
+  --shadow-inner-top: inset 0 2px 0 rgb(var(--rgb-white) / 0.7);
+  --shadow-inner-sunk: inset 0 3px 6px rgb(var(--rgb-warm-shadow) / 0.18);
+  --shadow-text: 0 2px 0 rgb(var(--rgb-cool-shadow) / 0.45);
+  --shadow-focus: 0 0 0 var(--size-ring-offset) var(--color-surface), 0 0 0 calc(var(--size-ring-offset) + var(--size-ring)) var(--color-focus);
+
+  /* ---------- Motion ---------- */
+  --duration-instant: 80ms;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  --duration-hold: 500ms;       /* must match --delay-hold */
+  --duration-none: 0.01ms;      /* "Kurangi gerak" setting */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---------- Layers ---------- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  /* ---------- Playful tilt (sticker-like labels) ---------- */
+  --tilt-label: -2deg;
+  --tilt-card: 2deg;
+  --press-offset: 3px;
+}
+
+/* ==========================================================================
+   Night theme: opt-in for Werewolf night phases. Light is the site default.
+   Only semantic roles change; components stay untouched.
+   ========================================================================== */
+[data-theme="night"] {
+  --color-bg: var(--color-night-800);
+  --color-bg-soft: var(--color-night-700);
+  --color-panel: var(--color-night-600);
+  --color-panel-strong: var(--color-night-500);
+  --color-surface: var(--color-night-700);
+  --color-surface-sunken: var(--color-night-800);
+  --color-surface-hover: var(--color-night-600);
+  --color-border: var(--color-night-500);
+  --color-border-strong: var(--color-night-300);
+
+  --color-text: var(--color-night-50);
+  --color-text-title: var(--color-white);
+  --color-text-muted: var(--color-night-200);   /* 4.84:1 on night-500, 6.18:1 on night-600 */
+  --color-text-number: var(--color-sun-300);
+  --color-text-link: var(--color-sky-300);
+
+  --color-primary: var(--color-sun-400);
+  --color-primary-hover: var(--color-sun-300);
+  --color-secondary: var(--color-sky-500);
+  --color-secondary-hover: var(--color-sky-400);
+  --color-secondary-edge: var(--color-sky-700);
+  --color-text-on-secondary: var(--color-night-900);
+  --color-accent: var(--color-grape-400);
+  --color-accent-soft: var(--color-night-500);
+
+  --color-success: var(--color-leaf-400);
+  --color-success-soft: var(--color-night-600);
+  --color-warning: var(--color-sun-400);
+  --color-warning-soft: var(--color-night-600);
+  --color-error: var(--color-coral-400);
+  --color-error-soft: var(--color-night-600);
+  --color-info: var(--color-sky-300);
+  --color-info-soft: var(--color-night-600);
+
+  --color-control-border: var(--color-night-300);
+  --color-input-border: var(--color-night-500);
+  --color-tooltip-bg: var(--color-night-50);
+  --color-tooltip-fg: var(--color-night-900);
+  --color-focus: var(--color-sun-300);
+  --color-overlay: rgb(var(--rgb-ink) / 0.75);
+  --color-nav-active: var(--color-night-500);
+  --color-highlight: var(--color-night-600);
+  --color-icon-bubble: var(--color-night-600);
+  --color-icon-bubble-fg: var(--color-sun-300);
+  --color-icon-bubble-ring: var(--color-night-500);
+
+  --gradient-page: linear-gradient(180deg, var(--color-night-900) 0%, var(--color-night-800) 100%);
+  --gradient-panel: linear-gradient(180deg, var(--color-night-600) 0%, var(--color-night-700) 100%);
+  --gradient-button: linear-gradient(180deg, var(--color-sun-300) 0%, var(--color-sun-400) 100%);
+
+  --shadow-sm: 0 3px 8px -2px rgb(0 0 0 / 0.5);
+  --shadow-md: 0 10px 22px -8px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 22px 40px -14px rgb(0 0 0 / 0.7);
+  --shadow-inner-top: inset 0 2px 0 rgb(var(--rgb-white) / 0.1);
+}

@@ -1,0 +1,203 @@
+/* Button: chunky, rounded, with a solid bottom edge that collapses on press.
+   Ref: moodboard bottom action bar (back / pause / bolt). */
+
+.btn {
+  --btn-bg: var(--gradient-button);
+  --btn-fg: var(--color-text-on-primary);
+  --btn-edge: var(--color-primary-edge);
+  --btn-h: var(--size-tap);
+  --btn-px: var(--space-6);
+  --btn-fs: var(--text-md);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--btn-h);
+  padding: 0 var(--btn-px);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-display);
+  font-size: var(--btn-fs);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow-inner-top), 0 var(--press-offset) 0 var(--btn-edge), var(--shadow-sm);
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    filter var(--duration-fast) var(--ease-standard);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:hover {
+  filter: var(--filter-hover);
+}
+
+.btn:active {
+  transform: translateY(var(--press-offset));
+  box-shadow: var(--shadow-inner-top), 0 0 0 var(--btn-edge);
+}
+
+.btn:focus-visible {
+  box-shadow: var(--shadow-inner-top), 0 var(--press-offset) 0 var(--btn-edge), var(--shadow-focus);
+}
+
+/* Variants */
+.btn--secondary {
+  --btn-bg: var(--color-secondary);
+  --btn-fg: var(--color-text-on-secondary);
+  --btn-edge: var(--color-secondary-edge);
+}
+
+.btn--secondary:hover {
+  --btn-bg: var(--color-secondary-hover);
+  filter: none;
+}
+
+.btn--accent {
+  --btn-bg: var(--gradient-grape);
+  --btn-fg: var(--color-white);
+  --btn-edge: var(--color-grape-700);
+}
+
+.btn--danger {
+  --btn-bg: var(--color-coral-600);
+  --btn-fg: var(--color-white);
+  --btn-edge: var(--color-coral-700);
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-text-title);
+  --btn-edge: transparent;
+  box-shadow: inset 0 0 0 var(--size-border) var(--color-border-strong);
+}
+
+.btn--ghost:hover {
+  --btn-bg: var(--color-surface-hover);
+  filter: none;
+}
+
+.btn--ghost:active {
+  box-shadow: inset 0 0 0 var(--size-border) var(--color-border-strong);
+}
+
+.btn--ghost:focus-visible {
+  box-shadow: inset 0 0 0 var(--size-border) var(--color-border-strong), var(--shadow-focus);
+}
+
+/* Sizes */
+.btn--sm {
+  --btn-h: var(--size-tap-sm);
+  --btn-px: var(--space-4);
+  --btn-fs: var(--text-sm);
+  border-radius: var(--radius-md);
+}
+
+.btn--lg {
+  --btn-h: var(--size-tap-lg);
+  --btn-px: var(--space-8);
+  --btn-fs: var(--text-lg);
+}
+
+.btn--xl {
+  --btn-h: var(--size-tap-xl);
+  --btn-px: var(--space-10);
+  --btn-fs: var(--text-xl);
+  border-radius: var(--radius-xl);
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* Square icon button (moodboard action bar) */
+.btn--icon {
+  --btn-px: 0;
+  width: var(--btn-h);
+}
+
+.btn--icon.btn--lg,
+.btn--icon.btn--xl {
+  border-radius: var(--radius-xl);
+}
+
+.btn--round {
+  border-radius: var(--radius-round);
+}
+
+.btn .icon {
+  stroke-width: var(--stroke-icon-bold);
+}
+
+.btn--xl .icon {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+}
+
+/* States */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  filter: var(--filter-disabled);
+  transform: none;
+}
+
+.btn[aria-busy="true"] {
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  border-radius: var(--radius-round);
+  border: var(--size-border-thick) solid var(--btn-fg);
+  border-right-color: transparent;
+  animation: btn-spin var(--duration-slower) linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn-group {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+/* Hold-to-confirm (DESIGN.md 5.5): handoff buttons need a short hold so the next
+   screen can't open by accident while the phone changes hands. Driven by button.js. */
+.btn--hold {
+  isolation: isolate;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.btn--hold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-hold-fill);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-instant) linear;
+}
+
+.btn--hold[data-holding="true"]::before {
+  transform: scaleX(1);
+  transition-duration: var(--duration-hold);
+}

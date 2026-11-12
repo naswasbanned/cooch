@@ -1,0 +1,109 @@
+/* Hero: warm panel with sunburst and tilted number tiles (moodboard screen 2 header). */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: var(--space-8) var(--space-6);
+  background: var(--gradient-panel);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: var(--gradient-sunburst);
+}
+
+.hero__content {
+  position: relative;
+  max-width: var(--size-reading);
+}
+
+.hero__title {
+  margin-top: var(--space-4);
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-title);
+}
+
+.hero__text {
+  margin-top: var(--space-3);
+  font-size: var(--text-md);
+  color: var(--color-text);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.hero__art {
+  display: none;
+}
+
+.hero__tile {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: var(--size-tile-lg);
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-tile);
+  color: var(--color-text-on-tile);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  text-shadow: var(--shadow-text);
+  box-shadow: var(--shadow-inner-top), var(--shadow-cool);
+}
+
+.hero__tile--a {
+  top: 12%;
+  right: 30%;
+  transform: rotate(calc(var(--tilt-card) * 6));
+}
+
+.hero__tile--b {
+  top: 42%;
+  right: 8%;
+  background: var(--gradient-grape);
+  transform: rotate(calc(var(--tilt-card) * -4));
+}
+
+.hero__tile--c {
+  bottom: 10%;
+  right: 38%;
+  background: var(--color-surface);
+  color: var(--color-text-title);
+  text-shadow: none;
+  transform: rotate(calc(var(--tilt-card) * -2));
+}
+
+@media (min-width: 48em) {
+  .hero {
+    padding: var(--space-16) var(--space-12);
+  }
+
+  .hero__content {
+    max-width: 55%;
+  }
+
+  .hero__art {
+    display: block;
+    position: absolute;
+    inset: 0 0 0 55%;
+  }
+}

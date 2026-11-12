@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Atur sesi Guess the Impostor - Cooch</title>
+  <meta name="description" content="Atur jumlah pemain dan pengaturan Guess the Impostor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/breadcrumb/breadcrumb.css">
+  <link rel="stylesheet" href="../components/accordion/accordion.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="../components/sticky-cta/sticky-cta.css">
+  <link rel="stylesheet" href="../components/player-row/player-row.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+        <a class="navbar__link" href="settings.html">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Beranda</a></li>
+    <li class="breadcrumb__item"><a class="breadcrumb__link" href="game-impostor.html">Guess the Impostor</a></li>
+    <li class="breadcrumb__item"><span aria-current="page">Atur sesi</span></li>
+  </ol>
+</nav>
+<div class="page-header">
+  <h1 class="page-header__title">Atur sesi</h1>
+  <p class="page-header__text">Pengaturan terakhir untuk game ini sudah terisi. Mau cepat? Langsung tekan Mulai.</p>
+</div>
+
+<form class="setup" data-setup data-sample-names='["Dina", "Raka", "Sari", "Bima", "Yanti", "Eko"]' aria-label="Pengaturan sesi Guess the Impostor">
+  <section class="panel" aria-labelledby="p-title">
+    <h2 class="panel__title" id="p-title">Pemain</h2>
+    <div class="field">
+      <span class="field__label" id="lbl-players">Jumlah pemain</span>
+      <div class="stepper" data-stepper role="group" aria-labelledby="lbl-players">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi pemain"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-players" type="number" min="3" max="20" value="6" aria-labelledby="lbl-players" inputmode="numeric" data-players>
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah pemain"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      <span class="field__hint">3 sampai 20 pemain.</span>
+    </div>
+    <div class="field">
+      <span class="field__label">Nama pemain</span>
+      <span class="field__hint">Nama kosong otomatis jadi Pemain 1, Pemain 2, dan seterusnya. Urutan ini dipakai saat bagi kartu.</span>
+    </div>
+    <div class="player-list" data-player-list></div>
+    <div class="cluster">
+      <button class="btn btn--ghost" type="button" data-add-player><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Tambah pemain</button>
+      <button class="btn btn--ghost" type="button" data-shuffle><svg class="icon" aria-hidden="true"><use href="#i-shuffle"></use></svg>Acak urutan</button>
+    </div>
+  </section>
+
+  <!-- game: settings schema -->
+  <section class="panel" aria-labelledby="g-title">
+    <h2 class="panel__title" id="g-title">Pengaturan game</h2>
+    <div class="field">
+      <span class="field__label" id="lbl-impostors">Jumlah Impostor</span>
+      <div class="stepper" data-stepper role="group" aria-labelledby="lbl-impostors">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi Impostor"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-impostors" type="number" min="1" max="2" value="1" aria-labelledby="lbl-impostors" inputmode="numeric" data-max-third data-evil>
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah Impostor"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      <span class="field__hint" data-max-third-hint="f-impostors">Maksimal 2 untuk 6 pemain.</span>
+    </div>
+    <div>
+      <label class="toggle">Tambah Chameleon<input class="toggle__input" type="checkbox" role="switch" data-min-players="6" data-evil aria-describedby="chameleon-hint"></label>
+      <span class="field__hint" id="chameleon-hint">Dapat kata mirip dan tidak tahu perannya. Butuh minimal 6 pemain.</span>
+    </div>
+    <ul class="menu-list meta-list">
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-modal-open="category-modal"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg></span><span class="menu-list__text">Kategori kata<small data-category-summary>Semua kategori, acak</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button></li>
+    </ul>
+    <div class="field">
+      <span class="field__label" id="lbl-timer">Timer diskusi (menit)</span>
+      <div class="stepper" data-stepper role="group" aria-labelledby="lbl-timer">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi menit"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+        <input class="stepper__value" id="f-timer" type="number" min="1" max="10" value="3" aria-labelledby="lbl-timer" inputmode="numeric">
+        <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah menit"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+      </div>
+      <span class="field__hint">1 sampai 10 menit.</span>
+    </div>
+    <label class="toggle">Impostor boleh menebak kata saat tertangkap<input class="toggle__input" type="checkbox" role="switch" checked></label>
+  </section>
+
+  <div class="accordion">
+    <details class="accordion__item">
+      <summary class="accordion__summary">Pengaturan lanjutan<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+      <div class="accordion__content">
+        <div class="field">
+          <label class="field__label" for="f-word-lang">Bahasa kata</label>
+          <select class="select" id="f-word-lang"><option>Ikuti bahasa aplikasi</option><option>Indonesia</option><option>English</option></select>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="sticky-cta">
+    <div class="alert alert--error setup-error" role="alert" data-setup-error hidden><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg><div class="alert__body"><span data-setup-error-text></span></div></div>
+    <div class="sticky-cta__inner">
+      <p class="sticky-cta__info"><strong data-player-count>6 pemain siap</strong>1 Impostor · kategori acak · timer 3 menit</p>
+      <a class="btn btn--lg" href="play-impostor.html" data-start><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Mulai</a>
+    </div>
+  </div>
+</form>
+</main>
+<footer class="footer footer--no-tabbar">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+
+<dialog class="modal" id="category-modal" aria-labelledby="category-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="category-modal-title">Kategori kata</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <fieldset class="choice-group choice-grid modal__body">
+      <legend class="sr-only">Pilih kategori</legend>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Makanan</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Hewan</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Tempat</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Profesi</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Film dan Serial</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Olahraga</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Benda Sehari-hari</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Tokoh Umum</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Kota Indonesia</label>
+      <label class="choice"><input class="choice__input" type="checkbox" checked data-category-option>Kantor (buatanmu)</label>
+    </fieldset>
+    <p class="field__hint">Semua dicentang berarti kata diambil acak dari semua kategori.</p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-category-all="on">Pilih semua</button>
+      <button class="btn" type="button" data-modal-close>Selesai</button>
+    </div>
+  </div>
+</dialog>
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="../components/form/form.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/setup.js"></script>
+</body>
+</html>

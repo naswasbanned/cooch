@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cara main - Cooch</title>
+  <meta name="description" content="Cara memakai satu HP untuk game party tanpa membocorkan kartu rahasia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/card/card.css">
+  <link rel="stylesheet" href="../components/accordion/accordion.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html" aria-current="page">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html" aria-current="page">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+        <a class="navbar__link" href="settings.html">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<div class="page-header">
+  <h1 class="page-header__title">Cara main di Cooch</h1>
+  <p class="page-header__text">Satu HP untuk semua orang. Begini caranya supaya rahasia tetap aman.</p>
+</div>
+
+<section class="page-section--tight" aria-label="Langkah">
+<ol class="steps">
+  <li class="card step"><span class="step__num" aria-hidden="true"></span><h2 class="card__title">Pilih game dan pemain</h2><p class="card__text">Pengaturan terakhir sudah terisi. Nama kosong otomatis jadi Pemain 1, Pemain 2, dan seterusnya.</p></li>
+  <li class="card step"><span class="step__num" aria-hidden="true"></span><h2 class="card__title">Oper HP bergiliran</h2><p class="card__text">Layar "Serahkan HP ke Rani" muncul. Rani menahan tombolnya sebentar, menahan kartu untuk membaca, lalu menutupnya.</p></li>
+  <li class="card step"><span class="step__num" aria-hidden="true"></span><h2 class="card__title">Taruh HP di tengah</h2><p class="card__text">Website memandu giliran, timer, voting, sampai pemenang diumumkan.</p></li>
+</ol>
+</section>
+
+<section class="page-section panel" aria-labelledby="leak-title">
+  <h2 class="panel__title" id="leak-title">Supaya kartu tidak bocor</h2>
+  <ul class="role-list">
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span><span class="role__body">Tombol "Aku Rani, lanjut" harus ditahan sebentar, jadi tidak terbuka saat HP berpindah tangan.</span></li>
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg></span><span class="role__body">Kartu hanya terbuka selama ditahan, dan menutup sendiri setelah 15 detik.</span></li>
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></span><span class="role__body">Tekan Jeda kapan saja. Kartu yang terbuka langsung tertutup.</span></li>
+    <li class="role"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span><span class="role__body">Kembali dari telepon atau aplikasi lain? Layar oper muncul dulu, bukan kartu.</span></li>
+  </ul>
+</section>
+
+<section class="page-section" id="faq" aria-labelledby="faq-title">
+<div class="section-heading">
+  <div class="section-heading__text"><h2 class="section-heading__title" id="faq-title">Pertanyaan umum</h2></div>
+  
+</div>
+<div class="accordion">
+  <details class="accordion__item" open>
+    <summary class="accordion__summary">Perlu akun atau install aplikasi?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Tidak. Buka website di satu HP, langsung main.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Perlu internet?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Hanya saat pertama kali membuka. Setelah itu game jalan tanpa sinyal.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Ada suara narator?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Belum. Semua narasi tampil sebagai teks besar di layar.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Bisa pakai bahasa Inggris?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Bisa. Ganti lewat tombol ID | EN di atas, atau di Pengaturan. Game yang sedang berjalan tidak diulang.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Tab tertutup di tengah game?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Game tersimpan di HP. Buka Cooch lagi dan tekan Lanjutkan di Beranda.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Nama pemain dikirim ke server?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Tidak. Nama, peran, dan kata rahasia hanya ada di HP ini. <a class="link" href="privacy.html">Baca privasi</a>.</p></div>
+  </details>
+</div>
+</section>
+
+<section class="page-section panel" aria-labelledby="cta-title">
+  <h2 class="panel__title" id="cta-title">Siap main?</h2>
+  <p class="panel__text">Pilih game dan mulai dalam kurang dari satu menit.</p>
+  <div class="cluster"><a class="btn btn--lg" href="games.html"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Pilih game</a></div>
+</section>
+</main>
+<footer class="footer footer--no-tabbar">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+
+
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

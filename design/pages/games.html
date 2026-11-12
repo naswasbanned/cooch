@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jelajah game - Cooch</title>
+  <meta name="description" content="Cari game party, kuis, solo, dan dua pemain. Filter menurut jumlah pemain, durasi, dan kesulitan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/card/card.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="../components/empty-state/empty-state.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html" aria-current="page">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html" aria-current="page">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+        <a class="navbar__link" href="settings.html">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<div class="page-header">
+  <h1 class="page-header__title">Jelajah</h1>
+  <p class="page-header__text">Semua game di Cooch. Katalog terus bertambah.</p>
+</div>
+
+<section class="page-section--tight" id="cari" aria-label="Cari dan filter">
+  <div class="search-bar">
+    <div class="field">
+      <label class="field__label" for="f-search">Cari game</label>
+      <div class="input-wrap"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input class="input" id="f-search" type="search" placeholder="Werewolf, kuis, puzzle..." data-filter-search></div>
+    </div>
+    <button class="btn btn--ghost" type="button" data-modal-open="filter-modal"><svg class="icon" aria-hidden="true"><use href="#i-filter"></use></svg>Filter<span class="badge badge--accent" data-filter-active hidden>0</span></button>
+  </div>
+  <div class="page-section--tight">
+<div class="chip-row" role="group" aria-label="Kategori" data-chip-group data-filter-cat>
+  <button class="chip" type="button" aria-pressed="true" data-value="semua">Semua</button>
+  <button class="chip" type="button" aria-pressed="false" data-value="party">Party</button>
+  <button class="chip" type="button" aria-pressed="false" data-value="kuis">Kuis</button>
+  <button class="chip" type="button" aria-pressed="false" data-value="solo">Main sendiri</button>
+  <button class="chip" type="button" aria-pressed="false" data-value="duo">Dua pemain</button>
+  <button class="chip" type="button" aria-pressed="false" data-value="puzzle">Puzzle</button>
+  <button class="chip" type="button" aria-pressed="false" data-value="arcade">Arcade</button>
+</div>
+  </div>
+</section>
+
+<section aria-labelledby="result-title">
+  <div class="catalog-bar">
+    <h2 class="sr-only" id="result-title">Hasil</h2>
+    <p class="catalog-bar__count" data-filter-count aria-live="polite">12 game</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-filter-reset>Reset filter</button>
+  </div>
+<div class="card-list" data-catalog>
+  <article class="card card--horizontal card--interactive" data-name="Guess the Impostor" data-tags="party" data-min="3" data-max="20" data-minutes="15" data-level="mudah">
+    <div class="card__media"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-mask"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title"><a href="game-impostor.html">Guess the Impostor</a></h3><p class="card__text">Semua dapat kata rahasia, kecuali tim jahat. Temukan mereka.</p></div><div class="card__meta"><span class="badge badge--new">Baru</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>15 mnt</span><span class="badge badge--success">Mudah</span></div></div>
+  </article>
+  <article class="card card--horizontal card--interactive" data-name="Werewolf" data-tags="party" data-min="5" data-max="20" data-minutes="30" data-level="sedang">
+    <div class="card__media card__media--night"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-moon"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title"><a href="game-werewolf.html">Werewolf</a></h3><p class="card__text">Desa vs serigala. HP ini jadi moderatornya.</p></div><div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>5-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>30 mnt</span><span class="badge badge--warning">Sedang</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Spyfall" data-tags="party" data-min="3" data-max="12" data-minutes="15" data-level="sedang">
+    <div class="card__media card__media--grape"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-eye"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Spyfall</h3><p class="card__text">Semua tahu lokasi, kecuali mata-mata.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-12</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>15 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Tebak Gaya" data-tags="party kuis" data-min="4" data-max="20" data-minutes="15" data-level="mudah">
+    <div class="card__media card__media--sun"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-sparkle"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Tebak Gaya</h3><p class="card__text">Peragakan kata tanpa bicara. Tim lain menebak.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>4-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>15 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Kuis Tim" data-tags="kuis" data-min="4" data-max="20" data-minutes="20" data-level="sedang">
+    <div class="card__media"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-help"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Kuis Tim</h3><p class="card__text">Soal cepat antar tim dengan skor otomatis.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>4-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>20 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Jujur atau Berani" data-tags="party" data-min="3" data-max="12" data-minutes="20" data-level="mudah">
+    <div class="card__media card__media--sun"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-flame"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Jujur atau Berani</h3><p class="card__text">Pilih tingkat keberanian, HP yang mengundi.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-12</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>20 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Misi Rahasia" data-tags="party" data-min="5" data-max="10" data-minutes="30" data-level="sulit">
+    <div class="card__media card__media--night"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-key"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Misi Rahasia</h3><p class="card__text">Tim misi dan penyusup. Voting rahasia tiap ronde.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>5-10</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>30 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Tebak Kata Kilat" data-tags="kuis" data-min="4" data-max="16" data-minutes="10" data-level="mudah">
+    <div class="card__media card__media--leaf"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-bolt"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Tebak Kata Kilat</h3><p class="card__text">Satu menit, sebanyak mungkin kata.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>4-16</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>10 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Kartu Memori" data-tags="solo puzzle" data-min="1" data-max="1" data-minutes="5" data-level="mudah">
+    <div class="card__media"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-dice"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Kartu Memori</h3><p class="card__text">Buka dua kartu, cari pasangannya.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>1 pemain</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>5 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Tangkas" data-tags="solo arcade" data-min="1" data-max="1" data-minutes="3" data-level="mudah">
+    <div class="card__media card__media--grape"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-bolt"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Tangkas</h3><p class="card__text">Ketuk secepat kilat sebelum waktu habis.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>1 pemain</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>3 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Tiga Sebaris" data-tags="duo puzzle" data-min="2" data-max="2" data-minutes="5" data-level="mudah">
+    <div class="card__media card__media--leaf"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-close"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Tiga Sebaris</h3><p class="card__text">Klasik dua pemain di satu layar.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>2 pemain</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>5 mnt</span></div></div>
+  </article>
+  <article class="card card--horizontal card--soon" aria-disabled="true" data-name="Catur" data-tags="duo" data-min="2" data-max="2" data-minutes="30" data-level="sulit">
+    <div class="card__media card__media--sun"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-trophy"></use></svg></div>
+    <div class="card__main"><div class="card__body"><h3 class="card__title">Catur</h3><p class="card__text">Berhadapan di satu layar, giliran otomatis.</p></div><div class="card__meta"><span class="badge">Segera</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>2 pemain</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>30 mnt</span></div></div>
+  </article>
+</div>
+<div class="empty-state" data-filter-empty hidden>
+  <span class="empty-state__icon"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></span>
+  <h2 class="empty-state__title">Tidak ada game yang cocok</h2>
+  <p class="empty-state__text">Coba kurangi filter atau ganti kata pencarian.</p>
+  <button class="btn btn--ghost" type="button" data-filter-reset>Reset filter</button>
+</div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Navigasi bawah">
+  <a class="tabbar__item" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-home"></use></svg>Beranda</a>
+  <a class="tabbar__item" href="games.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>Jelajah</a>
+  <a class="tabbar__item" href="settings.html"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>Atur</a>
+</nav>
+<dialog class="modal" id="filter-modal" aria-labelledby="filter-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="filter-modal-title">Filter game</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <div class="stack">
+    <div class="field">
+      <label class="field__label" for="f-players">Berapa orang?</label>
+      <select class="select" id="f-players" data-filter-players><option value="">Semua</option><option value="1">Sendiri</option><option value="2">2 orang</option><option value="4">4 orang</option><option value="6">6 orang</option><option value="8">8 orang</option><option value="12">12 orang</option><option value="20">20 orang</option></select>
+    </div>
+    <div class="field">
+      <label class="field__label" for="f-duration">Durasi</label>
+      <select class="select" id="f-duration" data-filter-duration><option value="">Semua</option><option value="5">Maks 5 menit</option><option value="15">Maks 15 menit</option><option value="30">Maks 30 menit</option></select>
+    </div>
+    <div class="field">
+      <label class="field__label" for="f-level">Kesulitan</label>
+      <select class="select" id="f-level" data-filter-level><option value="">Semua</option><option value="mudah">Mudah</option><option value="sedang">Sedang</option><option value="sulit">Sulit</option></select>
+    </div>
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-filter-reset>Reset</button>
+      <button class="btn" type="button" data-modal-close>Lihat hasil</button>
+    </div>
+  </div>
+</dialog>
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

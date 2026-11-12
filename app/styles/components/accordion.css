@@ -1,0 +1,53 @@
+/* Accordion: native <details>. Used for rules panel and FAQ. */
+
+.accordion {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.accordion__item {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-inner-top), var(--shadow-sm);
+}
+
+.accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--size-tap-lg);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  list-style: none;
+  cursor: pointer;
+}
+
+.accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__summary:hover {
+  background: var(--color-surface-hover);
+}
+
+.accordion__summary .icon {
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.accordion__item[open] .accordion__summary .icon {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--color-text);
+}
+
+.accordion__content > * + * {
+  margin-top: var(--space-2);
+}

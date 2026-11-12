@@ -1,0 +1,17 @@
+<div>
+  <button class="btn" type="button" data-modal-open="demo-modal">Buka dialog</button>
+  <dialog class="modal" id="demo-modal" aria-labelledby="demo-modal-title">
+    <div class="modal__inner">
+      <span class="modal__handle" aria-hidden="true"></span>
+      <div class="modal__header">
+        <h2 class="modal__title" id="demo-modal-title">Akhiri game ini?</h2>
+        <button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+      </div>
+      <p class="modal__body">Progres game akan hilang. Pengaturan pemain tetap tersimpan.</p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" data-modal-close>Lanjut main</button>
+        <button class="btn btn--danger" type="button" data-modal-close>Akhiri</button>
+      </div>
+    </div>
+  </dialog>
+</div>

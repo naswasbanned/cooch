@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Component Gallery - Cooch Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="components/button/button.css">
+  <link rel="stylesheet" href="components/navbar/navbar.css">
+  <link rel="stylesheet" href="components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="components/footer/footer.css">
+  <link rel="stylesheet" href="components/hero/hero.css">
+  <link rel="stylesheet" href="components/heading/heading.css">
+  <link rel="stylesheet" href="components/badge/badge.css">
+  <link rel="stylesheet" href="components/card/card.css">
+  <link rel="stylesheet" href="components/stat/stat.css">
+  <link rel="stylesheet" href="components/form/form.css">
+  <link rel="stylesheet" href="components/modal/modal.css">
+  <link rel="stylesheet" href="components/accordion/accordion.css">
+  <link rel="stylesheet" href="components/tabs/tabs.css">
+  <link rel="stylesheet" href="components/toast/toast.css">
+  <link rel="stylesheet" href="components/tooltip/tooltip.css">
+  <link rel="stylesheet" href="components/breadcrumb/breadcrumb.css">
+  <link rel="stylesheet" href="components/list/list.css">
+  <link rel="stylesheet" href="components/reveal/reveal.css">
+  <link rel="stylesheet" href="components/tile/tile.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <!-- Generated from components/*/*.html. Each component's own HTML file is the source of truth. -->
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="#"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="#" aria-current="page">Beranda</a>
+        <a class="navbar__link" href="#">Semua Game</a>
+        <a class="navbar__link" href="#">Cara Main</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="btn btn--ghost btn--icon btn--round" type="button" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></button>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+      <a class="navbar__link" href="#" aria-current="page">Beranda</a>
+      <a class="navbar__link" href="#">Semua Game</a>
+      <a class="navbar__link" href="#">Cara Main</a>
+    </div>
+  </div>
+</header>
+  <main class="container gallery">
+    <div class="gallery__intro">
+      <span class="label-tag">Fase 1 review</span>
+      <h1>Component Gallery</h1>
+      <p>Semua token, komponen, dan state untuk platform party game. Uji keyboard (Tab), hover, dan klik di tiap komponen. Lebar layar 375 sampai 1440 px.</p>
+      <nav class="gallery__toc" aria-label="Daftar isi">
+        <a class="chip" href="#colors">Warna</a>
+        <a class="chip" href="#type">Tipografi</a>
+        <a class="chip" href="#navbar">Navbar</a>
+        <a class="chip" href="#hero">Hero</a>
+        <a class="chip" href="#buttons">Button</a>
+        <a class="chip" href="#heading">Heading & link</a>
+        <a class="chip" href="#badges">Badge & chip</a>
+        <a class="chip" href="#cards">Card</a>
+        <a class="chip" href="#stats">Stat</a>
+        <a class="chip" href="#forms">Form</a>
+        <a class="chip" href="#reveal">Reveal & timer</a>
+        <a class="chip" href="#tiles">Tile & action bar</a>
+        <a class="chip" href="#lists">List & leaderboard</a>
+        <a class="chip" href="#tabs">Tabs</a>
+        <a class="chip" href="#accordion">Accordion</a>
+        <a class="chip" href="#modal">Modal</a>
+        <a class="chip" href="#toast">Alert & toast</a>
+        <a class="chip" href="#tooltip">Tooltip</a>
+        <a class="chip" href="#breadcrumb">Breadcrumb & pagination</a>
+        <a class="chip" href="#tabbar">Tabbar</a>
+        <a class="chip" href="#night">Tema malam</a>
+        <a class="chip" href="#footer">Footer</a>
+      </nav>
+    </div>
+
+    <section class="gallery__section" id="colors">
+      <h2>Warna</h2>
+      <p class="gallery__note">Palet mentah. Komponen memakai token peran (--color-surface, --color-primary, dst.), bukan nilai ini langsung.</p>
+      <div class="gallery__panel ">
+
+      <div class="swatch-group"><h3>Sky (backdrop, tile)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-50)"></span><span>sky-50</span><span class="swatch__hex">#f0f8ff</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-100)"></span><span>sky-100</span><span class="swatch__hex">#dff0fd</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-200)"></span><span>sky-200</span><span class="swatch__hex">#bfe2fb</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-300)"></span><span>sky-300</span><span class="swatch__hex">#9fd3f8</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-400)"></span><span>sky-400</span><span class="swatch__hex">#6dbbf0</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-500)"></span><span>sky-500</span><span class="swatch__hex">#2b8bd2</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-600)"></span><span>sky-600</span><span class="swatch__hex">#2380c6</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-700)"></span><span>sky-700</span><span class="swatch__hex">#1c64a0</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-800)"></span><span>sky-800</span><span class="swatch__hex">#1b4e7c</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sky-900)"></span><span>sky-900</span><span class="swatch__hex">#123a5e</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Sun (panel, aksi utama)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-50)"></span><span>sun-50</span><span class="swatch__hex">#fffaf1</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-100)"></span><span>sun-100</span><span class="swatch__hex">#fff3df</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-200)"></span><span>sun-200</span><span class="swatch__hex">#ffe6bf</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-300)"></span><span>sun-300</span><span class="swatch__hex">#ffd28a</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-400)"></span><span>sun-400</span><span class="swatch__hex">#ffbf5e</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-500)"></span><span>sun-500</span><span class="swatch__hex">#ffa73a</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-600)"></span><span>sun-600</span><span class="swatch__hex">#e8871a</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-700)"></span><span>sun-700</span><span class="swatch__hex">#b8630c</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-sun-800)"></span><span>sun-800</span><span class="swatch__hex">#955008</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Cocoa (teks)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-50)"></span><span>cocoa-50</span><span class="swatch__hex">#f6ede4</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-300)"></span><span>cocoa-300</span><span class="swatch__hex">#c9a98a</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-500)"></span><span>cocoa-500</span><span class="swatch__hex">#8a5a2e</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-600)"></span><span>cocoa-600</span><span class="swatch__hex">#7a4a1f</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-700)"></span><span>cocoa-700</span><span class="swatch__hex">#6b3a12</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-800)"></span><span>cocoa-800</span><span class="swatch__hex">#4f2a0c</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-cocoa-900)"></span><span>cocoa-900</span><span class="swatch__hex">#3a1f08</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Grape (aksen, kartu rahasia)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-grape-100)"></span><span>grape-100</span><span class="swatch__hex">#ece6fc</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-grape-400)"></span><span>grape-400</span><span class="swatch__hex">#9b7bf0</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-grape-500)"></span><span>grape-500</span><span class="swatch__hex">#7b5be0</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-grape-600)"></span><span>grape-600</span><span class="swatch__hex">#6244c8</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-grape-700)"></span><span>grape-700</span><span class="swatch__hex">#4d34a3</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Leaf (sukses, pilihan)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-leaf-100)"></span><span>leaf-100</span><span class="swatch__hex">#dcf6df</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-leaf-400)"></span><span>leaf-400</span><span class="swatch__hex">#4ccb5b</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-leaf-500)"></span><span>leaf-500</span><span class="swatch__hex">#2fb344</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-leaf-600)"></span><span>leaf-600</span><span class="swatch__hex">#1f8f31</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-leaf-700)"></span><span>leaf-700</span><span class="swatch__hex">#176b25</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Coral (error, eliminasi)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-coral-100)"></span><span>coral-100</span><span class="swatch__hex">#fde3e3</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-coral-400)"></span><span>coral-400</span><span class="swatch__hex">#f58a8a</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-coral-500)"></span><span>coral-500</span><span class="swatch__hex">#ef6666</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-coral-600)"></span><span>coral-600</span><span class="swatch__hex">#d24848</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-coral-700)"></span><span>coral-700</span><span class="swatch__hex">#a93030</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Peach (nav aktif)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-peach-200)"></span><span>peach-200</span><span class="swatch__hex">#ffd9c4</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-peach-300)"></span><span>peach-300</span><span class="swatch__hex">#f9c3a6</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>Night (fase malam Werewolf)</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-50)"></span><span>night-50</span><span class="swatch__hex">#e9e8ff</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-300)"></span><span>night-300</span><span class="swatch__hex">#8f8cc9</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-500)"></span><span>night-500</span><span class="swatch__hex">#3b3a78</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-600)"></span><span>night-600</span><span class="swatch__hex">#2c2b5e</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-700)"></span><span>night-700</span><span class="swatch__hex">#212048</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-800)"></span><span>night-800</span><span class="swatch__hex">#181738</span></div>
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-night-900)"></span><span>night-900</span><span class="swatch__hex">#0f0e26</span></div>
+      </div></div>
+      <div class="swatch-group"><h3>White</h3><div class="swatches">
+        <div class="swatch"><span class="swatch__chip" style="--swatch: var(--color-white)"></span><span>white</span><span class="swatch__hex">#ffffff</span></div>
+      </div></div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="type">
+      <h2>Tipografi</h2>
+      <p class="gallery__note">Fredoka untuk judul dan angka, Nunito untuk teks. Keduanya rounded, cocok dengan moodboard.</p>
+      <div class="gallery__panel ">
+        <div class="type-sample">
+          <div class="type-sample__row"><span class="type-sample__meta">Display / Fredoka 700 / --text-display</span><p style="font-family:var(--font-display);font-size:var(--text-display);font-weight:var(--font-weight-bold);line-height:var(--leading-tight);color:var(--color-text-title)">Main bareng</p></div>
+          <div class="type-sample__row"><span class="type-sample__meta">H1 / --text-4xl</span><h1>Guess the Impostor</h1></div>
+          <div class="type-sample__row"><span class="type-sample__meta">H2 / --text-3xl</span><h2>Pilih game</h2></div>
+          <div class="type-sample__row"><span class="type-sample__meta">H3 / --text-xl</span><h3>Pengaturan sesi</h3></div>
+          <div class="type-sample__row"><span class="type-sample__meta">Angka / Fredoka 700 / navy</span><p class="stat-card__value">01:24</p></div>
+          <div class="type-sample__row"><span class="type-sample__meta">Body / Nunito 500 / --text-base</span><p>Edarkan HP ke pemain berikutnya. Pastikan layar tidak terlihat oleh orang lain selama kartu terbuka.</p></div>
+          <div class="type-sample__row"><span class="type-sample__meta">Small / --text-sm muted</span><p class="field__hint">Pengaturan tersimpan di perangkat ini.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="navbar">
+      <h2>Navbar</h2>
+      <p class="gallery__note">Desktop: link sejajar. Di bawah 768 px: tombol menu membuka panel. Sticky di atas.</p>
+      <div class="gallery__panel ">
+        <p class="field__hint">Navbar aktif ada di bagian paling atas halaman ini. Kecilkan jendela untuk melihat menu mobile.</p>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="hero">
+      <h2>Hero</h2>
+      <p class="gallery__note">Panel hangat dengan sunburst dan tile miring (diambil dari header layar Onet di moodboard).</p>
+      <div class="gallery__panel gallery__panel--bare">
+<section class="hero">
+  <div class="hero__content">
+    <span class="label-tag">Tanpa login</span>
+    <h1 class="hero__title">Main bareng, cukup satu HP</h1>
+    <p class="hero__text">Edarkan HP, buka kartu rahasia, lalu tebak siapa impostornya. Website jadi moderatormu.</p>
+    <div class="hero__actions">
+      <a class="btn btn--lg" href="#"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Mulai Main</a>
+      <a class="btn btn--lg btn--ghost" href="#">Cara bermain</a>
+    </div>
+    <div class="hero__meta">
+      <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-20 pemain</span>
+      <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Mulai &lt; 1 menit</span>
+    </div>
+  </div>
+  <div class="hero__art" aria-hidden="true">
+    <span class="hero__tile hero__tile--a">12</span>
+    <span class="hero__tile hero__tile--b">7</span>
+    <span class="hero__tile hero__tile--c"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-mask"></use></svg></span>
+  </div>
+</section>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="buttons">
+      <h2>Button</h2>
+      <p class="gallery__note">Tombol tebal dengan tepi bawah 3 px yang turun saat ditekan. Tinggi minimal 48 px.</p>
+      <div class="gallery__panel ">
+<div class="stack">
+  <div class="cluster">
+    <button class="btn" type="button">Mulai Main</button>
+    <button class="btn btn--secondary" type="button">Aturan</button>
+    <button class="btn btn--accent" type="button">Pilih Peran</button>
+    <button class="btn btn--ghost" type="button">Batal</button>
+    <button class="btn btn--danger" type="button">Akhiri Game</button>
+  </div>
+  <div class="cluster">
+    <button class="btn btn--sm" type="button">Kecil</button>
+    <button class="btn" type="button">Sedang</button>
+    <button class="btn btn--lg" type="button">Besar</button>
+    <button class="btn btn--xl" type="button">Mulai Voting</button>
+  </div>
+  <div class="cluster">
+    <button class="btn" type="button"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Main Lagi</button>
+    <button class="btn btn--secondary" type="button">Lanjut<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+    <button class="btn btn--icon btn--round" type="button" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></button>
+  </div>
+  <div class="cluster">
+    <button class="btn" type="button" disabled>Disabled</button>
+    <button class="btn btn--secondary" type="button" aria-busy="true">Memuat</button>
+    <button class="btn btn--ghost" type="button" disabled>Ghost disabled</button>
+  </div>
+  <p class="field__hint">Aksi game (bar bawah, ikon persegi):</p>
+  <div class="btn-group">
+    <button class="btn btn--icon btn--xl" type="button" aria-label="Kembali"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg></button>
+    <button class="btn btn--icon btn--xl" type="button" aria-label="Jeda"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+    <button class="btn btn--icon btn--xl" type="button" aria-label="Bantuan cepat"><svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg></button>
+  </div>
+  <button class="btn btn--block btn--lg" type="button">Tombol Penuh Satu Layar</button>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="heading">
+      <h2>Section heading, label, link</h2>
+      
+      <div class="gallery__panel ">
+<div class="stack">
+  <div class="section-heading">
+    <div class="section-heading__text">
+      <span class="label-tag">Populer</span>
+      <h2 class="section-heading__title">Game Pilihan Minggu Ini</h2>
+      <p class="section-heading__sub">Cocok untuk 4 sampai 12 orang di satu HP.</p>
+    </div>
+    <a class="link" href="#">Lihat semua<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+  </div>
+  <div class="cluster">
+    <span class="label-tag">Daily Streak</span>
+    <span class="label-tag label-tag--sky">Baru</span>
+    <span class="label-tag label-tag--grape">Tim</span>
+    <span class="label-tag label-tag--flat">Tanpa miring</span>
+  </div>
+  <p>Teks biasa dengan <a class="link" href="#">tautan di dalam kalimat</a> dan teks lanjutan.</p>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="badges">
+      <h2>Badge, chip, poin, tren</h2>
+      <p class="gallery__note">Badge status selalu memakai ikon + teks agar tidak bergantung pada warna.</p>
+      <div class="gallery__panel ">
+<div class="stack">
+  <div class="cluster">
+    <span class="badge">Netral</span>
+    <span class="badge badge--success"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Siap</span>
+    <span class="badge badge--warning"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Hampir habis</span>
+    <span class="badge badge--error"><svg class="icon" aria-hidden="true"><use href="#i-x-circle"></use></svg>Gagal</span>
+    <span class="badge badge--info"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>Info</span>
+    <span class="badge badge--accent">Party</span>
+    <span class="badge badge--new">Baru</span>
+  </div>
+  <div class="cluster" role="group" aria-label="Filter contoh">
+    <button class="chip" type="button" aria-pressed="false">Semua</button>
+    <button class="chip" type="button" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Party</button>
+    <button class="chip" type="button" aria-pressed="false">Solo</button>
+    <button class="chip" type="button" disabled>Segera hadir</button>
+  </div>
+  <div class="cluster">
+    <span class="points"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-coin"></use></svg>12.563 pt</span>
+    <span class="trend trend--up">+12</span>
+    <span class="trend trend--down">-2</span>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="cards">
+      <h2>Card</h2>
+      <p class="gallery__note">Kartu game untuk katalog: featured, normal (favorit off), segera hadir, dan kartu konten polos.</p>
+      <div class="gallery__panel gallery__panel--warm">
+<div class="card-grid">
+  <article class="card card--interactive card--featured">
+    <div class="card__media"><span class="card__corner badge badge--new">Baru</span><svg class="icon card__glyph" aria-hidden="true"><use href="#i-mask"></use></svg>
+      <button class="card__fav" type="button" aria-pressed="true" aria-label="Hapus dari favorit"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"></use></svg></button></div>
+    <div class="card__body"><h3 class="card__title"><a href="#">Guess the Impostor</a></h3><p class="card__text">Satu orang tidak tahu kata rahasia. Temukan dia.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>10 mnt</span><span class="badge badge--success">Mudah</span></div>
+  </article>
+  <article class="card card--interactive">
+    <div class="card__media card__media--night"><svg class="icon card__glyph" aria-hidden="true"><use href="#i-moon"></use></svg>
+      <button class="card__fav" type="button" aria-pressed="false" aria-label="Tambah ke favorit"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"></use></svg></button></div>
+    <div class="card__body"><h3 class="card__title"><a href="#">Werewolf</a></h3><p class="card__text">Desa vs serigala. Website jadi Dungeon Master.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>5-20</span><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>30 mnt</span><span class="badge badge--warning">Sedang</span></div>
+  </article>
+  <article class="card card--soon" aria-disabled="true">
+    <div class="card__media card__media--grape"><span class="card__corner badge">Segera</span><svg class="icon card__glyph" aria-hidden="true"><use href="#i-eye"></use></svg></div>
+    <div class="card__body"><h3 class="card__title">Spyfall</h3><p class="card__text">Semua tahu lokasi, kecuali mata-mata.</p></div>
+    <div class="card__meta"><span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>3-12</span></div>
+  </article>
+  <article class="card">
+    <h3 class="card__title">Kartu konten</h3>
+    <p class="card__text">Varian polos untuk teks, pengaturan, atau ringkasan hasil.</p>
+    <a class="link" href="#">Baca aturan<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+  </article>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="stats">
+      <h2>Stat</h2>
+      <p class="gallery__note">Chip Level/Time/Streak dan kartu statistik dari layar profil moodboard.</p>
+      <div class="gallery__panel gallery__panel--warm">
+<div class="stack">
+  <div class="stat-row">
+    <div class="stat"><span class="stat__label">Ronde</span><span class="stat__value">2</span></div>
+    <div class="stat"><span class="stat__label">Waktu</span><span class="stat__value">01:24</span></div>
+    <div class="stat"><span class="stat__label">Hidup</span><span class="stat__value"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-star"></use></svg>6</span></div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-card__banner"><span>Game<br>dimainkan</span><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg></div><span class="stat-card__value">10</span></div>
+    <div class="stat-card"><div class="stat-card__banner stat-card__banner--grape"><span>Game<br>terlama</span><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></div><span class="stat-card__value">32m</span></div>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="forms">
+      <h2>Form</h2>
+      <p class="gallery__note">Setup sesi: stepper pemain, input, select, textarea, segmented, checkbox, radio, toggle. Submit kosong untuk melihat validasi.</p>
+      <div class="gallery__panel ">
+        <div class="gallery__phone">
+<form class="stack" data-validate novalidate>
+  <div class="field">
+    <span class="field__label" id="lbl-players">Jumlah pemain</span>
+    <div class="stepper" data-stepper role="group" aria-labelledby="lbl-players">
+      <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi pemain"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+      <input class="stepper__value" type="number" min="3" max="20" value="5" aria-labelledby="lbl-players" inputmode="numeric">
+      <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah pemain"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+    </div>
+    <span class="field__hint">3 sampai 20 pemain.</span>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-name">Nama pemain 1</label>
+    <input class="input" id="f-name" type="text" placeholder="Contoh: Rani" required aria-describedby="f-name-err">
+    <span class="field__error" id="f-name-err"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Nama tidak boleh kosong.</span>
+  </div>
+  <div class="field field--error">
+    <label class="field__label" for="f-err">Nama pemain 2 (state error)</label>
+    <input class="input" id="f-err" type="text" value="" aria-invalid="true" aria-describedby="f-err-msg">
+    <span class="field__error" id="f-err-msg"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Nama sudah dipakai pemain lain.</span>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-search">Cari game</label>
+    <div class="input-wrap"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input class="input" id="f-search" type="search" placeholder="Werewolf, kuis, puzzle..."></div>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-dis">Disabled</label>
+    <input class="input" id="f-dis" type="text" value="Tidak bisa diubah" disabled>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-cat">Kategori kata</label>
+    <select class="select" id="f-cat"><option>Acak</option><option>Makanan</option><option>Hewan</option><option>Kota Indonesia</option></select>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-words">Kategori buatan sendiri</label>
+    <textarea class="textarea" id="f-words" placeholder="Satu kata per baris"></textarea>
+    <span class="field__hint">Tersimpan di perangkat ini saja.</span>
+  </div>
+  <div class="field">
+    <span class="field__label" id="lbl-mode">Mode impostor</span>
+    <div class="segmented" role="radiogroup" aria-labelledby="lbl-mode">
+      <label class="segmented__option"><input type="radio" name="mode" checked><span>Tahu kategori</span></label>
+      <label class="segmented__option"><input type="radio" name="mode"><span>Kata mirip</span></label>
+    </div>
+  </div>
+  <fieldset class="choice-group">
+    <legend class="field__label">Kategori</legend>
+    <label class="choice"><input class="choice__input" type="checkbox" checked>Makanan</label>
+    <label class="choice"><input class="choice__input" type="checkbox">Hewan</label>
+    <label class="choice"><input class="choice__input" type="checkbox" disabled>Film (terkunci)</label>
+  </fieldset>
+  <fieldset class="choice-group">
+    <legend class="field__label">Hasil voting seri</legend>
+    <label class="choice"><input class="choice__input" type="radio" name="tie" checked>Tidak ada eksekusi</label>
+    <label class="choice"><input class="choice__input" type="radio" name="tie">Voting ulang</label>
+    <label class="choice"><input class="choice__input" type="radio" name="tie" disabled>Host memilih (segera)</label>
+  </fieldset>
+  <div>
+    <label class="toggle">Narasi suara<input class="toggle__input" type="checkbox" role="switch" checked></label>
+    <label class="toggle">Buka peran saat mati<input class="toggle__input" type="checkbox" role="switch"></label>
+    <label class="toggle">Mode online (segera)<input class="toggle__input" type="checkbox" role="switch" disabled></label>
+  </div>
+  <button class="btn btn--block btn--lg" type="submit">Simpan dan Mulai</button>
+</form>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="reveal">
+      <h2>Reveal card, handover, timer</h2>
+      <p class="gallery__note">Inti pass-and-play. Tahan kartu ungu untuk melihat kata; lepas untuk menutup. Ketuk via keyboard menutup otomatis setelah 5 detik. Timer contoh 15 detik, merah di 10 detik terakhir.</p>
+      <div class="gallery__panel gallery__panel--warm">
+        <div class="gallery__phone">
+<div class="stack">
+  <div class="handover">
+    <span class="handover__eyebrow">Serahkan HP ke</span>
+    <h2 class="handover__name">Rani</h2>
+    <p class="field__hint">Pastikan pemain lain tidak melihat layar.</p>
+    <button class="btn btn--xl" type="button">Aku Rani, buka</button>
+  </div>
+  <div class="reveal" data-reveal>
+    <p class="reveal__player">Kartu milik <strong>Rani</strong></p>
+    <button class="reveal-card" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+      <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+      <span class="reveal-card__face"><span class="reveal-card__role">Kata rahasia</span><span class="reveal-card__secret">Rendang</span><span class="reveal-card__note">Kategori: Makanan</span></span>
+    </button>
+    <p class="reveal__hint">Kartu tertutup otomatis setelah 5 detik.</p>
+    <button class="btn btn--lg btn--block" type="button" data-reveal-done disabled>Sudah dibaca</button>
+  </div>
+  <div class="reveal" data-reveal>
+    <p class="reveal__player">Varian impostor</p>
+    <button class="reveal-card reveal-card--impostor" type="button" data-reveal-card aria-pressed="true" aria-label="Kartu impostor">
+      <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+      <span class="reveal-card__face"><span class="reveal-card__role">Peranmu</span><span class="reveal-card__secret">Kamu Impostor</span><span class="reveal-card__note">Kategori: Makanan</span></span>
+    </button>
+  </div>
+  <div class="cluster">
+    <div class="timer" data-timer="15"><span class="timer__label">Diskusi</span><span class="timer__value" data-timer-value>00:15</span><button class="btn btn--sm btn--secondary" type="button" data-timer-toggle>Mulai</button></div>
+    <div class="timer timer--urgent"><span class="timer__label">Voting</span><span class="timer__value">00:08</span></div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="tiles">
+      <h2>Tile grid dan action bar</h2>
+      <p class="gallery__note">Papan game ala Onet: tile biru, terpilih (ring hijau), terbuka, sudah cocok.</p>
+      <div class="gallery__panel gallery__panel--warm">
+        <div class="gallery__phone">
+<div class="stack">
+  <div class="tile-grid" role="group" aria-label="Papan contoh">
+    <button class="tile tile--selected" type="button" aria-label="Kartu terbuka: topeng"><svg class="icon" aria-hidden="true"><use href="#i-mask"></use></svg></button>
+    <button class="tile" type="button">2</button>
+    <button class="tile" type="button">3</button>
+    <button class="tile" type="button">4</button>
+    <button class="tile" type="button">5</button>
+    <button class="tile tile--open" type="button" aria-label="Kartu terbuka: bulan"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg></button>
+    <button class="tile tile--matched" type="button" disabled aria-label="Sudah cocok">7</button>
+    <button class="tile" type="button">8</button>
+  </div>
+  <div class="action-bar">
+    <button class="btn btn--icon btn--xl" type="button" aria-label="Kembali"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg></button>
+    <button class="btn btn--icon btn--xl" type="button" aria-label="Jeda"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+    <button class="btn btn--icon btn--xl" type="button" aria-label="Bantuan"><svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg></button>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="lists">
+      <h2>Sheet, menu list, streak, podium, rank list</h2>
+      <p class="gallery__note">Avatar memakai inisial, bukan foto, sesuai prinsip privasi PRD.</p>
+      <div class="gallery__panel gallery__panel--warm">
+        <div class="gallery__phone">
+<div class="stack">
+  <div class="sheet">
+    <ul class="menu-list">
+      <li class="menu-list__item"><a class="menu-list__link" href="#"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></span><span class="menu-list__text">Pengaturan</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+      <li class="menu-list__item"><a class="menu-list__link" href="#"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg></span><span class="menu-list__text">Aturan game</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+      <li class="menu-list__item"><button class="menu-list__link menu-list__link--danger" type="button"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-logout"></use></svg></span><span class="menu-list__text">Akhiri sesi</span></button></li>
+    </ul>
+  </div>
+  <div class="streak" aria-label="Main 5 dari 7 hari">
+    <div class="streak__day streak__day--done">Jum<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Sab<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Min<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Sen<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Sel<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day">Rab<span class="streak__mark"></span></div>
+    <div class="streak__day">Kam<span class="streak__mark"></span></div>
+  </div>
+  <div class="podium">
+    <div class="podium__place podium__place--2"><span class="avatar avatar--sky">S</span><span class="podium__name">Susi</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>12</span><span class="podium__block">2</span></div>
+    <div class="podium__place podium__place--1"><span class="avatar avatar--lg avatar--ring">D</span><span class="podium__name">Dimas</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>18</span><span class="podium__block">1</span></div>
+    <div class="podium__place podium__place--3"><span class="avatar avatar--grape">Y</span><span class="podium__name">Yanti</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>9</span><span class="podium__block">3</span></div>
+  </div>
+  <ol class="rank-list">
+    <li class="rank-row"><span class="rank-row__pos">4</span><span class="avatar avatar--sm avatar--leaf">M</span><span class="rank-row__name">Mira</span><span class="trend trend--up">+4</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>8</span></li>
+    <li class="rank-row rank-row--me"><span class="rank-row__pos">5</span><span class="avatar avatar--sm avatar--sun">R</span><span class="rank-row__name">Rani (kamu)</span><span class="trend trend--up">+1</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>6</span></li>
+    <li class="rank-row"><span class="rank-row__pos">6</span><span class="avatar avatar--sm">B</span><span class="rank-row__name">Bayu</span><span class="trend trend--down">-2</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>5</span></li>
+    <li class="rank-row rank-row--out"><span class="rank-row__pos">-</span><span class="avatar avatar--sm avatar--grape">A</span><span class="rank-row__name">Andi</span><span class="badge badge--error">Tereliminasi</span></li>
+  </ol>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="tabs">
+      <h2>Tabs</h2>
+      <p class="gallery__note">Panah kiri/kanan, Home, End berpindah tab.</p>
+      <div class="gallery__panel ">
+<div class="tabs" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Detail game">
+    <button class="tabs__tab" role="tab" id="tab-a" aria-controls="panel-a" aria-selected="true" type="button">Aturan</button>
+    <button class="tabs__tab" role="tab" id="tab-b" aria-controls="panel-b" aria-selected="false" type="button">Peran</button>
+    <button class="tabs__tab" role="tab" id="tab-c" aria-controls="panel-c" aria-selected="false" type="button">Tips</button>
+  </div>
+  <div class="tabs__panel" role="tabpanel" id="panel-a" aria-labelledby="tab-a"><p>Semua pemain menerima kata sama. Impostor tidak. Beri petunjuk, lalu voting.</p></div>
+  <div class="tabs__panel" role="tabpanel" id="panel-b" aria-labelledby="tab-b" hidden><p>Warga melihat kata. Impostor hanya melihat kategori.</p></div>
+  <div class="tabs__panel" role="tabpanel" id="panel-c" aria-labelledby="tab-c" hidden><p>Beri petunjuk yang tidak terlalu jelas agar impostor tidak menebak kata.</p></div>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="accordion">
+      <h2>Accordion</h2>
+      <p class="gallery__note">Panel aturan dan FAQ. Native details/summary.</p>
+      <div class="gallery__panel gallery__panel--warm">
+<div class="accordion">
+  <details class="accordion__item" open>
+    <summary class="accordion__summary">Bagaimana cara bermain?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Edarkan satu HP. Tiap pemain membuka kartu rahasia sendiri, lalu menyerahkan HP ke pemain berikutnya.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Perlu internet?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Tidak. Setelah halaman termuat, game jalan tanpa sinyal.</p></div>
+  </details>
+  <details class="accordion__item">
+    <summary class="accordion__summary">Berapa pemain minimal?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <div class="accordion__content"><p>Tiga pemain. Maksimal dua puluh.</p></div>
+  </details>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="modal">
+      <h2>Modal</h2>
+      <p class="gallery__note">Bottom sheet di mobile, kartu tengah di desktop. Esc, klik backdrop, atau tombol menutup.</p>
+      <div class="gallery__panel ">
+<div>
+  <button class="btn" type="button" data-modal-open="demo-modal">Buka dialog</button>
+  <dialog class="modal" id="demo-modal" aria-labelledby="demo-modal-title">
+    <div class="modal__inner">
+      <span class="modal__handle" aria-hidden="true"></span>
+      <div class="modal__header">
+        <h2 class="modal__title" id="demo-modal-title">Akhiri game ini?</h2>
+        <button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+      </div>
+      <p class="modal__body">Progres game akan hilang. Pengaturan pemain tetap tersimpan.</p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" data-modal-close>Lanjut main</button>
+        <button class="btn btn--danger" type="button" data-modal-close>Akhiri</button>
+      </div>
+    </div>
+  </dialog>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="toast">
+      <h2>Alert dan toast</h2>
+      <p class="gallery__note">Toast muncul di atas, hilang otomatis setelah 4 detik.</p>
+      <div class="gallery__panel ">
+<div class="stack">
+  <div class="alert alert--success" role="status"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg><div class="alert__body"><span class="alert__title">Pengaturan tersimpan</span><span>Dipakai lagi pada game berikutnya.</span></div></div>
+  <div class="alert alert--warning" role="status"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg><div class="alert__body"><span class="alert__title">Pemain terlalu sedikit</span><span>Tambah minimal 3 pemain untuk mulai.</span></div></div>
+  <div class="alert alert--error" role="alert"><svg class="icon" aria-hidden="true"><use href="#i-x-circle"></use></svg><div class="alert__body"><span class="alert__title">Sesi tidak ditemukan</span><span>Mulai game baru dari katalog.</span></div></div>
+  <div class="alert" role="status"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg><div class="alert__body"><span class="alert__title">Tip</span><span>Layar tetap menyala selama game berjalan.</span></div></div>
+  <div class="cluster">
+    <button class="btn btn--sm" type="button" data-toast="Pengaturan tersimpan" data-toast-type="success">Toast sukses</button>
+    <button class="btn btn--sm btn--danger" type="button" data-toast="Nama pemain tidak boleh kosong" data-toast-type="error">Toast error</button>
+    <button class="btn btn--sm btn--secondary" type="button" data-toast="Giliran Rani" data-toast-type="info">Toast info</button>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="tooltip">
+      <h2>Tooltip</h2>
+      <p class="gallery__note">Hover atau fokus keyboard. Hanya untuk info tambahan, bukan info penting.</p>
+      <div class="gallery__panel ">
+<div class="cluster">
+  <span class="tooltip">
+    <button class="btn btn--icon btn--round btn--sm" type="button" aria-describedby="tip-1" aria-label="Info impostor"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg></button>
+    <span class="tooltip__bubble" role="tooltip" id="tip-1">Impostor tidak melihat kata rahasia.</span>
+  </span>
+  <span class="tooltip">
+    <button class="btn btn--ghost btn--sm" type="button" aria-describedby="tip-2">Timer diskusi</button>
+    <span class="tooltip__bubble" role="tooltip" id="tip-2">Atur 1 sampai 10 menit, atau matikan.</span>
+  </span>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="breadcrumb">
+      <h2>Breadcrumb dan pagination</h2>
+      
+      <div class="gallery__panel ">
+<div class="stack">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a class="breadcrumb__link" href="#">Beranda</a></li>
+      <li class="breadcrumb__item"><a class="breadcrumb__link" href="#">Party</a></li>
+      <li class="breadcrumb__item"><span aria-current="page">Guess the Impostor</span></li>
+    </ol>
+  </nav>
+  <nav class="pagination" aria-label="Halaman katalog">
+    <ul class="pagination__list">
+      <li><a class="pagination__link" href="#" aria-disabled="true" aria-label="Sebelumnya"><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg></a></li>
+      <li><a class="pagination__link" href="#" aria-current="page">1</a></li>
+      <li><a class="pagination__link" href="#">2</a></li>
+      <li><a class="pagination__link" href="#">3</a></li>
+      <li><a class="pagination__link" href="#" aria-label="Berikutnya"><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+    </ul>
+  </nav>
+</div>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="tabbar">
+      <h2>Tabbar (mobile)</h2>
+      <p class="gallery__note">Navigasi bawah mengambang dari moodboard. Label teks tetap tampil di bawah ikon. Versi statis ditampilkan di sini.</p>
+      <div class="gallery__panel gallery__panel--warm">
+<nav class="tabbar tabbar--static" aria-label="Navigasi bawah">
+  <a class="tabbar__item" href="#" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"></use></svg>Beranda</a>
+  <a class="tabbar__item" href="#"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg>Game</a>
+  <a class="tabbar__item" href="#"><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg>Riwayat</a>
+  <a class="tabbar__item" href="#"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>Atur</a>
+</nav>
+      </div>
+    </section>
+
+    <section class="gallery__section" id="night">
+      <h2>Tema malam</h2>
+      <p class="gallery__note">data-theme="night" hanya mengganti token peran. Dipakai otomatis saat fase malam Werewolf.</p>
+      <div class="gallery__panel gallery__panel--bare">
+
+        <div class="night-demo" data-theme="night">
+          <div class="handover">
+            <span class="handover__eyebrow">Malam 1</span>
+            <h3 class="handover__name">Semua tidur</h3>
+            <p>Werewolf, buka mata. Pilih satu korban.</p>
+            <button class="btn btn--lg" type="button">Serahkan ke Werewolf</button>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Pengaturan host</h3>
+            <label class="toggle">Narasi suara<input class="toggle__input" type="checkbox" role="switch" checked></label>
+            <label class="choice"><input class="choice__input" type="checkbox" checked>Doctor boleh melindungi diri sendiri</label>
+            <div class="cluster"><span class="badge badge--success">Hidup 6</span><span class="badge badge--error">Mati 2</span><span class="badge badge--accent">Werewolf ?</span></div>
+          </div>
+          <div class="cluster"><button class="btn btn--secondary" type="button">Mulai voting</button><button class="btn btn--ghost" type="button">Lewati</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="#">Semua game</a></li>
+          <li><a class="footer__link" href="#">Cara bermain</a></li>
+          <li><a class="footer__link" href="#">Terakhir dimainkan</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="#">Aturan game</a></li>
+          <li><a class="footer__link" href="#">Privasi</a></li>
+          <li><a class="footer__link" href="#">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+  <script src="icons/icons.js"></script>
+  <script src="components/navbar/navbar.js"></script>
+  <script src="components/form/form.js"></script>
+  <script src="components/modal/modal.js"></script>
+  <script src="components/tabs/tabs.js"></script>
+  <script src="components/toast/toast.js"></script>
+  <script src="components/reveal/reveal.js"></script>
+</body>
+</html>

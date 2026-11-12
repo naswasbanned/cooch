@@ -1,0 +1,37 @@
+/* Player row (new, DESIGN.md 4 PlayerRow): number, editable name, remove button.
+   Rows are rendered by pages/js/setup.js from the player count. */
+
+.player-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.player-row__num {
+  flex: none;
+  width: var(--space-8);
+  color: var(--color-text-number);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-row .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-row .btn {
+  flex: none;
+}
+
+.player-field .field__error {
+  padding-left: calc(var(--space-8) + var(--space-2));
+}

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Guess the Impostor game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7b5be0"/>
+    <stop offset="1" stop-color="#4d34a3"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="front" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b7bf0"/>
+    <stop offset="1" stop-color="#4d34a3"/>
+  </linearGradient>
+  <linearGradient id="mask" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset="1" stop-color="#ece6fc"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<ellipse cx="400" cy="510" rx="250" ry="28" fill="#2b1608" opacity="0.18"/>
+<g filter="url(#soft)">
+  <rect x="196" y="160" width="210" height="310" rx="30" fill="#fffaf1" transform="rotate(-13 301 315)"/>
+  <rect x="222" y="206" width="120" height="14" rx="7" fill="#dff0fd" transform="rotate(-13 301 315)"/>
+  <rect x="222" y="238" width="150" height="14" rx="7" fill="#dff0fd" transform="rotate(-13 301 315)"/>
+  <rect x="222" y="270" width="96" height="14" rx="7" fill="#dff0fd" transform="rotate(-13 301 315)"/>
+  <rect x="394" y="160" width="210" height="310" rx="30" fill="#ffe6bf" transform="rotate(13 499 315)"/>
+  <rect x="430" y="206" width="120" height="14" rx="7" fill="#ffd28a" transform="rotate(13 499 315)"/>
+  <rect x="430" y="238" width="150" height="14" rx="7" fill="#ffd28a" transform="rotate(13 499 315)"/>
+  <rect x="430" y="270" width="96" height="14" rx="7" fill="#ffd28a" transform="rotate(13 499 315)"/>
+  <rect x="280" y="126" width="240" height="350" rx="34" fill="url(#front)" stroke="#ece6fc" stroke-opacity="0.35" stroke-width="3"/>
+  <path d="M318 258 C342 224 376 224 400 250 C424 224 458 224 482 258 C482 306 452 338 400 338 C348 338 318 306 318 258 Z" fill="url(#mask)"/>
+  <ellipse cx="360" cy="272" rx="19" ry="13" fill="#4d34a3"/>
+  <ellipse cx="440" cy="272" rx="19" ry="13" fill="#4d34a3"/>
+  <path d="M386 300 Q400 310 414 300" stroke="#7b5be0" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M318 258 Q300 246 292 228 M482 258 Q500 246 508 228" stroke="#ece6fc" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8"/>
+</g>
+<path d="M600 130 C603.96 148.04 603.96 148.04 622 152 C603.96 155.96 603.96 155.96 600 174 C596.04 155.96 596.04 155.96 578 152 C596.04 148.04 596.04 148.04 600 130 Z" fill="#ffd28a" opacity="0.85"/>
+<path d="M196 386 C198.88 399.12 198.88 399.12 212 402 C198.88 404.88 198.88 404.88 196 418 C193.12 404.88 193.12 404.88 180 402 C193.12 399.12 193.12 399.12 196 386 Z" fill="#fffaf1" opacity="0.8"/>
+<path d="M640 360 C642.16 369.84 642.16 369.84 652 372 C642.16 374.16 642.16 374.16 640 384 C637.84 374.16 637.84 374.16 628 372 C637.84 369.84 637.84 369.84 640 360 Z" fill="#ffbf5e" opacity="0.7"/>
+<circle cx="172" cy="210" r="7" fill="#fffaf1" opacity="0.6"/>
+<circle cx="620" cy="462" r="5" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

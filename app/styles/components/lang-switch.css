@@ -1,0 +1,49 @@
+/* Language switch (new, DESIGN.md 4 LangSwitch): compact ID | EN control for the top bar
+   and settings. Native radios, so it works with keyboard arrows. */
+
+.lang-switch {
+  display: inline-flex;
+  flex: none;
+  gap: var(--space-1);
+  margin: 0;
+  padding: var(--space-1);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-sunken);
+  box-shadow: var(--shadow-inner-sunk);
+}
+
+.lang-switch__option {
+  position: relative;
+}
+
+.lang-switch__option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lang-switch__option span {
+  display: grid;
+  place-items: center;
+  min-width: var(--size-tap-sm);
+  min-height: var(--size-tap-sm);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.lang-switch__option input:checked + span {
+  background: var(--gradient-button);
+  color: var(--color-text-on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-switch__option input:focus-visible + span {
+  box-shadow: var(--shadow-focus);
+}

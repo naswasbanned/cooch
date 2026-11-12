@@ -1,0 +1,47 @@
+/* Empty state (new in phase 3): explains why a list is empty and offers one way out. */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-10) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+  text-align: center;
+}
+
+.empty-state[hidden] {
+  display: none;
+}
+
+.empty-state__art {
+  width: min(100%, 220px);
+  height: auto;
+}
+
+.empty-state__icon {
+  display: grid;
+  place-items: center;
+  width: var(--size-avatar-lg);
+  height: var(--size-avatar-lg);
+  border-radius: var(--radius-round);
+  background: var(--color-surface-sunken);
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-inner-sunk);
+}
+
+.empty-state__icon .icon {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+}
+
+.empty-state__title {
+  font-size: var(--text-xl);
+}
+
+.empty-state__text {
+  max-width: var(--size-reading);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Lost card illustration">
+<defs>
+  <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b7bf0"/>
+    <stop offset="1" stop-color="#4d34a3"/>
+  </linearGradient>
+  <linearGradient id="mask" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fffaf1"/>
+    <stop offset="1" stop-color="#ece6fc"/>
+  </linearGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#2b1608" flood-opacity="0.2"/>
+  </filter>
+</defs>
+<rect width="640" height="420" fill="none"/>
+<ellipse cx="320" cy="362" rx="230" ry="24" fill="#2b1608" opacity="0.12"/>
+<g filter="url(#soft)">
+  <rect x="214" y="92" width="212" height="284" rx="30" fill="url(#card)" transform="rotate(-7 320 234)"/>
+  <path d="M250 190 C270 164 300 164 320 186 C340 164 370 164 390 190 C390 230 366 256 320 256 C274 256 250 230 250 190 Z" fill="url(#mask)"/>
+  <ellipse cx="288" cy="202" rx="16" ry="11" fill="#4d34a3"/>
+  <ellipse cx="352" cy="202" rx="16" ry="11" fill="#4d34a3"/>
+  <path d="M304 226 Q320 236 336 226" stroke="#7b5be0" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M320 300 L338 330 L302 330 Z" fill="#ffd28a"/>
+  <path d="M320 316 L320 342" stroke="#ffd28a" stroke-width="7" stroke-linecap="round"/>
+</g>
+<g filter="url(#soft)">
+  <rect x="420" y="200" width="120" height="150" rx="20" fill="#fffaf1" transform="rotate(14 480 275)"/>
+  <rect x="438" y="230" width="68" height="10" rx="5" fill="#dff0fd" transform="rotate(14 480 275)"/>
+  <rect x="438" y="252" width="84" height="10" rx="5" fill="#dff0fd" transform="rotate(14 480 275)"/>
+</g>
+<g opacity="0.7">
+  <path d="M120 110 C126 124 136 134 150 140 C136 146 126 156 120 170 C114 156 104 146 90 140 C104 134 114 124 120 110 Z" fill="#ffa73a"/>
+  <path d="M540 80 C546 94 556 104 570 110 C556 116 546 126 540 140 C534 126 524 116 510 110 C524 104 534 94 540 80 Z" fill="#7b5be0" opacity="0.8"/>
+  <circle cx="120" cy="300" r="6" fill="#ef6666"/>
+  <circle cx="550" cy="330" r="7" fill="#2fb344"/>
+</g>
+</svg>

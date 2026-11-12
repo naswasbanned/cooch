@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pengaturan - Cooch</title>
+  <meta name="description" content="Bahasa, tema, ukuran teks, dan kategori kata buatan. Tersimpan di perangkat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html">Riwayat</a>
+        <a class="navbar__link" href="settings.html" aria-current="page">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<div class="page-header">
+  <h1 class="page-header__title">Pengaturan</h1>
+  <p class="page-header__text">Tersimpan di perangkat ini saja.</p>
+</div>
+
+<div class="settings">
+<section class="panel" aria-labelledby="s-lang">
+  <h2 class="panel__title" id="s-lang">Bahasa</h2>
+  <div class="segmented" role="radiogroup" aria-labelledby="s-lang" data-lang-switch><label class="segmented__option"><input type="radio" name="lang-settings" value="id" checked><span>Indonesia</span></label><label class="segmented__option"><input type="radio" name="lang-settings" value="en"><span>English</span></label></div>
+  <p class="field__hint">Game yang sedang berjalan tidak diulang. Kata yang sudah dibagikan tetap dalam bahasa saat dibagikan.</p>
+</section>
+
+<section class="panel" aria-labelledby="s-look">
+  <h2 class="panel__title" id="s-look">Tampilan</h2>
+  <div class="field">
+    <span class="field__label" id="lbl-theme">Tema</span>
+    <div class="segmented" role="radiogroup" aria-labelledby="lbl-theme"><label class="segmented__option"><input type="radio" name="theme" value="gelap" data-theme-option><span>Gelap</span></label><label class="segmented__option"><input type="radio" name="theme" value="terang" checked data-theme-option><span>Terang</span></label><label class="segmented__option"><input type="radio" name="theme" value="sistem" data-theme-option><span>Ikuti sistem</span></label></div>
+  </div>
+  <div class="field">
+    <span class="field__label" id="lbl-text">Ukuran teks</span>
+    <div class="segmented" role="radiogroup" aria-labelledby="lbl-text"><label class="segmented__option"><input type="radio" name="text-size" value="normal" checked data-text-size-option><span>Normal</span></label><label class="segmented__option"><input type="radio" name="text-size" value="besar" data-text-size-option><span>Besar</span></label></div>
+  </div>
+  <div>
+    <label class="toggle">Kurangi gerak<input class="toggle__input" type="checkbox" role="switch" data-motion-toggle></label>
+    <label class="toggle">Getar saat kartu dibuka dan timer habis<input class="toggle__input" type="checkbox" role="switch" data-saved-toggle></label>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="s-cat">
+  <h2 class="panel__title" id="s-cat">Kategori kata buatanmu</h2>
+  <p class="panel__text">Dipakai di Guess the Impostor dan game kata lainnya.</p>
+  <ul class="menu-list meta-list" data-category-list>
+    <li class="menu-list__item"><div class="menu-list__link"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg></span><span class="menu-list__text"><span data-category-title>Kantor</span><small data-category-meta>24 kata</small></span></div></li>
+    <li class="menu-list__item"><div class="menu-list__link"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"></use></svg></span><span class="menu-list__text"><span data-category-title>Jajanan SD</span><small data-category-meta>31 kata</small></span></div></li>
+  </ul>
+  <div class="cluster"><button class="btn btn--ghost" type="button" data-modal-open="category-modal"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Tambah kategori</button></div>
+</section>
+
+<section class="panel" aria-labelledby="s-data">
+  <h2 class="panel__title" id="s-data">Data di perangkat ini</h2>
+  <p class="panel__text">Riwayat, favorit, sesi tersimpan, dan kategori buatanmu. Tidak ada yang dikirim ke server.</p>
+  <div class="cluster"><button class="btn btn--danger" type="button" data-modal-open="clear-modal">Hapus data lokal</button></div>
+</section>
+
+<section class="panel" aria-labelledby="s-about">
+  <h2 class="panel__title" id="s-about">Tentang Cooch</h2>
+  <div class="cluster"><span class="badge">Versi 0.1</span><span class="badge badge--success"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Offline siap</span></div>
+  <p class="panel__text">Satu HP, banyak game. Tanpa akun dan tanpa pelacakan.</p>
+  <div class="cluster"><a class="link" href="privacy.html">Privasi</a><a class="link" href="how-to.html">Cara main</a></div>
+</section>
+</div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Navigasi bawah">
+  <a class="tabbar__item" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-home"></use></svg>Beranda</a>
+  <a class="tabbar__item" href="games.html"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>Jelajah</a>
+  <a class="tabbar__item" href="settings.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>Atur</a>
+</nav>
+<dialog class="modal" id="category-modal" aria-labelledby="category-modal-title">
+  <form class="modal__inner" data-validate data-category-form novalidate>
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="category-modal-title">Kategori baru</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <div class="field">
+      <label class="field__label" for="c-name">Nama kategori</label>
+      <input class="input" id="c-name" type="text" maxlength="24" placeholder="Contoh: Kantor" required aria-describedby="c-name-err" data-category-name>
+      <span class="field__error" id="c-name-err"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Nama kategori tidak boleh kosong.</span>
+    </div>
+    <div class="field">
+      <label class="field__label" for="c-words">Daftar kata</label>
+      <textarea class="textarea" id="c-words" placeholder="Satu kata per baris" required aria-describedby="c-words-hint c-words-err" data-category-words></textarea>
+      <span class="field__hint" id="c-words-hint">Minimal 5 kata supaya tidak cepat berulang.</span>
+      <span class="field__error" id="c-words-err"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Isi minimal satu kata.</span>
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-modal-close>Batal</button>
+      <button class="btn" type="submit">Simpan kategori</button>
+    </div>
+  </form>
+</dialog>
+<dialog class="modal" id="clear-modal" aria-labelledby="clear-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="clear-modal-title">Hapus data lokal?</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <p class="modal__body">Riwayat, favorit, sesi tersimpan, dan kategori buatanmu akan hilang dari HP ini. Tidak bisa dibatalkan.</p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-modal-close autofocus>Batal</button>
+      <button class="btn btn--danger" type="button" data-modal-close data-clear-data>Hapus</button>
+    </div>
+  </div>
+</dialog>
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="../components/form/form.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

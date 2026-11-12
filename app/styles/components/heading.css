@@ -1,0 +1,79 @@
+/* Section heading, sticker label, and text link. */
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.section-heading__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.section-heading__title {
+  font-size: var(--text-2xl);
+}
+
+.section-heading__sub {
+  color: var(--color-text-muted);
+}
+
+/* Sticker label, tilted (moodboard "Daily Streak") */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-xs);
+  background: var(--color-sun-400);
+  color: var(--color-cocoa-900);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  box-shadow: var(--shadow-sm);
+  transform: rotate(var(--tilt-label));
+}
+
+.label-tag--sky {
+  background: var(--color-sky-700);
+  color: var(--color-white);
+}
+
+.label-tag--grape {
+  background: var(--color-grape-600);
+  color: var(--color-white);
+}
+
+.label-tag--flat {
+  transform: none;
+}
+
+/* Text link */
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--size-tap);
+  color: var(--color-text-link);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  text-decoration-thickness: var(--size-border);
+  text-underline-offset: var(--space-1);
+  border-radius: var(--radius-xs);
+}
+
+.link:hover {
+  color: var(--color-text-title);
+}
+
+.link .icon {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}

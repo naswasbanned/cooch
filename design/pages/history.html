@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Riwayat - Cooch</title>
+  <meta name="description" content="Rekap game dan juara di perangkat ini.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../components/tabbar/tabbar.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/lang-switch/lang-switch.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/stat/stat.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<header class="navbar" data-navbar>
+  <div class="container">
+    <nav class="navbar__inner" aria-label="Utama">
+      <a class="navbar__brand" href="index.html"><span class="navbar__logo"><svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg></span>Cooch</a>
+      <div class="navbar__links">
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html" aria-current="page">Riwayat</a>
+      </div>
+      <div class="navbar__actions">
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="games.html#cari" aria-label="Cari game"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></a>
+        <a class="btn btn--ghost btn--icon btn--round hide-mobile" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></a>
+        <fieldset class="lang-switch" data-lang-switch>
+          <legend class="sr-only">Bahasa</legend>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="id" checked><span>ID</span></label>
+          <label class="lang-switch__option"><input type="radio" name="lang-navbar" value="en"><span>EN</span></label>
+        </fieldset>
+        <button class="btn btn--icon btn--round navbar__toggle" type="button" data-navbar-toggle aria-controls="navbar-menu" aria-expanded="false" aria-label="Buka menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      </div>
+    </nav>
+    <div class="navbar__menu" id="navbar-menu" data-navbar-menu>
+        <a class="navbar__link" href="index.html">Beranda</a>
+        <a class="navbar__link" href="games.html">Jelajah</a>
+        <a class="navbar__link" href="how-to.html">Cara Main</a>
+        <a class="navbar__link" href="history.html" aria-current="page">Riwayat</a>
+        <a class="navbar__link" href="settings.html">Pengaturan</a>
+    </div>
+  </div>
+</header>
+<main class="container page" id="main">
+<div class="page-header">
+  <h1 class="page-header__title">Riwayat</h1>
+  <p class="page-header__text">Rekap game di HP ini. Tidak dikirim ke mana pun.</p>
+</div>
+
+<section class="page-section--tight" aria-label="Statistik">
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-card__banner"><span>Game<br>dimainkan</span><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg></div><span class="stat-card__value">10</span></div>
+    <div class="stat-card"><div class="stat-card__banner stat-card__banner--grape"><span>Game<br>terlama</span><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></div><span class="stat-card__value">32m</span></div>
+  </div>
+</section>
+
+<section class="page-section panel" aria-labelledby="streak-title">
+  <div class="section-heading"><div class="section-heading__text"><span class="label-tag">Main beruntun</span><h2 class="panel__title" id="streak-title">5 hari minggu ini</h2></div></div>
+  <div class="streak" aria-label="Main 5 dari 7 hari">
+    <div class="streak__day streak__day--done">Jum<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Sab<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Min<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Sen<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day streak__day--done">Sel<span class="streak__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg></span></div>
+    <div class="streak__day">Rab<span class="streak__mark"></span></div>
+    <div class="streak__day">Kam<span class="streak__mark"></span></div>
+  </div>
+</section>
+
+<div class="history-grid">
+<section class="page-section" aria-labelledby="recent-title">
+<div class="section-heading">
+  <div class="section-heading__text"><h2 class="section-heading__title" id="recent-title">Terakhir dimainkan</h2></div>
+  
+</div>
+<div class="sheet">
+  <ul class="menu-list meta-list">
+    <li class="menu-list__item"><a class="menu-list__link" href="game-werewolf.html"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg></span><span class="menu-list__text">Werewolf<small>Hari ini · 8 pemain · Desa menang</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+    <li class="menu-list__item"><a class="menu-list__link" href="game-impostor.html"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-mask"></use></svg></span><span class="menu-list__text">Guess the Impostor<small>Kemarin · 6 pemain · Warga menang</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+    <li class="menu-list__item"><a class="menu-list__link" href="game-impostor.html"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-mask"></use></svg></span><span class="menu-list__text">Guess the Impostor<small>Kemarin · 6 pemain · Tim jahat menang</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+    <li class="menu-list__item"><a class="menu-list__link" href="game-werewolf.html"><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg></span><span class="menu-list__text">Werewolf<small>Sabtu · 12 pemain · Werewolf menang</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a></li>
+  </ul>
+</div>
+</section>
+
+<section class="page-section" aria-labelledby="board-title">
+<div class="section-heading">
+  <div class="section-heading__text"><h2 class="section-heading__title" id="board-title">Juara di HP ini</h2><p class="section-heading__sub">Poin dari semua game yang dimainkan di perangkat ini.</p></div>
+  
+</div>
+<div class="board">
+  <div class="podium">
+    <div class="podium__place podium__place--2"><span class="avatar avatar--sky">S</span><span class="podium__name">Susi</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>12</span><span class="podium__block">2</span></div>
+    <div class="podium__place podium__place--1"><span class="avatar avatar--lg avatar--ring">D</span><span class="podium__name">Dimas</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>18</span><span class="podium__block">1</span></div>
+    <div class="podium__place podium__place--3"><span class="avatar avatar--grape">Y</span><span class="podium__name">Yanti</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>9</span><span class="podium__block">3</span></div>
+  </div>
+  <ol class="rank-list" start="4">
+    <li class="rank-row"><span class="rank-row__pos">4</span><span class="avatar avatar--sm avatar--leaf">M</span><span class="rank-row__name">Mira</span><span class="trend trend--up">+4</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>8</span></li>
+    <li class="rank-row rank-row--me"><span class="rank-row__pos">5</span><span class="avatar avatar--sm avatar--sun">R</span><span class="rank-row__name">Rani</span><span class="trend trend--up">+1</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>6</span></li>
+    <li class="rank-row"><span class="rank-row__pos">6</span><span class="avatar avatar--sm">B</span><span class="rank-row__name">Bima</span><span class="trend trend--down">-2</span><span class="points"><svg class="icon icon--fill icon--sm" aria-hidden="true"><use href="#i-coin"></use></svg>5</span></li>
+  </ol>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer footer--no-tabbar">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__name">Cooch</span>
+        <p class="footer__tagline">Satu HP, banyak game seru. Tanpa akun, tanpa install.</p>
+      </div>
+      <nav aria-label="Jelajahi">
+        <h2 class="footer__title">Jelajahi</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="games.html">Semua game</a></li>
+          <li><a class="footer__link" href="how-to.html">Cara bermain</a></li>
+          <li><a class="footer__link" href="history.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Bantuan">
+        <h2 class="footer__title">Bantuan</h2>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="how-to.html#faq">Pertanyaan umum</a></li>
+          <li><a class="footer__link" href="privacy.html">Privasi</a></li>
+          <li><a class="footer__link" href="privacy.html#kontak">Hubungi kami</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom"><span>Data pemain hanya tersimpan di perangkatmu.</span><span>Cooch 2026</span></div>
+  </div>
+</footer>
+
+
+  <script src="../icons/icons.js"></script>
+  <script src="../components/navbar/navbar.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/lang-switch/lang-switch.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

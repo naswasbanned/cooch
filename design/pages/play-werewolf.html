@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Main Werewolf - Cooch</title>
+  <meta name="description" content="Sesi Werewolf sedang berjalan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/stat/stat.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/reveal/reveal.css">
+  <link rel="stylesheet" href="../components/game-bar/game-bar.css">
+  <link rel="stylesheet" href="../components/pick-list/pick-list.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<div class="container play">
+  <header class="game-bar">
+    <div class="game-bar__inner">
+      <button class="btn btn--ghost" type="button" data-modal-open="pause-modal"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg>Jeda</button>
+      <div class="game-bar__title">
+        <h1 class="game-bar__game">Werewolf</h1>
+        <span class="game-bar__phase" data-phase aria-live="polite">Bagi kartu</span>
+      </div>
+      <button class="btn btn--ghost" type="button" data-modal-open="rules-modal"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>Aturan</button>
+    </div>
+  </header>
+  <main id="main" data-flow>
+  <section class="screen" data-screen="handover-1" data-phase="Bagi peran · 1 dari 8" hidden>
+    <div class="progress" role="img" aria-label="Kartu 0 dari 8"><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Serahkan HP ke</span>
+      <h2 class="handover__name">Bima</h2>
+      <p class="field__hint">Hanya Bima yang boleh melihat layar berikutnya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="reveal-1">Aku Bima, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="reveal-1" data-phase="Bagi peran · 1 dari 8" data-secret data-reveal hidden>
+    <div class="progress" role="img" aria-label="Kartu 1 dari 8"><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Bima</strong></h2>
+      <button class="reveal-card" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Peranmu</span><span class="reveal-card__secret">Villager</span><span class="reveal-card__note">Tim desa. Tidak ada aksi malam.</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="handover-2" disabled>Sudah, tutup kartu</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="handover-2" data-phase="Bagi peran · 2 dari 8" hidden>
+    <div class="progress" role="img" aria-label="Kartu 1 dari 8"><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Serahkan HP ke</span>
+      <h2 class="handover__name">Andi</h2>
+      <p class="field__hint">Hanya Andi yang boleh melihat layar berikutnya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="reveal-2">Aku Andi, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="reveal-2" data-phase="Bagi peran · 2 dari 8" data-secret data-reveal hidden>
+    <div class="progress" role="img" aria-label="Kartu 2 dari 8"><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Andi</strong></h2>
+      <button class="reveal-card reveal-card--impostor" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Peranmu</span><span class="reveal-card__secret">Werewolf</span><span class="reveal-card__note">Rekanmu: Eko</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="all-read" disabled>Sudah, tutup kartu</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="all-read" data-phase="Bagi peran selesai" hidden>
+    <div class="progress" role="img" aria-label="Kartu 8 dari 8"><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span></div>
+    <div class="screen__head"><span class="label-tag">8 dari 8</span><h2 class="screen__title">Semua sudah tahu peran</h2><p class="screen__text">Letakkan HP di tengah. Malam pertama akan dimulai.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="night">Mulai game</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="night" data-phase="Malam 1" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg></span>
+      <span class="handover__eyebrow">Malam 1</span>
+      <h2 class="handover__name">Malam tiba</h2>
+      <p>Semua menutup mata. Host menekan Mulai malam.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="pass-wolf">Mulai malam</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="pass-wolf" data-phase="Malam 1 · Werewolf" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Werewolf, buka mata</span>
+      <h2 class="handover__name">Serahkan ke Werewolf</h2>
+      <p class="field__hint">Werewolf berkumpul dan memegang HP bersama.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="night-wolf">Kami Werewolf, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-wolf" data-phase="Malam 1 · Werewolf" data-theme="night" data-secret hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Werewolf</span><h2 class="screen__title">Pilih korban</h2><p class="screen__text">Ada 2 Werewolf. Sepakati satu nama dulu, baru konfirmasi.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih korban</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Rani"><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Dimas"><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Andi" disabled><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__note">Kawanan</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Eko" disabled><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__note">Kawanan</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="victim" data-pick-template="Serang {name}" data-pick-empty="Pilih korban" data-go="pass-doctor" disabled>Pilih korban</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="pass-doctor" data-phase="Malam 1 · Doctor" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Werewolf, tutup mata · Doctor, buka mata</span>
+      <h2 class="handover__name">Serahkan ke Doctor</h2>
+      <p class="field__hint">Doctor mengambil HP.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="night-doctor">Aku Doctor, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-doctor" data-phase="Malam 1 · Doctor" data-theme="night" data-secret hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Doctor</span><h2 class="screen__title">Lindungi siapa?</h2><p class="screen__text">Tidak boleh orang yang sama dua malam berturut-turut.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih pemain yang dilindungi</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Rani"><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Dimas"><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Andi"><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="protect" data-pick-template="Lindungi {name}" data-pick-empty="Pilih pemain" data-go="pass-seer" disabled>Pilih pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="pass-seer" data-phase="Malam 1 · Seer" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Doctor, tutup mata · Seer, buka mata</span>
+      <h2 class="handover__name">Serahkan ke Seer</h2>
+      <p class="field__hint">Seer mengambil HP.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="night-seer">Aku Seer, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-seer" data-phase="Malam 1 · Seer" data-theme="night" data-secret hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Seer</span><h2 class="screen__title">Cek siapa?</h2><p class="screen__text">Kamu akan melihat apakah dia Werewolf.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih pemain yang dicek</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Rani"><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Andi"><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="check" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="check" data-pick-template="Cek {name}" data-pick-empty="Pilih pemain" data-go="seer-result" disabled>Pilih pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="seer-result" data-phase="Malam 1 · Seer" data-theme="night" data-secret data-reveal hidden>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Seer</strong></h2>
+      <button class="reveal-card reveal-card--impostor" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Hasil cek</span><span class="reveal-card__secret">Werewolf</span><span class="reveal-card__note"><span data-pick-echo="check">Andi</span> adalah Werewolf</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="morning" disabled>Sudah, tutup kartu</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="morning" data-phase="Pagi · Hari 1" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-sun"></use></svg></span>
+      <span class="label-tag">Pagi, hari 1</span>
+      <h2 class="screen__title">Rani meninggal</h2>
+      <p class="verdict__text">Semua buka mata. Rani adalah <strong>Hunter</strong>, jadi ia menembak satu pemain.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="hunter">Lanjut ke tembakan Hunter</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="hunter" data-phase="Tembakan Hunter" hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Hunter</span><h2 class="screen__title">Rani, tembak siapa?</h2><p class="screen__text">Pilih satu pemain yang masih hidup.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih pemain yang ditembak</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Dimas"><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Andi"><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="shoot" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="shoot" data-pick-template="Tembak {name}" data-pick-empty="Pilih pemain" data-go="hunter-result" disabled>Pilih pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="hunter-result" data-phase="Tembakan Hunter" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg></span>
+      <span class="label-tag">Tertembak</span>
+      <h2 class="screen__title"><span data-pick-echo="shoot">Dimas</span> tersingkir</h2>
+      <p class="verdict__text">Dimas adalah <strong>Seer</strong>.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="day">Mulai diskusi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="day" data-phase="Siang · Hari 1" hidden>
+    <div class="screen__head"><h2 class="screen__title">Diskusi siang</h2><p class="screen__text">Siapa yang mencurigakan? Bela dirimu.</p></div>
+    <div class="screen__center">
+      <div class="timer" data-timer="240"><span class="timer__label">Sisa waktu</span><span class="timer__value" data-timer-value>04:00</span><button class="btn btn--sm btn--secondary" type="button" data-timer-toggle>Mulai</button></div>
+      <div class="cluster">
+        <button class="btn btn--ghost" type="button" data-toast="Timer dikurangi 1 menit" data-toast-type="info"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg>1 menit</button>
+        <button class="btn btn--ghost" type="button" data-toast="Timer ditambah 1 menit" data-toast-type="info"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>1 menit</button>
+      </div>
+    </div>
+    <section class="panel" aria-labelledby="alive-1">
+      <h3 class="panel__title" id="alive-1">6 hidup, 2 mati</h3>
+      <ul class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">M</span><span class="rank-row__name">Mira</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">A</span><span class="rank-row__name">Andi</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">S</span><span class="rank-row__name">Susi</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sun">R</span><span class="rank-row__name">Rani</span><span class="badge badge--error">Mati</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">D</span><span class="rank-row__name">Dimas</span><span class="badge badge--error">Mati</span></li>
+      </ul>
+    </section>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="vote-handover-1">Mulai voting</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-handover-1" data-phase="Voting · Hari 1" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Voting rahasia · serahkan HP ke</span>
+      <h2 class="handover__name">Bima</h2>
+      <p class="field__hint">Hanya Bima yang boleh melihat pilihannya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="vote-1">Aku Bima, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-1" data-phase="Voting · Hari 1" data-secret hidden>
+    <div class="screen__head"><h2 class="screen__title">Bima, siapa yang kamu pilih?</h2><p class="screen__text">Pilihanmu tidak ditampilkan sampai semua selesai.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih tersangka</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Bima" disabled><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Andi"><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="vote-1-pick" data-pick-template="Pilih {name}" data-pick-empty="Pilih satu pemain" data-go="vote-handover-2" disabled>Pilih satu pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-handover-2" data-phase="Voting · Hari 1" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Voting rahasia · serahkan HP ke</span>
+      <h2 class="handover__name">Mira</h2>
+      <p class="field__hint">Hanya Mira yang boleh melihat pilihannya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="vote-2">Aku Mira, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-2" data-phase="Voting · Hari 1" data-secret hidden>
+    <div class="screen__head"><h2 class="screen__title">Mira, siapa yang kamu pilih?</h2><p class="screen__text">Pilihanmu tidak ditampilkan sampai semua selesai.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih tersangka</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Mira" disabled><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Andi"><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="vote-2-pick" data-pick-template="Pilih {name}" data-pick-empty="Pilih satu pemain" data-go="votes-done" disabled>Pilih satu pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="votes-done" data-phase="Voting · Hari 1" hidden>
+    <div class="screen__head"><span class="label-tag">6 dari 6</span><h2 class="screen__title">Semua sudah memilih</h2><p class="screen__text">Letakkan HP di tengah. Hasil suara dibuka bersamaan.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="tally">Buka hasil suara</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="tally" data-phase="Voting · Hari 1" hidden>
+    <div class="screen__head"><h2 class="screen__title">Hasil suara</h2></div>
+    <ol class="rank-list">
+      <li class="rank-row rank-row--me"><span class="rank-row__pos">1</span><span class="avatar avatar--sm avatar--grape">A</span><span class="rank-row__name">Andi</span><span class="badge badge--accent">4 suara</span></li>
+      <li class="rank-row"><span class="rank-row__pos">2</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--accent">1 suara</span></li>
+      <li class="rank-row"><span class="rank-row__pos">3</span><span class="avatar avatar--sm avatar--sky">S</span><span class="rank-row__name">Susi</span><span class="badge badge--accent">1 suara</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="execution">Eksekusi Andi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="execution" data-phase="Eksekusi · Hari 1" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-paw"></use></svg></span>
+      <span class="label-tag">Dieksekusi</span>
+      <h2 class="screen__title">Andi adalah Werewolf</h2>
+      <p class="verdict__text">Masih ada Werewolf di desa. Game berlanjut.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="night-2">Mulai malam 2</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-2" data-phase="Malam 2" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg></span>
+      <span class="handover__eyebrow">Malam 2</span>
+      <h2 class="handover__name">Malam tiba</h2>
+      <p>Semua menutup mata.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="pass-wolf-2">Mulai malam</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="pass-wolf-2" data-phase="Malam 2 · Werewolf" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Werewolf, buka mata</span>
+      <h2 class="handover__name">Serahkan ke Werewolf</h2>
+      <p class="field__hint">Werewolf mengambil HP.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="night-wolf-2">Aku Werewolf, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-wolf-2" data-phase="Malam 2 · Werewolf" data-theme="night" data-secret hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Werewolf</span><h2 class="screen__title">Pilih korban</h2></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih korban</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Andi" disabled><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Eko" disabled><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="victim-2" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="victim-2" data-pick-template="Serang {name}" data-pick-empty="Pilih korban" data-go="pass-doctor-2" disabled>Pilih korban</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="pass-doctor-2" data-phase="Malam 2 · Doctor" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Werewolf, tutup mata · Doctor, buka mata</span>
+      <h2 class="handover__name">Serahkan ke Doctor</h2>
+      <p class="field__hint">Doctor mengambil HP.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="night-doctor-2">Aku Doctor, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-doctor-2" data-phase="Malam 2 · Doctor" data-theme="night" data-secret hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Doctor</span><h2 class="screen__title">Lindungi siapa?</h2><p class="screen__text">Tidak boleh orang yang sama dua malam berturut-turut.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih pemain yang dilindungi</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Andi" disabled><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Susi" disabled><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__note">Dilindungi semalam</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="protect-2" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="protect-2" data-pick-template="Lindungi {name}" data-pick-empty="Pilih pemain" data-go="pass-seer-2" disabled>Pilih pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="pass-seer-2" data-phase="Malam 2 · Seer" data-theme="night" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Doctor, tutup mata · Seer, buka mata</span>
+      <h2 class="handover__name">Serahkan ke Seer</h2>
+      <p class="field__hint">Seer mengambil HP.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="night-seer-2">Aku Seer, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="night-seer-2" data-phase="Malam 2 · Seer" data-theme="night" hidden>
+    <div class="screen__head"><span class="label-tag label-tag--grape">Seer</span><h2 class="screen__title">Seer, buka mata</h2><p class="screen__text">Tunggu sebentar.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-wait data-go="morning-2">Selesai, tutup mata</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="morning-2" data-phase="Pagi · Hari 2" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-sun"></use></svg></span>
+      <span class="label-tag">Pagi, hari 2</span>
+      <h2 class="screen__title">Tidak ada yang meninggal</h2>
+      <p class="verdict__text">Serangan semalam gagal. Semua buka mata.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="day-2">Mulai diskusi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="day-2" data-phase="Siang · Hari 2" hidden>
+    <div class="screen__head"><h2 class="screen__title">Diskusi siang</h2><p class="screen__text">Satu Werewolf masih bersembunyi.</p></div>
+    <div class="screen__center">
+      <div class="timer" data-timer="240"><span class="timer__label">Sisa waktu</span><span class="timer__value" data-timer-value>04:00</span><button class="btn btn--sm btn--secondary" type="button" data-timer-toggle>Mulai</button></div>
+    </div>
+    <section class="panel" aria-labelledby="alive-2">
+      <h3 class="panel__title" id="alive-2">5 hidup, 3 mati</h3>
+      <ul class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">M</span><span class="rank-row__name">Mira</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">S</span><span class="rank-row__name">Susi</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sun">R</span><span class="rank-row__name">Rani</span><span class="badge badge--error">Mati</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">D</span><span class="rank-row__name">Dimas</span><span class="badge badge--error">Mati</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">A</span><span class="rank-row__name">Andi</span><span class="badge badge--error">Mati</span></li>
+      </ul>
+    </section>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="vote2-handover-1">Mulai voting</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote2-handover-1" data-phase="Voting · Hari 2" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Voting rahasia · serahkan HP ke</span>
+      <h2 class="handover__name">Susi</h2>
+      <p class="field__hint">Hanya Susi yang boleh melihat pilihannya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="vote2-1">Aku Susi, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote2-1" data-phase="Voting · Hari 2" data-secret hidden>
+    <div class="screen__head"><h2 class="screen__title">Susi, siapa yang kamu pilih?</h2><p class="screen__text">Pilihanmu tidak ditampilkan sampai semua selesai.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih tersangka</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Andi" disabled><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Susi" disabled><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="vote2-1-pick" data-pick-template="Pilih {name}" data-pick-empty="Pilih satu pemain" data-go="votes-done-2" disabled>Pilih satu pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="votes-done-2" data-phase="Voting · Hari 2" hidden>
+    <div class="screen__head"><span class="label-tag">5 dari 5</span><h2 class="screen__title">Semua sudah memilih</h2><p class="screen__text">Hasil suara dibuka bersamaan.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="tally-2">Buka hasil suara</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="tally-2" data-phase="Voting · Hari 2" hidden>
+    <div class="screen__head"><h2 class="screen__title">Hasil suara</h2></div>
+    <ol class="rank-list">
+      <li class="rank-row rank-row--me"><span class="rank-row__pos">1</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--accent">4 suara</span></li>
+      <li class="rank-row"><span class="rank-row__pos">2</span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge--accent">1 suara</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="execution-2">Eksekusi Eko</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="execution-2" data-phase="Eksekusi · Hari 2" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-paw"></use></svg></span>
+      <span class="label-tag">Dieksekusi</span>
+      <h2 class="screen__title">Eko adalah Werewolf</h2>
+      <p class="verdict__text">Semua Werewolf sudah tersingkir.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="result">Lihat hasil</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="result" data-phase="Hasil" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg></span>
+      <span class="label-tag">Hari 2 · 34 menit</span>
+      <h2 class="screen__title">Desa menang!</h2>
+      <p class="verdict__text">Semua Werewolf sudah tersingkir.</p>
+    </div>
+    <section class="panel" aria-labelledby="roles-title">
+      <h3 class="panel__title" id="roles-title">Peran semua pemain</h3>
+      <ol class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge">Villager</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sun">R</span><span class="rank-row__name">Rani</span><span class="badge badge--info">Hunter</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">D</span><span class="rank-row__name">Dimas</span><span class="badge badge--info">Seer</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">M</span><span class="rank-row__name">Mira</span><span class="badge badge--info">Doctor</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">A</span><span class="rank-row__name">Andi</span><span class="badge badge--error">Werewolf</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--error">Werewolf</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">S</span><span class="rank-row__name">Susi</span><span class="badge badge">Villager</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span><span class="badge badge">Villager</span></li>
+      </ol>
+    </section>
+    <section class="panel" aria-labelledby="log-title">
+      <h3 class="panel__title" id="log-title">Kronologi</h3>
+      <ol class="role-list">
+        <li class="role"><span class="badge">Malam 1</span><span class="role__body">Werewolf menyerang Rani.</span></li>
+        <li class="role"><span class="badge">Pagi 1</span><span class="role__body">Rani (Hunter) menembak Dimas.</span></li>
+        <li class="role"><span class="badge">Hari 1</span><span class="role__body">Andi dieksekusi.</span></li>
+        <li class="role"><span class="badge">Malam 2</span><span class="role__body">Serangan digagalkan Doctor.</span></li>
+        <li class="role"><span class="badge">Hari 2</span><span class="role__body">Eko dieksekusi.</span></li>
+      </ol>
+    </section>
+    <section class="panel" aria-labelledby="survey-1">
+      <h3 class="panel__title" id="survey-1">Seru?</h3>
+      <div class="cluster" role="group" aria-labelledby="survey-1" data-chip-group>
+        <button class="chip" type="button" aria-pressed="false" data-value="ya"><svg class="icon" aria-hidden="true"><use href="#i-thumb-up"></use></svg>Seru</button><button class="chip" type="button" aria-pressed="false" data-value="tidak"><svg class="icon" aria-hidden="true"><use href="#i-thumb-down"></use></svg>Kurang</button>
+      </div>
+      <p class="field__hint">Opsional, boleh dilewati.</p>
+    </section>
+    <div class="cluster screen__links"><a class="btn btn--ghost" href="setup-werewolf.html">Ubah pengaturan</a><a class="btn btn--ghost" href="index.html">Ke beranda</a></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="handover-1"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Main lagi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="peek" data-phase="Lihat peran lagi" hidden>
+    <div class="screen__head"><h2 class="screen__title">Lihat peran lagi</h2><p class="screen__text">Pilih namamu. Pastikan yang lain tidak melihat layar.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih namamu</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Rani" disabled><span class="avatar avatar--sm avatar--sun">R</span><span class="pick__name">Rani</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Dimas" disabled><span class="avatar avatar--sm avatar--sky">D</span><span class="pick__name">Dimas</span><span class="pick__note">Mati</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Mira"><span class="avatar avatar--sm avatar--leaf">M</span><span class="pick__name">Mira</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Andi"><span class="avatar avatar--sm avatar--grape">A</span><span class="pick__name">Andi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Susi"><span class="avatar avatar--sm avatar--sky">S</span><span class="pick__name">Susi</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="peek" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="peek" data-pick-template="Aku {name}, lihat peran" data-pick-empty="Pilih namamu" data-go="peek-card" disabled>Pilih namamu</button>
+      <button class="btn btn--ghost btn--block" type="button" data-go="back">Batal</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="peek-card" data-phase="Lihat peran lagi" data-secret data-reveal hidden>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Bima</strong></h2>
+      <button class="reveal-card" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Peranmu</span><span class="reveal-card__secret">Villager</span><span class="reveal-card__note">Tim desa. Tidak ada aksi malam.</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="back" data-back-steps="2" disabled>Tutup dan kembali</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="resume" data-phase="Dilanjutkan" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Game dilanjutkan</span>
+      <h2 class="handover__name">Lanjutkan sebagai host</h2>
+      <p class="field__hint">Layar rahasia disembunyikan. Pastikan HP dipegang host.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="back" data-fallback="day">Aku host, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  </main>
+</div>
+
+<dialog class="modal" id="pause-modal" aria-labelledby="pause-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="pause-modal-title">Jeda</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <p class="field__hint">Kartu yang terbuka sudah ditutup.</p>
+    <ul class="menu-list">
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg></span><span class="menu-list__text">Lanjutkan</span></button></li>
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-modal-open="rules-modal" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg></span><span class="menu-list__text">Aturan game</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button></li>
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-modal-open="alive-modal" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span><span class="menu-list__text">Siapa masih hidup</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button></li>
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-go="peek" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg></span><span class="menu-list__text">Lihat peran saya lagi</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button></li>
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-go="handover-1" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-shuffle"></use></svg></span><span class="menu-list__text">Ulangi dari awal</span></button></li>
+      <li class="menu-list__item"><button class="menu-list__link menu-list__link--danger" type="button" data-modal-open="exit-modal" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-logout"></use></svg></span><span class="menu-list__text">Akhiri game</span></button></li>
+    </ul>
+  </div>
+</dialog>
+<dialog class="modal" id="rules-modal" aria-labelledby="rules-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="rules-modal-title">Aturan Werewolf</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <div class="modal__body"><ol class="role-list">
+    <li class="role"><span class="badge" aria-hidden="true">1</span><div class="role__body"><span class="role__name">Bagi peran</span><span class="text-muted">Edarkan HP. Werewolf melihat nama rekannya di kartu.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">2</span><div class="role__body"><span class="role__name">Malam</span><span class="text-muted">Semua tutup mata. HP dioper ke Werewolf, Doctor, lalu Seer.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">3</span><div class="role__body"><span class="role__name">Pagi</span><span class="text-muted">Website mengumumkan siapa yang meninggal.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">4</span><div class="role__body"><span class="role__name">Siang</span><span class="text-muted">Diskusi dengan timer, lalu voting rahasia. Suara terbanyak dieksekusi.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">5</span><div class="role__body"><span class="role__name">Menang</span><span class="text-muted">Desa menang bila semua Werewolf mati. Werewolf menang bila jumlahnya menyamai warga.</span></div></li>
+    </ol></div>
+    <div class="modal__actions">
+      <button class="btn" type="button" data-modal-close>Mengerti</button>
+    </div>
+  </div>
+</dialog>
+<dialog class="modal" id="exit-modal" aria-labelledby="exit-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="exit-modal-title">Akhiri game ini?</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <p class="modal__body">Sesi ini dihapus dan kamu kembali ke Beranda. Pemain dan pengaturan tetap tersimpan.</p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-modal-close autofocus>Batal, lanjut main</button>
+      <a class="btn btn--danger" href="index.html">Akhiri game</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="modal" id="alive-modal" aria-labelledby="alive-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="alive-modal-title">Siapa masih hidup</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <p class="field__hint">Hanya status hidup atau mati. Peran tidak ditampilkan.</p>
+    <ul class="rank-list modal__body">
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">M</span><span class="rank-row__name">Mira</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">A</span><span class="rank-row__name">Andi</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">S</span><span class="rank-row__name">Susi</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span><span class="badge badge--success">Hidup</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sun">R</span><span class="rank-row__name">Rani</span><span class="badge badge--error">Mati</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">D</span><span class="rank-row__name">Dimas</span><span class="badge badge--error">Mati</span></li>
+    </ul>
+    <div class="modal__actions">
+      <button class="btn" type="button" data-modal-close>Tutup</button>
+    </div>
+  </div>
+</dialog>
+  <script src="../icons/icons.js"></script>
+  <script src="../components/button/button.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/reveal/reveal.js"></script>
+  <script src="../components/pick-list/pick-list.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/flow.js"></script>
+</body>
+</html>

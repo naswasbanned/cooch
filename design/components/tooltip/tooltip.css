@@ -1,0 +1,50 @@
+/* Tooltip: CSS-only, shown on hover and keyboard focus. Supplementary text only. */
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip__bubble {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  z-index: var(--z-tooltip);
+  width: max-content;
+  max-width: var(--size-tooltip);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-tooltip-bg);
+  color: var(--color-tooltip-fg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, var(--space-1));
+  transition:
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    visibility 0s linear var(--duration-fast);
+  pointer-events: none;
+}
+
+.tooltip__bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: var(--space-1) solid transparent;
+  border-top-color: var(--color-tooltip-bg);
+  transform: translateX(-50%);
+}
+
+.tooltip:hover .tooltip__bubble,
+.tooltip:focus-within .tooltip__bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 0s;
+}

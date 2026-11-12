@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-label="Decorative night waves">
+<defs>
+  <linearGradient id="a" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3b3a78" stop-opacity="0.65"/>
+    <stop offset="0.5" stop-color="#8f8cc9" stop-opacity="0.25"/>
+    <stop offset="1" stop-color="#3b3a78" stop-opacity="0.65"/>
+  </linearGradient>
+  <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#212048" stop-opacity="0.8"/>
+    <stop offset="1" stop-color="#3b3a78" stop-opacity="0.45"/>
+  </linearGradient>
+  <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#ffd28a" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#ffd28a" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#8f8cc9" stop-opacity="0.25"/>
+    <stop offset="1" stop-color="#8f8cc9" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1600" height="1200" fill="none"/>
+<circle cx="1250" cy="180" r="300" fill="url(#moon)"/>
+<circle cx="1250" cy="180" r="86" fill="#ffd28a" opacity="0.7"/>
+<circle cx="300" cy="500" r="430" fill="url(#glow)"/>
+<path d="M0 780 C230 710 400 850 620 810 C840 770 1000 680 1220 720 C1380 750 1510 800 1600 780 L1600 1200 L0 1200 Z" fill="url(#a)" opacity="0.75"/>
+<path d="M0 900 C240 830 430 960 660 920 C890 880 1060 800 1290 840 C1430 866 1530 900 1600 885 L1600 1200 L0 1200 Z" fill="url(#b)" opacity="0.8"/>
+<path d="M0 1020 C260 950 470 1070 700 1030 C930 990 1110 930 1340 960 C1460 976 1540 998 1600 990 L1600 1200 L0 1200 Z" fill="#181738" opacity="0.85"/>
+<g fill="#fff3df" opacity="0.55">
+  <circle cx="200" cy="230" r="4"/>
+  <circle cx="420" cy="140" r="5"/>
+  <circle cx="760" cy="260" r="3"/>
+  <circle cx="980" cy="120" r="4"/>
+  <circle cx="1480" cy="380" r="5"/>
+  <circle cx="680" cy="420" r="3"/>
+</g>
+</svg>

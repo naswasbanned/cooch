@@ -1,0 +1,107 @@
+/* Badge (status), chip (filter toggle), points pill (coin), trend (rank change). */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-sunken);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-snug);
+  white-space: nowrap;
+}
+
+.badge .icon {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.badge--success { background: var(--color-success-soft); color: var(--color-success); }
+.badge--warning { background: var(--color-warning-soft); color: var(--color-warning); }
+.badge--error   { background: var(--color-error-soft);   color: var(--color-error); }
+.badge--info    { background: var(--color-info-soft);    color: var(--color-info); }
+.badge--accent  { background: var(--color-accent-soft);  color: var(--color-accent); }
+.badge--new     { background: var(--color-coral-700);    color: var(--color-white); }
+
+/* Filter chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--size-tap);
+  padding: 0 var(--space-4);
+  border: var(--size-border) solid var(--color-input-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.chip:hover {
+  background: var(--color-surface-hover);
+}
+
+.chip[aria-pressed="true"] {
+  border-color: var(--color-secondary);
+  background: var(--color-secondary);
+  color: var(--color-text-on-secondary);
+}
+
+.chip:disabled {
+  cursor: not-allowed;
+  filter: var(--filter-disabled);
+}
+
+.chip .icon {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+/* Coin points pill (moodboard leaderboard) */
+.points {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  border-radius: var(--radius-sm);
+  background: var(--color-sun-100);
+  color: var(--color-cocoa-800);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  box-shadow: var(--shadow-xs);
+  white-space: nowrap;
+}
+
+.points .icon {
+  color: var(--color-sun-500);
+}
+
+/* Rank trend */
+.trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+}
+
+.trend::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-inline: var(--space-2) solid transparent;
+}
+
+.trend--up::before {
+  border-bottom: var(--space-3) solid var(--color-leaf-500);
+}
+
+.trend--down::before {
+  border-top: var(--space-3) solid var(--color-coral-500);
+}

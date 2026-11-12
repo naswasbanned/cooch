@@ -1,0 +1,63 @@
+<form class="stack" data-validate novalidate>
+  <div class="field">
+    <span class="field__label" id="lbl-players">Jumlah pemain</span>
+    <div class="stepper" data-stepper role="group" aria-labelledby="lbl-players">
+      <button class="btn btn--icon btn--round" type="button" data-stepper-dec aria-label="Kurangi pemain"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+      <input class="stepper__value" type="number" min="3" max="20" value="5" aria-labelledby="lbl-players" inputmode="numeric">
+      <button class="btn btn--icon btn--round" type="button" data-stepper-inc aria-label="Tambah pemain"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+    </div>
+    <span class="field__hint">3 sampai 20 pemain.</span>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-name">Nama pemain 1</label>
+    <input class="input" id="f-name" type="text" placeholder="Contoh: Rani" required aria-describedby="f-name-err">
+    <span class="field__error" id="f-name-err"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Nama tidak boleh kosong.</span>
+  </div>
+  <div class="field field--error">
+    <label class="field__label" for="f-err">Nama pemain 2 (state error)</label>
+    <input class="input" id="f-err" type="text" value="" aria-invalid="true" aria-describedby="f-err-msg">
+    <span class="field__error" id="f-err-msg"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Nama sudah dipakai pemain lain.</span>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-search">Cari game</label>
+    <div class="input-wrap"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input class="input" id="f-search" type="search" placeholder="Werewolf, kuis, puzzle..."></div>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-dis">Disabled</label>
+    <input class="input" id="f-dis" type="text" value="Tidak bisa diubah" disabled>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-cat">Kategori kata</label>
+    <select class="select" id="f-cat"><option>Acak</option><option>Makanan</option><option>Hewan</option><option>Kota Indonesia</option></select>
+  </div>
+  <div class="field">
+    <label class="field__label" for="f-words">Kategori buatan sendiri</label>
+    <textarea class="textarea" id="f-words" placeholder="Satu kata per baris"></textarea>
+    <span class="field__hint">Tersimpan di perangkat ini saja.</span>
+  </div>
+  <div class="field">
+    <span class="field__label" id="lbl-mode">Mode impostor</span>
+    <div class="segmented" role="radiogroup" aria-labelledby="lbl-mode">
+      <label class="segmented__option"><input type="radio" name="mode" checked><span>Tahu kategori</span></label>
+      <label class="segmented__option"><input type="radio" name="mode"><span>Kata mirip</span></label>
+    </div>
+  </div>
+  <fieldset class="choice-group">
+    <legend class="field__label">Kategori</legend>
+    <label class="choice"><input class="choice__input" type="checkbox" checked>Makanan</label>
+    <label class="choice"><input class="choice__input" type="checkbox">Hewan</label>
+    <label class="choice"><input class="choice__input" type="checkbox" disabled>Film (terkunci)</label>
+  </fieldset>
+  <fieldset class="choice-group">
+    <legend class="field__label">Hasil voting seri</legend>
+    <label class="choice"><input class="choice__input" type="radio" name="tie" checked>Tidak ada eksekusi</label>
+    <label class="choice"><input class="choice__input" type="radio" name="tie">Voting ulang</label>
+    <label class="choice"><input class="choice__input" type="radio" name="tie" disabled>Host memilih (segera)</label>
+  </fieldset>
+  <div>
+    <label class="toggle">Narasi suara<input class="toggle__input" type="checkbox" role="switch" checked></label>
+    <label class="toggle">Buka peran saat mati<input class="toggle__input" type="checkbox" role="switch"></label>
+    <label class="toggle">Mode online (segera)<input class="toggle__input" type="checkbox" role="switch" disabled></label>
+  </div>
+  <button class="btn btn--block btn--lg" type="submit">Simpan dan Mulai</button>
+</form>

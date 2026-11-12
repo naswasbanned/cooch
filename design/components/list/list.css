@@ -1,0 +1,233 @@
+/* List: bottom sheet surface, menu rows (profile screen), leaderboard rows, avatar, streak, podium. */
+
+/* Bottom sheet surface with handle */
+.sheet {
+  position: relative;
+  padding: var(--space-5) var(--space-4) var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-2xl) var(--radius-2xl) var(--radius-xl) var(--radius-xl);
+  box-shadow: var(--shadow-inner-top), var(--shadow-lg);
+}
+
+.sheet::before {
+  content: "";
+  display: block;
+  width: var(--size-sheet-handle-w);
+  height: var(--size-sheet-handle-h);
+  margin: calc(var(--space-2) * -1) auto var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+}
+
+/* Avatar: initials on colored circle (no photo, privacy-first) */
+.avatar {
+  --avatar-size: var(--size-avatar-md);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-round);
+  background: var(--color-peach-200);
+  color: var(--color-cocoa-800);
+  font-family: var(--font-display);
+  font-size: calc(var(--avatar-size) * 0.4);
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 0 0 var(--size-border-thick) var(--color-surface), var(--shadow-sm);
+}
+
+.avatar--sm { --avatar-size: var(--size-avatar-sm); }
+.avatar--lg { --avatar-size: var(--size-avatar-lg); }
+.avatar--xl { --avatar-size: var(--size-avatar-xl); }
+.avatar--sky   { background: var(--color-sky-200);   color: var(--color-sky-900); }
+.avatar--grape { background: var(--color-grape-100); color: var(--color-grape-700); }
+.avatar--leaf  { background: var(--color-leaf-100);  color: var(--color-leaf-700); }
+.avatar--sun   { background: var(--color-sun-200);   color: var(--color-cocoa-800); }
+.avatar--ring  { box-shadow: 0 0 0 var(--size-border-thick) var(--color-sun-500), var(--shadow-sm); }
+
+/* Menu list */
+.menu-list {
+  display: grid;
+}
+
+.menu-list__item + .menu-list__item {
+  border-top: var(--size-border) solid var(--color-surface-sunken);
+}
+
+.menu-list__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: var(--size-tap-xl);
+  padding: var(--space-2);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  text-decoration: none;
+}
+
+.menu-list__link:hover {
+  background: var(--color-surface-hover);
+}
+
+.menu-list__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--size-tap);
+  height: var(--size-tap);
+  border-radius: var(--radius-round);
+  background: var(--color-icon-bubble);
+  color: var(--color-icon-bubble-fg);
+  box-shadow: inset 0 0 0 var(--size-border) var(--color-icon-bubble-ring);
+}
+
+.menu-list__text {
+  flex: 1;
+}
+
+.menu-list__link > .icon:last-child {
+  color: var(--color-text-muted);
+}
+
+.menu-list__link--danger {
+  color: var(--color-error);
+}
+
+.menu-list__link--danger .menu-list__icon {
+  background: var(--color-error-soft);
+  color: var(--color-error);
+  box-shadow: none;
+}
+
+/* Rank list (leaderboard / player list) */
+.rank-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.rank-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--size-tap-xl);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+}
+
+.rank-row--me {
+  background: var(--color-highlight);
+  box-shadow: inset 0 0 0 var(--size-border) var(--color-highlight-ring);
+}
+
+.rank-row--out {
+  opacity: var(--opacity-muted);
+}
+
+.rank-row--out .rank-row__name {
+  text-decoration: line-through;
+}
+
+.rank-row__pos {
+  width: var(--space-6);
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.rank-row__name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-title);
+  font-weight: var(--font-weight-bold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Daily streak */
+.streak {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.streak__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-title);
+}
+
+.streak__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--size-avatar-sm);
+  height: var(--size-avatar-sm);
+  border-radius: var(--radius-round);
+  background: var(--color-surface-sunken);
+  box-shadow: var(--shadow-inner-sunk);
+}
+
+.streak__day--done .streak__mark {
+  background: var(--color-sun-500);
+  color: var(--color-white);
+  box-shadow: var(--shadow-inner-top), 0 var(--space-1) 0 var(--color-sun-600);
+}
+
+.streak__day--done .streak__mark .icon {
+  stroke-width: var(--stroke-icon-bold);
+}
+
+/* Podium (top 3) */
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--space-2);
+}
+
+.podium__place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.podium__name {
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+}
+
+.podium__block {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-xs) var(--radius-xs);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  text-shadow: var(--shadow-text);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+}
+
+.podium__place--1 .podium__block { height: var(--size-podium-1); background: var(--gradient-grape); }
+.podium__place--2 .podium__block { height: var(--size-podium-2); background: var(--gradient-sky); }
+.podium__place--3 .podium__block { height: var(--size-podium-3); background: linear-gradient(180deg, var(--color-coral-500), var(--color-coral-700)); }

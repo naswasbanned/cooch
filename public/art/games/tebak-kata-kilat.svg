@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Speed Words game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#4ccb5b"/>
+    <stop offset="1" stop-color="#1f8f31"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="bolt" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff3df"/>
+    <stop offset="0.5" stop-color="#ffd28a"/>
+    <stop offset="1" stop-color="#ffa73a"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<g filter="url(#soft)">
+  <circle cx="400" cy="322" r="158" fill="#fffaf1"/>
+  <circle cx="400" cy="322" r="126" fill="#dcf6df"/>
+  <circle cx="400" cy="322" r="126" fill="none" stroke="#1f8f31" stroke-width="10"/>
+  <rect x="372" y="134" width="56" height="34" rx="12" fill="#1f8f31"/>
+  <rect x="386" y="112" width="28" height="32" rx="10" fill="#176b25"/>
+  <g stroke="#1f8f31" stroke-width="7" stroke-linecap="round">
+    <path d="M400 230 L400 246"/>
+    <path d="M490 322 L474 322"/>
+    <path d="M310 322 L326 322"/>
+    <path d="M464 258 L452 270"/>
+    <path d="M336 258 L348 270"/>
+  </g>
+  <path d="M430 200 L322 346 L394 346 L352 466 L500 296 L420 296 Z" fill="url(#bolt)" stroke="#b8630c" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M400 322 L456 268" stroke="#1f8f31" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="400" cy="322" r="14" fill="#1f8f31"/>
+</g>
+<g filter="url(#soft)">
+  <rect x="92" y="116" width="154" height="94" rx="26" fill="#fffaf1"/>
+  <path d="M144 210 L128 244 L180 210 Z" fill="#fffaf1"/>
+  <rect x="120" y="146" width="98" height="12" rx="6" fill="#4ccb5b"/>
+  <rect x="120" y="170" width="70" height="12" rx="6" fill="#9fd3f8"/>
+  <rect x="566" y="386" width="144" height="86" rx="24" fill="#fffaf1"/>
+  <path d="M660 472 L676 504 L626 472 Z" fill="#fffaf1"/>
+  <rect x="592" y="414" width="88" height="11" rx="5.5" fill="#4ccb5b"/>
+  <rect x="592" y="436" width="56" height="11" rx="5.5" fill="#9fd3f8"/>
+</g>
+<path d="M650 132 C653.24 146.76 653.24 146.76 668 150 C653.24 153.24 653.24 153.24 650 168 C646.76 153.24 646.76 153.24 632 150 C646.76 146.76 646.76 146.76 650 132 Z" fill="#fffaf1" opacity="0.85"/>
+<path d="M170 348 C172.16 357.84 172.16 357.84 182 360 C172.16 362.16 172.16 362.16 170 372 C167.84 362.16 167.84 362.16 158 360 C167.84 357.84 167.84 357.84 170 348 Z" fill="#fffaf1" opacity="0.7"/>
+<circle cx="690" cy="280" r="5" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

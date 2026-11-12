@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Main Guess the Impostor - Cooch</title>
+  <meta name="description" content="Sesi Guess the Impostor sedang berjalan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../components/button/button.css">
+  <link rel="stylesheet" href="../components/badge/badge.css">
+  <link rel="stylesheet" href="../components/heading/heading.css">
+  <link rel="stylesheet" href="../components/list/list.css">
+  <link rel="stylesheet" href="../components/form/form.css">
+  <link rel="stylesheet" href="../components/stat/stat.css">
+  <link rel="stylesheet" href="../components/modal/modal.css">
+  <link rel="stylesheet" href="../components/toast/toast.css">
+  <link rel="stylesheet" href="../components/reveal/reveal.css">
+  <link rel="stylesheet" href="../components/game-bar/game-bar.css">
+  <link rel="stylesheet" href="../components/pick-list/pick-list.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<a class="skip-link btn btn--sm" href="#main">Langsung ke konten</a>
+<div class="container play">
+  <header class="game-bar">
+    <div class="game-bar__inner">
+      <button class="btn btn--ghost" type="button" data-modal-open="pause-modal"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg>Jeda</button>
+      <div class="game-bar__title">
+        <h1 class="game-bar__game">Guess the Impostor</h1>
+        <span class="game-bar__phase" data-phase aria-live="polite">Bagi kartu</span>
+      </div>
+      <button class="btn btn--ghost" type="button" data-modal-open="rules-modal"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg>Aturan</button>
+    </div>
+  </header>
+  <main id="main" data-flow>
+  <section class="screen" data-screen="handover-1" data-phase="Bagi kartu · 1 dari 6" hidden>
+    <div class="progress" role="img" aria-label="Kartu 0 dari 6"><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Serahkan HP ke</span>
+      <h2 class="handover__name">Dina</h2>
+      <p class="field__hint">Hanya Dina yang boleh melihat layar berikutnya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="reveal-1">Aku Dina, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="reveal-1" data-phase="Bagi kartu · 1 dari 6" data-secret data-reveal hidden>
+    <div class="progress" role="img" aria-label="Kartu 1 dari 6"><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Dina</strong></h2>
+      <button class="reveal-card" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Kata rahasia</span><span class="reveal-card__secret">Bakso</span><span class="reveal-card__note">Kategori: Makanan</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="handover-2" disabled>Sudah, tutup kartu</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="handover-2" data-phase="Bagi kartu · 2 dari 6" hidden>
+    <div class="progress" role="img" aria-label="Kartu 1 dari 6"><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Serahkan HP ke</span>
+      <h2 class="handover__name">Raka</h2>
+      <p class="field__hint">Hanya Raka yang boleh melihat layar berikutnya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="reveal-2">Aku Raka, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="reveal-2" data-phase="Bagi kartu · 2 dari 6" data-secret data-reveal hidden>
+    <div class="progress" role="img" aria-label="Kartu 2 dari 6"><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Raka</strong></h2>
+      <button class="reveal-card" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Kata rahasia</span><span class="reveal-card__secret">Mi ayam</span><span class="reveal-card__note">Kategori: Makanan</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="handover-3" disabled>Sudah, tutup kartu</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="handover-3" data-phase="Bagi kartu · 3 dari 6" hidden>
+    <div class="progress" role="img" aria-label="Kartu 2 dari 6"><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Serahkan HP ke</span>
+      <h2 class="handover__name">Sari</h2>
+      <p class="field__hint">Hanya Sari yang boleh melihat layar berikutnya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="reveal-3">Aku Sari, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="reveal-3" data-phase="Bagi kartu · 3 dari 6" data-secret data-reveal hidden>
+    <div class="progress" role="img" aria-label="Kartu 3 dari 6"><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot"></span><span class="progress__dot"></span><span class="progress__dot"></span></div>
+    <div class="reveal">
+      <h2 class="reveal__player">Kartu milik <strong>Sari</strong></h2>
+      <button class="reveal-card reveal-card--impostor" type="button" data-reveal-card aria-pressed="false" aria-label="Tahan atau ketuk untuk melihat kartu">
+        <span class="reveal-card__cover"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg><span class="reveal-card__cover-text">Tahan untuk lihat</span></span>
+        <span class="reveal-card__face"><span class="reveal-card__role">Peranmu</span><span class="reveal-card__secret">Kamu Impostor</span><span class="reveal-card__note">Berbaurlah. Kamu tidak tahu kata dan kategorinya.</span></span>
+      </button>
+      <p class="reveal__hint">Lepas untuk menutup. Kartu tertutup sendiri setelah 15 detik.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-reveal-done data-go="all-read" disabled>Sudah, tutup kartu</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="all-read" data-phase="Bagi kartu selesai" hidden>
+    <div class="progress" role="img" aria-label="Kartu 6 dari 6"><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span><span class="progress__dot progress__dot--done"></span></div>
+    <div class="screen__head"><span class="label-tag">6 dari 6</span><h2 class="screen__title">Semua sudah melihat</h2><p class="screen__text">Letakkan HP di tengah. Website akan mengacak siapa yang mulai.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="order">Mulai game</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="order" data-phase="Putaran 1 · Petunjuk" hidden>
+    <div class="screen__head"><h2 class="screen__title">Urutan petunjuk</h2><p class="screen__text">Mulai dari Bima, searah jarum jam. Satu petunjuk lisan per orang.</p></div>
+    <ol class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos">1</span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span></li>
+      <li class="rank-row"><span class="rank-row__pos">2</span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span></li>
+      <li class="rank-row"><span class="rank-row__pos">3</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span></li>
+      <li class="rank-row"><span class="rank-row__pos">4</span><span class="avatar avatar--sm avatar--sun">D</span><span class="rank-row__name">Dina</span></li>
+      <li class="rank-row"><span class="rank-row__pos">5</span><span class="avatar avatar--sm avatar--sky">R</span><span class="rank-row__name">Raka</span></li>
+      <li class="rank-row"><span class="rank-row__pos">6</span><span class="avatar avatar--sm avatar--grape">S</span><span class="rank-row__name">Sari</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="clue">Mulai ronde petunjuk</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="clue" data-phase="Putaran 1 · Petunjuk 2 dari 6" hidden>
+    <div class="screen__head"><span class="label-tag">Petunjuk</span><h2 class="screen__title screen__title--big">Giliran Yanti</h2><p class="screen__text">Sebut satu kata petunjuk. Jangan terlalu jelas.</p></div>
+    <ol class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos">1</span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge--success"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Sudah</span></li>
+      <li class="rank-row rank-row--me"><span class="rank-row__pos">2</span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span><span class="badge badge--accent">Sekarang</span></li>
+      <li class="rank-row"><span class="rank-row__pos">3</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span></li>
+      <li class="rank-row"><span class="rank-row__pos">4</span><span class="avatar avatar--sm avatar--sun">D</span><span class="rank-row__name">Dina</span></li>
+      <li class="rank-row"><span class="rank-row__pos">5</span><span class="avatar avatar--sm avatar--sky">R</span><span class="rank-row__name">Raka</span></li>
+      <li class="rank-row"><span class="rank-row__pos">6</span><span class="avatar avatar--sm avatar--grape">S</span><span class="rank-row__name">Sari</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="discuss">Yanti selesai, lanjut</button>
+      <button class="btn btn--ghost btn--block" type="button" data-go="discuss">Lewati ke diskusi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="discuss" data-phase="Putaran 1 · Diskusi" hidden>
+    <div class="screen__head"><h2 class="screen__title">Diskusi</h2><p class="screen__text">Petunjuk siapa yang paling mencurigakan?</p></div>
+    <div class="screen__center">
+      <div class="timer" data-timer="180"><span class="timer__label">Sisa waktu</span><span class="timer__value" data-timer-value>03:00</span><button class="btn btn--sm btn--secondary" type="button" data-timer-toggle>Mulai</button></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span class="stat__label">Putaran</span><span class="stat__value">1</span></div>
+      <div class="stat"><span class="stat__label">Hidup</span><span class="stat__value">6</span></div>
+      <div class="stat"><span class="stat__label">Tim jahat</span><span class="stat__value">?</span></div>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="vote-handover-1">Mulai voting</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-handover-1" data-phase="Putaran 1 · Voting" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Voting rahasia · serahkan HP ke</span>
+      <h2 class="handover__name">Dina</h2>
+      <p class="field__hint">Hanya Dina yang boleh melihat pilihannya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="vote-1">Aku Dina, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-1" data-phase="Putaran 1 · Voting" data-secret hidden>
+    <div class="screen__head"><h2 class="screen__title">Dina, siapa yang kamu pilih?</h2><p class="screen__text">Pilihanmu tidak ditampilkan sampai semua selesai.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih tersangka</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Dina" disabled><span class="avatar avatar--sm avatar--sun">D</span><span class="pick__name">Dina</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Raka"><span class="avatar avatar--sm avatar--sky">R</span><span class="pick__name">Raka</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Sari"><span class="avatar avatar--sm avatar--grape">S</span><span class="pick__name">Sari</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-1-pick" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="vote-1-pick" data-pick-template="Pilih {name}" data-pick-empty="Pilih satu pemain" data-go="vote-handover-2" disabled>Pilih satu pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-handover-2" data-phase="Putaran 1 · Voting" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Voting rahasia · serahkan HP ke</span>
+      <h2 class="handover__name">Raka</h2>
+      <p class="field__hint">Hanya Raka yang boleh melihat pilihannya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="vote-2">Aku Raka, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote-2" data-phase="Putaran 1 · Voting" data-secret hidden>
+    <div class="screen__head"><h2 class="screen__title">Raka, siapa yang kamu pilih?</h2><p class="screen__text">Pilihanmu tidak ditampilkan sampai semua selesai.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih tersangka</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Dina"><span class="avatar avatar--sm avatar--sun">D</span><span class="pick__name">Dina</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Raka" disabled><span class="avatar avatar--sm avatar--sky">R</span><span class="pick__name">Raka</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Sari"><span class="avatar avatar--sm avatar--grape">S</span><span class="pick__name">Sari</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Bima"><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote-2-pick" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="vote-2-pick" data-pick-template="Pilih {name}" data-pick-empty="Pilih satu pemain" data-go="votes-done" disabled>Pilih satu pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="votes-done" data-phase="Putaran 1 · Voting" hidden>
+    <div class="screen__head"><span class="label-tag">6 dari 6</span><h2 class="screen__title">Semua sudah memilih</h2><p class="screen__text">Letakkan HP di tengah. Hasil suara dibuka bersamaan.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="tally">Buka hasil suara</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="tally" data-phase="Putaran 1 · Hasil suara" hidden>
+    <div class="screen__head"><h2 class="screen__title">Hasil suara</h2></div>
+    <ol class="rank-list">
+      <li class="rank-row rank-row--me"><span class="rank-row__pos">1</span><span class="avatar avatar--sm avatar--grape">S</span><span class="rank-row__name">Sari</span><span class="badge badge--accent">4 suara</span></li>
+      <li class="rank-row"><span class="rank-row__pos">2</span><span class="avatar avatar--sm avatar--sky">R</span><span class="rank-row__name">Raka</span><span class="badge badge--accent">1 suara</span></li>
+      <li class="rank-row"><span class="rank-row__pos">3</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--accent">1 suara</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="eliminated">Ungkap peran Sari</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="eliminated" data-phase="Putaran 1 · Eliminasi" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-mask"></use></svg></span>
+      <span class="label-tag">Tersingkir</span>
+      <h2 class="screen__title">Sari adalah Impostor</h2>
+      <p class="verdict__text">Sari boleh menebak kata rahasia satu kali.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="guess">Sari menebak</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="guess" data-phase="Putaran 1 · Tebak kata" hidden>
+    <div class="screen__head"><h2 class="screen__title">Tebak kata, Sari</h2><p class="screen__text">Satu kesempatan. Tebakan benar membuat tim jahat menang.</p></div>
+    <div class="field">
+      <label class="field__label" for="guess-word">Tebakan Sari</label>
+      <input class="input input--xl" id="guess-word" type="text" maxlength="24" autocomplete="off" placeholder="Ketik satu kata">
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="guess-wrong">Kunci tebakan</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="guess-wrong" data-phase="Putaran 1 · Tebak kata" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-x-circle"></use></svg></span>
+      <span class="label-tag">Tebakan salah</span>
+      <h2 class="screen__title">Game berlanjut</h2>
+      <p class="verdict__text">Masih ada tim jahat di antara kalian. Kata rahasia tetap rahasia.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="round-2">Mulai putaran 2</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="round-2" data-phase="Putaran 2 · Petunjuk" hidden>
+    <div class="screen__head"><span class="label-tag">5 pemain tersisa</span><h2 class="screen__title">Putaran 2</h2><p class="screen__text">Beri petunjuk baru, mulai dari Yanti.</p></div>
+    <ol class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos">1</span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span></li>
+      <li class="rank-row"><span class="rank-row__pos">2</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span></li>
+      <li class="rank-row"><span class="rank-row__pos">3</span><span class="avatar avatar--sm avatar--sun">D</span><span class="rank-row__name">Dina</span></li>
+      <li class="rank-row"><span class="rank-row__pos">4</span><span class="avatar avatar--sm avatar--sky">R</span><span class="rank-row__name">Raka</span></li>
+      <li class="rank-row"><span class="rank-row__pos">5</span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos">-</span><span class="avatar avatar--sm avatar--grape">S</span><span class="rank-row__name">Sari</span><span class="badge badge--error">Impostor</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="discuss-2">Petunjuk selesai, diskusi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="discuss-2" data-phase="Putaran 2 · Diskusi" hidden>
+    <div class="screen__head"><h2 class="screen__title">Diskusi</h2><p class="screen__text">Siapa lagi yang mencurigakan?</p></div>
+    <div class="screen__center">
+      <div class="timer" data-timer="180"><span class="timer__label">Sisa waktu</span><span class="timer__value" data-timer-value>03:00</span><button class="btn btn--sm btn--secondary" type="button" data-timer-toggle>Mulai</button></div>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="vote2-handover-1">Mulai voting</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote2-handover-1" data-phase="Putaran 2 · Voting" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Voting rahasia · serahkan HP ke</span>
+      <h2 class="handover__name">Bima</h2>
+      <p class="field__hint">Hanya Bima yang boleh melihat pilihannya.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="vote2-1">Aku Bima, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  <section class="screen" data-screen="vote2-1" data-phase="Putaran 2 · Voting" data-secret hidden>
+    <div class="screen__head"><h2 class="screen__title">Bima, siapa yang kamu pilih?</h2><p class="screen__text">Pilihanmu tidak ditampilkan sampai semua selesai.</p></div>
+    <fieldset class="pick-list">
+      <legend class="sr-only">Pilih tersangka</legend>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Bima" disabled><span class="avatar avatar--sm avatar--leaf">B</span><span class="pick__name">Bima</span><span class="pick__note">Kamu</span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Yanti"><span class="avatar avatar--sm avatar--grape">Y</span><span class="pick__name">Yanti</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Eko"><span class="avatar avatar--sm">E</span><span class="pick__name">Eko</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Dina"><span class="avatar avatar--sm avatar--sun">D</span><span class="pick__name">Dina</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Raka"><span class="avatar avatar--sm avatar--sky">R</span><span class="pick__name">Raka</span><span class="pick__mark"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span></label>
+      <label class="pick"><input class="pick__input" type="radio" name="vote2-1-pick" data-name="Sari" disabled><span class="avatar avatar--sm avatar--grape">S</span><span class="pick__name">Sari</span><span class="pick__note">Tersingkir</span></label>
+    </fieldset>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-pick-confirm="vote2-1-pick" data-pick-template="Pilih {name}" data-pick-empty="Pilih satu pemain" data-go="votes-done-2" disabled>Pilih satu pemain</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="votes-done-2" data-phase="Putaran 2 · Voting" hidden>
+    <div class="screen__head"><span class="label-tag">5 dari 5</span><h2 class="screen__title">Semua sudah memilih</h2><p class="screen__text">Hasil suara dibuka bersamaan.</p></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="tally-2">Buka hasil suara</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="tally-2" data-phase="Putaran 2 · Hasil suara" hidden>
+    <div class="screen__head"><h2 class="screen__title">Hasil suara</h2></div>
+    <ol class="rank-list">
+      <li class="rank-row rank-row--me"><span class="rank-row__pos">1</span><span class="avatar avatar--sm avatar--sky">R</span><span class="rank-row__name">Raka</span><span class="badge badge--accent">4 suara</span></li>
+      <li class="rank-row"><span class="rank-row__pos">2</span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--accent">1 suara</span></li>
+    </ol>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="eliminated-2">Ungkap peran Raka</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="eliminated-2" data-phase="Putaran 2 · Eliminasi" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg></span>
+      <span class="label-tag">Tersingkir</span>
+      <h2 class="screen__title">Raka adalah Chameleon</h2>
+      <p class="verdict__text">Kata Raka berbeda: Mi ayam. Semua tim jahat sudah tersingkir.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="result">Lihat hasil</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="result" data-phase="Hasil" hidden>
+    <div class="verdict">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg></span>
+      <span class="label-tag">2 putaran · 14 menit</span>
+      <h2 class="screen__title">Warga menang!</h2>
+      <p class="verdict__text">Kata rahasia: <strong>Bakso</strong>. Kata Chameleon: <strong>Mi ayam</strong>.</p>
+    </div>
+    <section class="panel" aria-labelledby="roles-title">
+      <h3 class="panel__title" id="roles-title">Peran semua pemain</h3>
+      <ol class="rank-list">
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sun">D</span><span class="rank-row__name">Dina</span><span class="badge badge--info">Warga</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--sky">R</span><span class="rank-row__name">Raka</span><span class="badge badge--error">Chameleon</span></li>
+      <li class="rank-row rank-row--out"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">S</span><span class="rank-row__name">Sari</span><span class="badge badge--error">Impostor</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--leaf">B</span><span class="rank-row__name">Bima</span><span class="badge badge--info">Warga</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm avatar--grape">Y</span><span class="rank-row__name">Yanti</span><span class="badge badge--info">Warga</span></li>
+      <li class="rank-row"><span class="rank-row__pos"></span><span class="avatar avatar--sm">E</span><span class="rank-row__name">Eko</span><span class="badge badge--info">Warga</span></li>
+      </ol>
+    </section>
+    <section class="panel" aria-labelledby="survey-1">
+      <h3 class="panel__title" id="survey-1">Seru?</h3>
+      <div class="cluster" role="group" aria-labelledby="survey-1" data-chip-group>
+        <button class="chip" type="button" aria-pressed="false" data-value="ya"><svg class="icon" aria-hidden="true"><use href="#i-thumb-up"></use></svg>Seru</button><button class="chip" type="button" aria-pressed="false" data-value="tidak"><svg class="icon" aria-hidden="true"><use href="#i-thumb-down"></use></svg>Kurang</button>
+      </div>
+      <p class="field__hint">Opsional, boleh dilewati.</p>
+    </section>
+    <div class="cluster screen__links"><a class="btn btn--ghost" href="setup-impostor.html">Ubah pengaturan</a><a class="btn btn--ghost" href="index.html">Ke beranda</a></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="handover-1"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Main lagi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="result-evil" data-phase="Hasil" hidden>
+    <div class="verdict verdict--grape">
+      <span class="verdict__icon"><svg class="icon" aria-hidden="true"><use href="#i-mask"></use></svg></span>
+      <span class="label-tag">1 putaran · 9 menit</span>
+      <h2 class="screen__title">Tim jahat menang!</h2>
+      <p class="verdict__text">Sari menebak kata dengan benar: <strong>Bakso</strong>.</p>
+    </div>
+    <section class="panel" aria-labelledby="survey-2">
+      <h3 class="panel__title" id="survey-2">Seru?</h3>
+      <div class="cluster" role="group" aria-labelledby="survey-2" data-chip-group>
+        <button class="chip" type="button" aria-pressed="false" data-value="ya"><svg class="icon" aria-hidden="true"><use href="#i-thumb-up"></use></svg>Seru</button><button class="chip" type="button" aria-pressed="false" data-value="tidak"><svg class="icon" aria-hidden="true"><use href="#i-thumb-down"></use></svg>Kurang</button>
+      </div>
+      <p class="field__hint">Opsional, boleh dilewati.</p>
+    </section>
+    <div class="cluster screen__links"><a class="btn btn--ghost" href="setup-impostor.html">Ubah pengaturan</a><a class="btn btn--ghost" href="index.html">Ke beranda</a></div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block" type="button" data-go="handover-1"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>Main lagi</button>
+    </div>
+  </section>
+  <section class="screen" data-screen="resume" data-phase="Dilanjutkan" hidden>
+    <div class="handover">
+      <span class="handover__icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+      <span class="handover__eyebrow">Game dilanjutkan</span>
+      <h2 class="handover__name">Lanjutkan sebagai host</h2>
+      <p class="field__hint">Layar rahasia disembunyikan. Pastikan HP dipegang host.</p>
+    </div>
+    <div class="screen__foot">
+      <button class="btn btn--lg btn--block btn--hold" type="button" data-hold data-go="back" data-fallback="discuss">Aku host, lanjut</button>
+      <p class="screen__hint">Tahan tombol sampai penuh.</p>
+    </div>
+  </section>
+  </main>
+</div>
+
+<dialog class="modal" id="pause-modal" aria-labelledby="pause-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="pause-modal-title">Jeda</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <p class="field__hint">Kartu yang terbuka sudah ditutup.</p>
+    <ul class="menu-list">
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg></span><span class="menu-list__text">Lanjutkan</span></button></li>
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-modal-open="rules-modal" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-help"></use></svg></span><span class="menu-list__text">Aturan game</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button></li>
+
+      <li class="menu-list__item"><button class="menu-list__link" type="button" data-go="handover-1" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-shuffle"></use></svg></span><span class="menu-list__text">Ulangi dari awal</span></button></li>
+      <li class="menu-list__item"><button class="menu-list__link menu-list__link--danger" type="button" data-modal-open="exit-modal" data-modal-close><span class="menu-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-logout"></use></svg></span><span class="menu-list__text">Akhiri game</span></button></li>
+    </ul>
+  </div>
+</dialog>
+<dialog class="modal" id="rules-modal" aria-labelledby="rules-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="rules-modal-title">Aturan Guess the Impostor</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <div class="modal__body"><ol class="role-list">
+    <li class="role"><span class="badge" aria-hidden="true">1</span><div class="role__body"><span class="role__name">Bagi kartu</span><span class="text-muted">Edarkan HP. Tahan kartu untuk melihat kata, lalu tutup.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">2</span><div class="role__body"><span class="role__name">Petunjuk</span><span class="text-muted">Bergiliran sebut satu petunjuk lisan tentang kata itu.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">3</span><div class="role__body"><span class="role__name">Diskusi</span><span class="text-muted">Debat sampai timer habis, lalu mulai voting.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">4</span><div class="role__body"><span class="role__name">Voting rahasia</span><span class="text-muted">HP dioper lagi. Tiap pemain memilih tersangka tanpa dilihat yang lain.</span></div></li>
+    <li class="role"><span class="badge" aria-hidden="true">5</span><div class="role__body"><span class="role__name">Eliminasi</span><span class="text-muted">Suara terbanyak tersingkir dan perannya dibuka. Ulangi sampai satu tim menang.</span></div></li>
+    </ol></div>
+    <div class="modal__actions">
+      <button class="btn" type="button" data-modal-close>Mengerti</button>
+    </div>
+  </div>
+</dialog>
+<dialog class="modal" id="exit-modal" aria-labelledby="exit-modal-title">
+  <div class="modal__inner">
+    <span class="modal__handle" aria-hidden="true"></span>
+    <div class="modal__header"><h2 class="modal__title" id="exit-modal-title">Akhiri game ini?</h2><button class="btn btn--ghost btn--icon btn--sm modal__close" type="button" data-modal-close aria-label="Tutup"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+    <p class="modal__body">Sesi ini dihapus dan kamu kembali ke Beranda. Pemain dan pengaturan tetap tersimpan.</p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-modal-close autofocus>Batal, lanjut main</button>
+      <a class="btn btn--danger" href="index.html">Akhiri game</a>
+    </div>
+  </div>
+</dialog>
+
+  <script src="../icons/icons.js"></script>
+  <script src="../components/button/button.js"></script>
+  <script src="../components/modal/modal.js"></script>
+  <script src="../components/toast/toast.js"></script>
+  <script src="../components/reveal/reveal.js"></script>
+  <script src="../components/pick-list/pick-list.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/flow.js"></script>
+</body>
+</html>

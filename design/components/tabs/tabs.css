@@ -1,0 +1,43 @@
+/* Tabs: pill segmented tab list + panels. */
+
+.tabs__list {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-sunken);
+  box-shadow: var(--shadow-inner-sunk);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs__tab {
+  flex: 1 0 auto;
+  min-height: var(--size-tap);
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.tabs__tab:hover {
+  color: var(--color-text-title);
+}
+
+.tabs__tab[aria-selected="true"] {
+  background: var(--color-surface);
+  color: var(--color-text-title);
+  box-shadow: var(--shadow-sm);
+}
+
+.tabs__panel {
+  padding-top: var(--space-5);
+}
+
+.tabs__panel[hidden] {
+  display: none;
+}

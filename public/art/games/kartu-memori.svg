@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Memory Cards game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7b5be0"/>
+    <stop offset="1" stop-color="#4d34a3"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="back" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9b7bf0"/>
+    <stop offset="1" stop-color="#4d34a3"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<g filter="url(#soft)">
+  <g transform="rotate(-7 300 260)">
+    <rect x="222" y="168" width="156" height="196" rx="24" fill="#fffaf1"/>
+    <path d="M300 220 C308.28 257.72 308.28 257.72 346 266 C308.28 274.28 308.28 274.28 300 312 C291.72 274.28 291.72 274.28 254 266 C291.72 257.72 291.72 257.72 300 220 Z" fill="#ffa73a" opacity="0.85"/>
+  </g>
+  <g transform="rotate(8 500 260)">
+    <rect x="422" y="168" width="156" height="196" rx="24" fill="url(#back)"/>
+    <path d="M500 206 L536 266 L500 326 L464 266 Z" fill="#ece6fc" opacity="0.75"/>
+  </g>
+  <g transform="rotate(6 300 420)">
+    <rect x="222" y="328" width="156" height="196" rx="24" fill="url(#back)"/>
+    <path d="M300 366 L336 426 L300 486 L264 426 Z" fill="#ece6fc" opacity="0.75"/>
+  </g>
+  <g transform="rotate(-8 500 420)">
+    <rect x="422" y="328" width="156" height="196" rx="24" fill="#fffaf1"/>
+    <path d="M500 380 C508.28 417.72 508.28 417.72 546 426 C508.28 434.28 508.28 434.28 500 472 C491.72 434.28 491.72 434.28 454 426 C491.72 417.72 491.72 417.72 500 380 Z" fill="#2fb344" opacity="0.85"/>
+  </g>
+</g>
+<path d="M150 164 C152.88 177.12 152.88 177.12 166 180 C152.88 182.88 152.88 182.88 150 196 C147.12 182.88 147.12 182.88 134 180 C147.12 177.12 147.12 177.12 150 164 Z" fill="#fffaf1" opacity="0.8"/>
+<path d="M666 368 C668.16 377.84 668.16 377.84 678 380 C668.16 382.16 668.16 382.16 666 392 C663.84 382.16 663.84 382.16 654 380 C663.84 377.84 663.84 377.84 666 368 Z" fill="#ffd28a" opacity="0.8"/>
+<circle cx="130" cy="440" r="6" fill="#fffaf1" opacity="0.5"/>
+<circle cx="680" cy="150" r="5" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

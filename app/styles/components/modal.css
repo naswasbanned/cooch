@@ -1,0 +1,89 @@
+/* Modal: native <dialog>. Bottom sheet on mobile, centered card on desktop. */
+
+.modal {
+  width: 100%;
+  max-width: var(--size-modal);
+  max-height: 90vh;
+  margin: auto auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal::backdrop {
+  background: var(--color-overlay);
+  backdrop-filter: blur(var(--blur-overlay));
+}
+
+.modal[open] {
+  animation: modal-in var(--duration-slow) var(--ease-out);
+}
+
+.modal__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-6) var(--space-6);
+}
+
+.modal__handle {
+  align-self: center;
+  width: var(--size-sheet-handle-w);
+  height: var(--size-sheet-handle-h);
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.modal__title {
+  font-size: var(--text-xl);
+}
+
+.modal__close {
+  flex: none;
+}
+
+.modal__body {
+  color: var(--color-text);
+  overflow-y: auto;
+}
+
+.modal__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-3);
+}
+
+@keyframes modal-in {
+  from { transform: translateY(var(--space-12)); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+@media (min-width: 48em) {
+  .modal {
+    margin: auto;
+    border-radius: var(--radius-2xl);
+  }
+
+  .modal__handle {
+    display: none;
+  }
+
+  .modal__inner {
+    padding-top: var(--space-6);
+  }
+
+  .modal__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Charades game art">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffd28a"/>
+    <stop offset="1" stop-color="#ffa73a"/>
+  </linearGradient>
+  <radialGradient id="halo" cx="50%" cy="42%" r="60%">
+    <stop offset="0" stop-color="#fffaf1" stop-opacity="0.28"/>
+    <stop offset="1" stop-color="#fffaf1" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2b1608" flood-opacity="0.24"/>
+  </filter>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="26"/>
+  </filter>
+  <linearGradient id="maskA" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fffaf1"/>
+    <stop offset="1" stop-color="#ffe6bf"/>
+  </linearGradient>
+  <linearGradient id="maskB" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#9b7bf0"/>
+    <stop offset="1" stop-color="#6244c8"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<rect width="800" height="600" fill="url(#halo)"/>
+<circle cx="400" cy="300" r="260" fill="#fffaf1" opacity="0.05"/>
+
+<g opacity="0.2" stroke="#fffaf1" stroke-width="5" stroke-linecap="round">
+  <path d="M110 200 L64 180 M110 260 L58 260 M110 320 L66 340"/>
+  <path d="M690 200 L736 180 M690 260 L742 260 M690 320 L734 340"/>
+</g>
+<g filter="url(#soft)" transform="rotate(-9 320 310)">
+  <path d="M200 280 C200 180 440 180 440 280 C440 408 320 462 320 462 C320 462 200 408 200 280 Z" fill="url(#maskA)"/>
+  <ellipse cx="268" cy="280" rx="24" ry="32" fill="#ffa73a"/>
+  <ellipse cx="372" cy="280" rx="24" ry="32" fill="#ffa73a"/>
+  <path d="M256 352 Q320 406 384 352" stroke="#4f2a0c" stroke-width="16" fill="none" stroke-linecap="round"/>
+</g>
+<g filter="url(#soft)" transform="rotate(10 510 320)">
+  <path d="M390 290 C390 190 630 190 630 290 C630 418 510 472 510 472 C510 472 390 418 390 290 Z" fill="url(#maskB)"/>
+  <ellipse cx="458" cy="290" rx="24" ry="32" fill="#fffaf1"/>
+  <ellipse cx="562" cy="290" rx="24" ry="32" fill="#fffaf1"/>
+  <path d="M446 390 Q510 344 574 390" stroke="#181738" stroke-width="16" fill="none" stroke-linecap="round"/>
+</g>
+<path d="M170 130 C173.6 146.4 173.6 146.4 190 150 C173.6 153.6 173.6 153.6 170 170 C166.4 153.6 166.4 153.6 150 150 C166.4 146.4 166.4 146.4 170 130 Z" fill="#fffaf1" opacity="0.9"/>
+<path d="M650 156 C652.52 167.48 652.52 167.48 664 170 C652.52 172.52 652.52 172.52 650 184 C647.48 172.52 647.48 172.52 636 170 C647.48 167.48 647.48 167.48 650 156 Z" fill="#fffaf1" opacity="0.8"/>
+<path d="M610 440 C611.8 448.2 611.8 448.2 620 450 C611.8 451.8 611.8 451.8 610 460 C608.2 451.8 608.2 451.8 600 450 C608.2 448.2 608.2 448.2 610 440 Z" fill="#fffaf1" opacity="0.7"/>
+<circle cx="130" cy="430" r="6" fill="#fffaf1" opacity="0.5"/>
+
+
+</svg>

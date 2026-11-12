@@ -1,0 +1,54 @@
+/* Sticky CTA (new in phase 3): keeps the main action in the thumb zone while scrolling.
+   Sticks to the bottom of its container, so it stops above the footer. */
+
+.sticky-cta {
+  position: sticky;
+  bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
+  z-index: var(--z-sticky);
+  margin-top: var(--space-8);
+}
+
+.sticky-cta__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-inner-top), var(--shadow-lg);
+}
+
+.sticky-cta__info {
+  display: none;
+  flex: 1;
+  min-width: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.sticky-cta__info strong {
+  display: block;
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+}
+
+.sticky-cta__inner > .btn {
+  flex: 1;
+}
+
+@media (min-width: 48em) {
+  .sticky-cta__info {
+    display: block;
+  }
+
+  .sticky-cta__inner > .btn {
+    flex: none;
+  }
+
+  /* Detail pages already show the CTA in the header on wide screens */
+  .sticky-cta--mobile {
+    display: none;
+  }
+}

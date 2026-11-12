@@ -1,0 +1,215 @@
+/* Reveal card + handover screen + timer: the core pass-and-play pattern (PRD section 2). */
+
+.reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.reveal__player {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.reveal__player strong {
+  color: var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+
+.reveal-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: min(100%, var(--size-reveal-card));
+  aspect-ratio: 3 / 4;
+  padding: var(--space-6);
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--gradient-grape);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  box-shadow: var(--shadow-inner-top), 0 var(--space-2) 0 var(--color-grape-700), var(--shadow-lg);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  transition: transform var(--duration-base) var(--ease-bounce);
+}
+
+.reveal-card > * {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.reveal-card::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: var(--gradient-sunburst);
+}
+
+.reveal-card__cover,
+.reveal-card__face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.reveal-card__cover .icon {
+  width: var(--size-avatar-lg);
+  height: var(--size-avatar-lg);
+  stroke-width: var(--stroke-icon-bold);
+}
+
+.reveal-card__cover-text {
+  font-size: var(--text-lg);
+}
+
+.reveal-card__face {
+  display: none;
+}
+
+.reveal-card__role {
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.reveal-card__secret {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  overflow-wrap: anywhere;
+}
+
+.reveal-card__note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.reveal-card[aria-pressed="true"] {
+  background: var(--color-surface);
+  color: var(--color-text-title);
+  transform: rotate(var(--tilt-label));
+}
+
+.reveal-card[aria-pressed="true"]::before {
+  display: none;
+}
+
+.reveal-card[aria-pressed="true"] .reveal-card__cover {
+  display: none;
+}
+
+.reveal-card[aria-pressed="true"] .reveal-card__face {
+  display: flex;
+}
+
+.reveal-card--impostor[aria-pressed="true"] {
+  background: var(--color-coral-100);
+  color: var(--color-coral-700);
+}
+
+.reveal__hint {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Handover: nothing secret visible while the device changes hands */
+.handover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-panel);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.handover__eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.handover__name {
+  font-size: var(--text-4xl);
+  overflow-wrap: anywhere;
+}
+
+/* Timer */
+.timer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: var(--size-timer);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-inner-top), var(--shadow-md);
+}
+
+.timer__label {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.timer__value {
+  color: var(--color-text-number);
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer--urgent .timer__value {
+  color: var(--color-error);
+}
+
+.timer--urgent {
+  box-shadow: inset 0 0 0 var(--size-border-thick) var(--color-error), var(--shadow-md);
+}
+
+/* Hand icon on handoff screens (DESIGN.md 5.5) */
+.handover__icon {
+  display: grid;
+  place-items: center;
+  width: var(--size-avatar-lg);
+  height: var(--size-avatar-lg);
+  border-radius: var(--radius-round);
+  background: var(--color-surface);
+  color: var(--color-text-title);
+  box-shadow: var(--shadow-md);
+}
+
+.handover__icon .icon {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  stroke-width: var(--stroke-icon-bold);
+}

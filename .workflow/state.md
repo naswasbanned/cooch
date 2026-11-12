@@ -1,0 +1,26 @@
+# Workflow State
+- Fase aktif: 4
+- Status gate: menunggu audit user (migrasi React fase 4 selesai; build dan pemeriksaan TypeScript lulus)
+- Terakhir diupdate: 2026-11-11
+- Graphify: terpasang | graph terakhir diupdate: 2026-11-11 | status: sinkron untuk kode (46 dokumen dan CSS tidak terindeks; ekstraksi semantik tidak aktif)
+- Fase selesai: 1 (approve 2026-11-11), 2 (approve 2026-11-11, tanpa revisi, LOCK dibuat), 3 (approve 2026-11-11)
+- Catatan / pertanyaan terbuka:
+  - 13 halaman HTML di design/pages/. Data contoh; logika game nanti di backend (keputusan user).
+  - Game detail/setup/play adalah template (blok <!-- game: ... -->) untuk banyak game.
+  - Komponen baru fase 3: game-bar, pick-list, sticky-cta, empty-state.
+  - Butuh keputusan: bug locked card.css (tombol favorit tertutup link kartu), workaround di pages.css.
+  - Email kontak di privacy.html masih placeholder.
+  - User meminta kelanjutan kerja dan audit Phase 3 terhadap PRD.md dan DESIGN.md (2026-11-11).
+  - Narator suara mengikuti DESIGN.md: ditunda; teks selalu tersedia.
+  - Sampel HTML memvisualisasikan alur dan state, bukan menjalankan mesin game/persistensi. Jangan mengklaim fitur backend (acak peran, sesi tersimpan, Wake Lock, orientasi) sebagai terimplementasi.
+  - Audit saat ini: instance tabbar halaman dan komponen terkunci sama-sama punya 3 item sesuai DESIGN.md (Beranda, Jelajah, Atur); temuan 4 tab sebelumnya tidak benar.
+  - PRD dan DESIGN.md konflik pada narator suara; DESIGN.md menetapkan suara ditunda, teks selalu ada. Fase 3 mengikuti DESIGN.md.
+  - Game screens adalah prototipe statis sesuai keputusan user terdahulu. Acak peran, persistensi, Wake Lock, rotasi portrait, dan aturan game nyata memerlukan implementasi backend/fase berikutnya; laporkan sebagai batasan, bukan sebagai fitur selesai.
+  - Audit rekonsiliasi dan batasan prototipe dicatat di design/PERSONA-RATIONALE.md §9 dan design/CHANGELOG.md. User menyetujui fase 3 dan meminta lanjut ke fase 4.
+  - Fase 4 disetujui eksplisit user. design-baseline/ disalin dari design/ dan .graphifyignore dibuat.
+  - Graphify semantic extraction tidak tersedia tanpa API key/Claude login; user memilih code-only. Graph code update manual selesai.
+  - Workspace bukan Git repo dan .git read-only; hook Graphify tidak dapat dipasang. Update graph manual tetap diperlukan.
+  - User menyetujui lanjut memakai Graphify code-only pada 2026-11-11. Next.js runtime dibangun di app/ dengan 13 halaman JSX dan komponen React bersama.
+  - User meminta tema terang sebagai default. Tema malam hanya digunakan pada layar malam Werewolf.
+  - Fase 4 implementasi React selesai dan menunggu audit/acceptance: production build dan TypeScript lulus. Pemeriksaan visual final belum diulang setelah konversi JSX dan default tema terang. Laporan di app/MIGRATION-MAP.md.
+  - Interaksi UI halaman masih menggunakan skrip vanilla yang sudah ada dari design-baseline; parser HTML dan salinan aset di public/baseline sudah dihapus.
