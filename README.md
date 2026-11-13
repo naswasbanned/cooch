@@ -2,6 +2,8 @@
 
 **Party games for one phone.** Cooch is a mobile-first pass-and-play demo: the device moves around the table, each player gets a private reveal, and the group plays together. No accounts, no install, no backend.
 
+**Live demo:** [cooch.vercel.app](https://cooch.vercel.app)
+
 Built with Next.js 16 (App Router), React 19, TypeScript, and Motion. It ships with two complete games — **Guess the Impostor** and **Werewolf** — plus a 12-game catalog, a searchable word bank, local history, favorites, bilingual UI, and a PWA offline shell.
 
 | Guess the Impostor | Werewolf |
@@ -150,6 +152,7 @@ Verified on 2026-11-13 against the production build:
 - Full Werewolf flow at 1440×900 and 390×844 with Hunter enabled: reveal → Wolf/Doctor/Seer night → Hunter killed → Hunter shot → day vote → village win → replay: pass.
 - History stat icons stay inside their banners at 1440 and 320; compact and full desktop announcements do not overlap the phone frame at 768/1024: pass.
 - PWA `cooch-v6`: 26 precached entries, offline home with 13 cards and no broken art, offline word bank with 12 categories: pass.
+- Production smoke test at [cooch.vercel.app](https://cooch.vercel.app): phone frame and note at 1440×900, copy-link toast, game detail without the tab bar, plain mobile stage at 390×844, `cooch-v6` service worker, no console errors: pass.
 
 Earlier verification (2026-11-12): PWA offline home, cached card art, wave backgrounds, offline word-bank search, Chameleon privacy, tie/revote, hand-count voting, resume gates, favorites, setup drafts, art, and motion checks: pass.
 

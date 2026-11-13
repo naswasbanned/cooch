@@ -153,6 +153,9 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
     and full announcements do not overlap the phone frame at 768/1024: **pass**.
   - `cooch-pwa-v6.js` — `cooch-v6` cache with 26 precached entries; offline home renders
     13 cards with no broken art, offline word bank renders 12 categories: **pass**.
+  - `cooch-prod-smoke.js` — against `https://cooch.vercel.app`: phone frame and note at
+    1440×900, copy-link toast, no tab bar on game detail, plain mobile stage at 390×844,
+    `cooch-v6` service worker, no console errors: **pass**.
 - Earlier checks (2026-11-12):
 - `/tmp/opencode/cooch-impostor-flow.js` — full flow, Chameleon privacy, correct and
   wrong guesses, citizen elimination, history: **pass**.
@@ -244,16 +247,22 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
 - The global tab bar and toast stack live outside the phone scroll area so they stay fixed
   to the shell; the tab bar only mounts on the four routes that opted into it.
 
+## Deployment
+
+- Public production URL: **https://cooch.vercel.app** — Vercel project
+  `naufalaqilnasrullah2007-gmailcoms-projects/cooch`, GitHub `main` auto-deploy.
+- `1f2d63e` deployed successfully; production serves `cooch-v6`, the desktop phone stage,
+  and the bilingual note. A production smoke test at 1440×900 and 390×844 passed with no
+  console errors.
+
 ## Blockers
 
-- Vercel deployment is live, but the project URL is behind Deployment Protection. Public
-  access needs the user to disable protection or confirm the canonical domain.
+- None.
 
 ## Next steps (post-demo)
 
-1. Confirm the Vercel production URL and disable Deployment Protection for public access.
-2. Replace the placeholder contact email and review privacy copy for launch.
-3. Add a backend adapter behind the existing game-engine/state boundary if online rooms,
+1. Replace the placeholder contact email and review privacy copy for launch.
+2. Add a backend adapter behind the existing game-engine/state boundary if online rooms,
    accounts, or cross-device history are wanted.
-4. Move the external Playwright checks into the repository and add CI.
-5. Implement one or more “soon” games using the registry + engine pattern.
+3. Move the external Playwright checks into the repository and add CI.
+4. Implement one or more “soon” games using the registry + engine pattern.
