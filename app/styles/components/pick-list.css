@@ -29,6 +29,11 @@
   font-weight: var(--font-weight-semibold);
   box-shadow: var(--shadow-inner-top), var(--shadow-sm);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
   transition: background-color var(--duration-fast) var(--ease-standard);
 }
 

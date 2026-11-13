@@ -32,7 +32,10 @@
     box-shadow var(--duration-fast) var(--ease-standard),
     filter var(--duration-fast) var(--ease-standard);
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
 }
 
 .btn:hover {

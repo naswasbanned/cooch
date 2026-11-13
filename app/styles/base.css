@@ -75,6 +75,11 @@ button, input, select, textarea {
 
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
 }
 
 :focus-visible {

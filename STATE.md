@@ -82,6 +82,17 @@ localStorage persistence, PWA, and no false claims about backend features.
   32px minimum thumb, and only the thumb takes pointer events so taps pass through.
 - Added the bilingual `scrollBar` label (`Gulir halaman` / `Page scroll`).
 
+### Hold/tap selection polish (revision)
+- Every `<button>` now suppresses text selection, the iOS long-press callout, drag
+  ghosting, and the mobile tap highlight (`-webkit-user-select`, `user-select`,
+  `-webkit-touch-callout`, `-webkit-tap-highlight-color`, `-webkit-user-drag`).
+- `.btn` also covers link-styled buttons (`LinkButton`), and the holdable surfaces
+  `.btn--hold`, `.reveal-card`, and `.pick` cards carry the same treatment, including
+  their child text. Ordinary page copy stays selectable.
+- Verified that drag-selecting a pick card, reveal card, hold button, or normal button
+  leaves the selection empty, while body text still selects; holding `.btn--hold` still
+  advances the game.
+
 ### Art pass
 - Hand-authored 18 SVGs in `public/art/`: 12 game thumbnails (4:3) in
   `public/art/games/`, three wavy backgrounds (`bg-waves-sky.svg`,
@@ -165,6 +176,9 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
     not blocked, mobile rails visible: **pass**.
   - `cooch-scrollbar-lang.js` — scrollbar ARIA and translated label survive an ID→EN
     switch: **pass**.
+  - `cooch-selection-check.js` — computed selection/callout/tap-highlight/drag styles on
+    buttons, hold buttons, pick cards, and reveal cards; drag selection stays empty on all
+    of them; ordinary body text still selects; hold-to-confirm still advances: **pass**.
   - `cooch-impostor-flow.js` — setup → deal → clue → discussion → secret vote → result →
     replay at 1440×900 and 390×844: **pass**.
   - `cooch-impostor-guess-flow.js` — 9 players/3 impostors, wrong guess → next round →

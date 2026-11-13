@@ -43,6 +43,7 @@
   text-align: center;
   box-shadow: var(--shadow-inner-top), 0 var(--space-2) 0 var(--color-grape-700), var(--shadow-lg);
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
