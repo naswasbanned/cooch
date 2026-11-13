@@ -159,7 +159,7 @@ Verified on 2026-11-13 against the production build:
 - PWA `cooch-v6`: 26 precached entries, offline home with 13 cards and no broken art, offline word bank with 12 categories: pass.
 - Production smoke test at [cooch.vercel.app](https://cooch.vercel.app): phone frame and note at 1440×900, copy-link toast, game detail without the tab bar, plain mobile stage at 390×844, `cooch-v6` service worker, no console errors: pass.
 - Production scrollbar check: phone rail visible with the thumb as the hit target, vertical drag `0 → 1267`, keyboard Home/End, shots rail visible with native scrollbar hidden, horizontal drag `0 → 201`, phone rail absent at 390px: pass.
-- Selection check: buttons, hold buttons, pick cards, and reveal cards expose `user-select: none`, transparent tap highlight, and no drag ghost; drag selection stays empty on all of them, ordinary page text still selects, and hold-to-confirm still advances: pass.
+- Selection check at 1440×900 and on production: buttons, hold buttons, pick cards, and reveal cards expose `user-select: none`, transparent tap highlight, and no drag ghost; drag selection stays empty on all of them, ordinary page text still selects, and hold-to-confirm still advances: pass.
 
 Earlier verification (2026-11-12): PWA offline home, cached card art, wave backgrounds, offline word-bank search, Chameleon privacy, tie/revote, hand-count voting, resume gates, favorites, setup drafts, art, and motion checks: pass.
 

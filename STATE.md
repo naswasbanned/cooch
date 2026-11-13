@@ -292,9 +292,10 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
 
 - Public production URL: **https://cooch.vercel.app** — Vercel project
   `naufalaqilnasrullah2007-gmailcoms-projects/cooch`, GitHub `main` auto-deploy.
-- The app commit `cad0536` deployed successfully; production serves `cooch-v6`, the
-  desktop phone stage, the bilingual note, and the custom candy scrollbars. Production
-  smoke and scrollbar checks at 1440×900 and 390×844 passed with no console errors.
+- The app commit `733f193` deployed successfully; production serves `cooch-v6`, the
+  desktop phone stage, the bilingual note, custom candy scrollbars, and selection-safe
+  buttons/holdable cards. Production smoke, scrollbar, and selection checks at 1440×900
+  and 390×844 passed with no console errors.
 
 ## Blockers
 
