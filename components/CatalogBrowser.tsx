@@ -10,6 +10,7 @@ import { EmptyState } from "./Section";
 import { GameCard } from "./GameCard";
 import { Icon } from "./Icon";
 import { Modal } from "./Modal";
+import { SideScroll } from "./SideScroll";
 
 type CategoryKey =
   | "all"
@@ -112,7 +113,7 @@ export function CatalogBrowser({ variant = "home" }: { variant?: "home" | "brows
           ) : null}
         </div>
         <div className="page-section--tight">
-          <div className="chip-row" role="group" aria-label={t("browse")}>
+          <SideScroll className="chip-row" role="group" aria-label={t("browse")}>
             {CATEGORIES.map((item) => (
               <Chip
                 key={item.value}
@@ -123,7 +124,7 @@ export function CatalogBrowser({ variant = "home" }: { variant?: "home" | "brows
                 {t(item.key)}
               </Chip>
             ))}
-          </div>
+          </SideScroll>
         </div>
       </section>
 

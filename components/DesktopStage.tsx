@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, type ReactNode } from "react";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
+import { PhoneScrollbar } from "@/components/PhoneScrollbar";
 import { Tabbar } from "@/components/Tabbar";
 import { useSettings } from "@/lib/settings";
 import { ToastViewport, useToast } from "@/lib/toast";
@@ -60,9 +61,10 @@ export function DesktopStage({ children }: { children: ReactNode }) {
       <div className="phone-shell">
         <span className="phone-shell__speaker" aria-hidden="true" />
         <span className="phone-shell__camera" aria-hidden="true" />
-        <div className="phone-screen" ref={screenRef}>
+        <div className="phone-screen" id="phone-screen" ref={screenRef}>
           {children}
         </div>
+        <PhoneScrollbar targetRef={screenRef} resetKey={pathname} />
         <Tabbar />
         <ToastViewport />
       </div>

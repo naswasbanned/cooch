@@ -10,6 +10,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { PickList } from "@/components/PickList";
 import { RevealCard } from "@/components/RevealCard";
 import { SectionHeading } from "@/components/Section";
+import { SideScroll } from "@/components/SideScroll";
 import { SiteShell } from "@/components/SiteShell";
 import { Stepper } from "@/components/Stepper";
 import { useSettings } from "@/lib/settings";
@@ -78,13 +79,13 @@ export default function GalleryPage() {
             <LabelTag tone="sky">Sky</LabelTag>
             <LabelTag tone="grape">Grape</LabelTag>
           </div>
-          <div className="chip-row" role="group" aria-label={t("galleryBadges")}>
+          <SideScroll className="chip-row" role="group" aria-label={t("galleryBadges")}>
             {["party", "kuis", "solo", "duo"].map((value) => (
               <Chip key={value} value={value} pressed={chip === value} onClick={() => setChip(value)}>
                 {value}
               </Chip>
             ))}
-          </div>
+          </SideScroll>
         </section>
 
         <section className="page-section" aria-labelledby="g-form">

@@ -68,6 +68,20 @@ localStorage persistence, PWA, and no false claims about backend features.
 - History stat labels were shortened and the narrow banner was tightened so the decorative icons
   stay inside their cards at 320px.
 
+### Custom scrollbars (revision)
+- The phone screen hides the native scrollbar and uses `components/PhoneScrollbar.tsx`: a
+  floating candy rail with a sun-gradient thumb, dotted hover track, grip marks, and
+  hover/drag states that match the site's cream/sun/cocoa palette.
+- The phone rail supports pointer drag, Arrow/Page/Home/End keys, and ARIA
+  `scrollbar` semantics. It re-measures on content, resize, font, route, and language
+  changes, and sits above the sticky navbar (`--z-dropdown`) so the thumb is the topmost
+  hit target while dialogs and toasts stay above it.
+- Horizontal rows use `components/SideScroll.tsx`, a reusable wrapper with a draggable
+  candy rail: home recently played, game screenshots, catalog category chips, and gallery
+  chips. Native horizontal scrollbars are hidden; rails work on mobile and desktop, keep a
+  32px minimum thumb, and only the thumb takes pointer events so taps pass through.
+- Added the bilingual `scrollBar` label (`Gulir halaman` / `Page scroll`).
+
 ### Art pass
 - Hand-authored 18 SVGs in `public/art/`: 12 game thumbnails (4:3) in
   `public/art/games/`, three wavy backgrounds (`bg-waves-sky.svg`,
@@ -142,6 +156,15 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
     no horizontal overflow, phone-scroll and fixed tab bar, route scroll reset, modal fit,
     toast containment, night stage, short desktop viewports, 320px, nav menu, sticky CTA:
     **pass**.
+  - `cooch-scrollbar-check.js` — phone rail visible and tracking, thumb drag, keyboard
+    Home/End, route reset, native horizontal scrollbar hidden, custom shots rail visible,
+    rail hidden at 390px: **pass**.
+  - `cooch-scrollbar-drag.js` — horizontal shots drag `0 → 241`, vertical phone drag
+    `0 → 1267`: **pass**.
+  - `cooch-sidescroll-check.js` — shots/card/chip rails visible and tracking, chip clicks
+    not blocked, mobile rails visible: **pass**.
+  - `cooch-scrollbar-lang.js` — scrollbar ARIA and translated label survive an ID→EN
+    switch: **pass**.
   - `cooch-impostor-flow.js` — setup → deal → clue → discussion → secret vote → result →
     replay at 1440×900 and 390×844: **pass**.
   - `cooch-impostor-guess-flow.js` — 9 players/3 impostors, wrong guess → next round →
@@ -246,6 +269,10 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
   for the stage/frame and reduced-motion preferences.
 - The global tab bar and toast stack live outside the phone scroll area so they stay fixed
   to the shell; the tab bar only mounts on the four routes that opted into it.
+- Scrollbars are part of the visual language, not browser chrome: the phone uses a floating
+  candy rail and horizontal rows use a compact draggable rail, both in sun/cocoa tones.
+  Native rails are hidden so the phone keeps its exact width and the rails stay consistent
+  across platforms.
 
 ## Deployment
 

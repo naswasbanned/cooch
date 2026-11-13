@@ -10,6 +10,7 @@ import { GameCard } from "@/components/GameCard";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/Section";
+import { SideScroll } from "@/components/SideScroll";
 import { SiteShell } from "@/components/SiteShell";
 import { getGame, similarGames } from "@/lib/games";
 import { useSettings } from "@/lib/settings";
@@ -229,7 +230,7 @@ export function GameDetail({ slug }: { slug: string }) {
         {shots.length ? (
           <Reveal as="section" className="page-section" labelledBy="shots-title">
             <SectionHeading title={t("gameScreens")} id="shots-title" />
-            <div className="shots">
+            <SideScroll className="shots">
               {shots.map((shot, index) => (
                 <figure className="shot" key={index}>
                   <div
@@ -242,7 +243,7 @@ export function GameDetail({ slug }: { slug: string }) {
                   <figcaption>{t(shot.caption)}</figcaption>
                 </figure>
               ))}
-            </div>
+            </SideScroll>
           </Reveal>
         ) : null}
 

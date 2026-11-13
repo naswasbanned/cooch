@@ -19,6 +19,7 @@ export const txt = {
   navSettingsShort: { id: "Atur", en: "Settings" },
   mainNav: { id: "Utama", en: "Main" },
   bottomNav: { id: "Navigasi bawah", en: "Bottom navigation" },
+  scrollBar: { id: "Gulir halaman", en: "Page scroll" },
   desktopBadge: { id: "Terbaik di HP", en: "Best on a phone" },
   desktopShort: {
     id: "Buka halaman ini di ponsel.",

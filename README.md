@@ -103,6 +103,8 @@ Both games save an active session, so a reload can resume the current phase. Fin
 app/                    Next.js routes, layout, manifest, global styles
 components/             UI, game screens, setup panels, motion primitives
 components/DesktopStage.tsx  Phone shell, desktop note, route scroll reset
+components/PhoneScrollbar.tsx  Draggable overlay rail for the phone screen
+components/SideScroll.tsx  Horizontal scroller with a custom draggable rail
 components/play/        Impostor and Werewolf screen flows
 components/motion/      MotionProvider, Reveal, reduced-motion hook
 app/styles/desktop.css  Stage/frame, fixed tab bar and toast, modal sizing
@@ -130,6 +132,7 @@ The game engines in `lib/game/` are deliberately pure state transitions. The UI 
 - Page and section reveals, card hover/tap, nav and toast transitions, hold/reveal feedback, phase changes, and result celebrations all use Motion.
 - The app’s **Kurangi gerak / Reduce motion** setting and the OS `prefers-reduced-motion` preference are both respected. Transform animations, hover lifts, floating loops, and gesture effects are disabled while content stays visible and usable.
 - CSS still handles simple hover/press states, focus rings, and the chunky button edge.
+- The phone and horizontal rows use custom candy rails instead of native scrollbars. The phone rail supports drag and Arrow/Page/Home/End keys, exposes ARIA `scrollbar` semantics, and is labelled in both languages; horizontal rails are draggable and leave taps to the cards underneath.
 - Semantic headings, labels, live regions, a skip link, and visible focus states are present throughout the flows.
 
 ## PWA
@@ -147,6 +150,7 @@ Verified on 2026-11-13 against the production build:
 - `npm run lint` — 0 errors, 21 intentional `react-hooks/set-state-in-effect` warnings (localStorage hydration and pass-and-play stage resets).
 - `npm run build` — pass; all routes prerender or render as expected.
 - Desktop regression at 1440×900, short 1024/768 viewports, and 320×844: phone frame and mobile stage, no horizontal overflow, fixed tab bar, route scroll reset, modal fit, toast containment, night stage, nav menu, and sticky CTA: pass.
+- Custom scrollbars at 1440×900 and 390×844: phone rail visible/tracking, thumb drag (vertical `0 → 1267`), keyboard Home/End, route reset, native rails hidden, shots/card/chip rails visible and draggable (horizontal `0 → 241`), chip clicks not blocked, mobile rails visible, ARIA label survives ID→EN: pass.
 - Full Impostor flow at 1440×900 and 390×844: setup → deal → clue → discussion → secret vote → result → replay: pass.
 - Impostor 9-player/3-impostor guess flow: wrong guess → next round → correct guess → evil win, session clear, and history entry: pass.
 - Full Werewolf flow at 1440×900 and 390×844 with Hunter enabled: reveal → Wolf/Doctor/Seer night → Hunter killed → Hunter shot → day vote → village win → replay: pass.

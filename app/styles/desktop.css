@@ -10,7 +10,8 @@
   display: contents;
 }
 
-.desktop-note {
+.desktop-note,
+.phone-scrollbar {
   display: none;
 }
 
@@ -224,6 +225,135 @@
     top: calc(var(--phone-bezel) + var(--space-4));
     width: calc(var(--phone-screen-w) - var(--space-4));
     max-width: none;
+  }
+
+  /* A floating candy rail instead of the browser scrollbar. The track is
+     decorative; only the thumb takes pointer events, so it never blocks taps
+     on content near the screen edge. */
+  .phone-scrollbar {
+    position: absolute;
+    top: calc(var(--phone-bezel) + var(--space-6));
+    bottom: calc(var(--phone-bezel) + var(--space-6));
+    right: calc(var(--phone-bezel) + var(--space-1));
+    /* Above the sticky navbar and tab bar (--z-sticky) so the thumb is the
+       topmost hit target, but below dropdowns, dialogs and toasts. */
+    z-index: var(--z-dropdown);
+    display: block;
+    width: 0.875rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--duration-base) var(--ease-standard);
+  }
+
+  .phone-scrollbar[data-visible="true"] {
+    opacity: 0.6;
+  }
+
+  .phone-scrollbar:hover,
+  .phone-scrollbar:focus-within,
+  .phone-scrollbar.is-dragging,
+  .phone-scrollbar:focus-visible {
+    opacity: 1;
+  }
+
+  .phone-scrollbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-pill);
+    background-image: radial-gradient(
+      circle,
+      rgb(var(--rgb-ink) / 0.22) 1px,
+      transparent 1.1px
+    );
+    background-position: center;
+    background-size: 4px 8px;
+    opacity: 0;
+    transition: opacity var(--duration-base) var(--ease-standard);
+  }
+
+  .phone-scrollbar:hover::before,
+  .phone-scrollbar:focus-within::before,
+  .phone-scrollbar.is-dragging::before {
+    opacity: 0.55;
+  }
+
+  .phone-scrollbar__thumb {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0.625rem;
+    min-height: 2.25rem;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(
+      180deg,
+      var(--color-sun-300),
+      var(--color-sun-500)
+    );
+    box-shadow:
+      inset 0 1px 0 rgb(var(--rgb-white) / 0.7),
+      0 1px 4px rgb(var(--rgb-warm-shadow) / 0.35);
+    cursor: grab;
+    pointer-events: auto;
+    touch-action: none;
+    transform: translate3d(-50%, 0, 0);
+    transition:
+      width var(--duration-fast) var(--ease-standard),
+      background var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
+    will-change: transform, height;
+  }
+
+  .phone-scrollbar__thumb:hover,
+  .phone-scrollbar.is-dragging .phone-scrollbar__thumb {
+    width: 0.75rem;
+    background: linear-gradient(
+      180deg,
+      var(--color-sun-400),
+      var(--color-sun-600)
+    );
+    box-shadow:
+      inset 0 1px 0 rgb(var(--rgb-white) / 0.75),
+      0 2px 8px rgb(var(--rgb-warm-shadow) / 0.45);
+  }
+
+  .phone-scrollbar.is-dragging .phone-scrollbar__thumb {
+    cursor: grabbing;
+  }
+
+  .phone-scrollbar__grip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 0.75rem;
+    border-radius: var(--radius-pill);
+    background: repeating-linear-gradient(
+      180deg,
+      rgb(var(--rgb-ink) / 0.32) 0 2px,
+      transparent 2px 5px
+    );
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity var(--duration-fast) var(--ease-standard);
+  }
+
+  .phone-scrollbar:hover .phone-scrollbar__grip,
+  .phone-scrollbar:focus-visible .phone-scrollbar__grip,
+  .phone-scrollbar.is-dragging .phone-scrollbar__grip {
+    opacity: 1;
+  }
+
+  .phone-scrollbar:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .phone-scrollbar:focus-visible .phone-scrollbar__thumb {
+    box-shadow:
+      0 0 0 var(--size-ring-offset) var(--color-surface),
+      0 0 0 calc(var(--size-ring-offset) + var(--size-ring)) var(--color-focus),
+      inset 0 1px 0 rgb(var(--rgb-white) / 0.7);
   }
 
   .modal {

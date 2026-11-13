@@ -6,6 +6,7 @@ import { GameCard } from "@/components/GameCard";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/Section";
+import { SideScroll } from "@/components/SideScroll";
 import { SiteShell } from "@/components/SiteShell";
 import { getGame, LIVE_GAMES } from "@/lib/games";
 import { useHistory } from "@/lib/history";
@@ -125,11 +126,11 @@ export default function HomePage() {
               action={{ label: t("navHistory"), href: "/history" }}
               id="recent-title"
             />
-            <div className="card-row">
+            <SideScroll className="card-row">
               {recentGames.map((game, index) => (
                 <GameCard key={game!.slug} game={game!} index={index} />
               ))}
-            </div>
+            </SideScroll>
           </section>
         ) : null}
 
