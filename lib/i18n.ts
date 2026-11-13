@@ -19,6 +19,29 @@ export const txt = {
   navSettingsShort: { id: "Atur", en: "Settings" },
   mainNav: { id: "Utama", en: "Main" },
   bottomNav: { id: "Navigasi bawah", en: "Bottom navigation" },
+  desktopBadge: { id: "Terbaik di HP", en: "Best on a phone" },
+  desktopShort: {
+    id: "Buka halaman ini di ponsel.",
+    en: "Open this page on your phone.",
+  },
+  desktopTitle: {
+    id: "Cooch dibuat untuk dimainkan di HP.",
+    en: "Cooch is made to be played on a phone.",
+  },
+  desktopBody: {
+    id: "Pass-and-play berarti HP berpindah dari tangan ke tangan. Buka halaman ini di ponsel untuk pengalaman penuh.",
+    en: "Pass-and-play means the phone moves from hand to hand. Open this page on your phone for the full experience.",
+  },
+  desktopTry: {
+    id: "Atau coba langsung di bingkai ini — semua game tetap bisa dimainkan.",
+    en: "Or try it right here in the frame — every game still works.",
+  },
+  copyLink: { id: "Salin tautan", en: "Copy link" },
+  linkCopied: { id: "Tautan disalin", en: "Link copied" },
+  copyFailed: {
+    id: "Tidak bisa menyalin. Salin URL dari bilah alamat.",
+    en: "Couldn't copy. Copy the URL from the address bar.",
+  },
   language: { id: "Bahasa", en: "Language" },
   menu: { id: "Buka menu", en: "Open menu" },
   searchGame: { id: "Cari game", en: "Search games" },
@@ -707,7 +730,7 @@ export const txt = {
   },
   gamesPlayed: { id: "Game\ndimainkan", en: "Games\nplayed" },
   longestGame: { id: "Game\nterlama", en: "Longest\ngame" },
-  winRate: { id: "Kemenangan\nwarga", en: "Citizen\nwins" },
+  winRate: { id: "Warga\nmenang", en: "Citizen\nwins" },
   streakTitle: { id: "Main beruntun", en: "Play streak" },
   daysThisWeek: { id: "{n} hari minggu ini", en: "{n} days this week" },
   playedDaysAria: { id: "Main {n} dari 7 hari", en: "Played {n} of 7 days" },

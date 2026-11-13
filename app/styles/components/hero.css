@@ -92,7 +92,7 @@
   transform: rotate(calc(var(--tilt-card) * -2));
 }
 
-@media (min-width: 48em) {
+@container app (min-width: 48em) {
   .hero {
     padding: var(--space-16) var(--space-12);
   }

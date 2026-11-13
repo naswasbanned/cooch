@@ -15,6 +15,7 @@ interface ToastItem {
 
 interface ToastContextValue {
   showToast: (message: string, tone?: ToastTone) => void;
+  toasts: ToastItem[];
 }
 
 const ToastContext = createContext<ToastContextValue | null>(null);
@@ -33,29 +34,42 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <ToastContext.Provider value={{ showToast }}>
+    <ToastContext.Provider value={{ showToast, toasts }}>
       {children}
-      <div className="toast-region" role="status" aria-live="polite">
-        <AnimatePresence initial={false}>
-          {toasts.map((toast) => (
-            <m.div
-              key={toast.id}
-              className={`toast toast--${toast.tone}`}
-              initial={{ opacity: 0, y: -18, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -12, scale: 0.97 }}
-              transition={{ duration: 0.24, ease: MOTION_EASE }}
-            >
-              <Icon
-                name={toast.tone === "success" ? "i-check-circle" : toast.tone === "error" ? "i-alert" : "i-info"}
-                aria-hidden
-              />
-              <span className="toast__text">{toast.message}</span>
-            </m.div>
-          ))}
-        </AnimatePresence>
-      </div>
     </ToastContext.Provider>
+  );
+}
+
+/**
+ * The toast stack lives outside the phone screen so it stays fixed above the
+ * app while the screen scrolls. On mobile it is fixed to the viewport.
+ */
+export function ToastViewport() {
+  const context = useContext(ToastContext);
+  if (!context) throw new Error("ToastViewport must be used inside ToastProvider");
+  const { toasts } = context;
+
+  return (
+    <div className="toast-region" role="status" aria-live="polite">
+      <AnimatePresence initial={false}>
+        {toasts.map((toast) => (
+          <m.div
+            key={toast.id}
+            className={`toast toast--${toast.tone}`}
+            initial={{ opacity: 0, y: -18, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -12, scale: 0.97 }}
+            transition={{ duration: 0.24, ease: MOTION_EASE }}
+          >
+            <Icon
+              name={toast.tone === "success" ? "i-check-circle" : toast.tone === "error" ? "i-alert" : "i-info"}
+              aria-hidden
+            />
+            <span className="toast__text">{toast.message}</span>
+          </m.div>
+        ))}
+      </AnimatePresence>
+    </div>
   );
 }
 

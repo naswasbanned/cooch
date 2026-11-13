@@ -585,7 +585,7 @@ html[data-text-size="lg"] {
 }
 
 /* ---------- Responsive ---------- */
-@media (min-width: 48em) {
+@container app (min-width: 48em) {
   .resume > .btn {
     flex: none;
   }
@@ -725,7 +725,7 @@ html[data-motion="reduce"] *::after {
   color: inherit;
 }
 
-@media (min-width: 48em) {
+@container app (min-width: 48em) {
   .card-row {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -735,7 +735,7 @@ html[data-motion="reduce"] *::after {
   }
 }
 
-@media (min-width: 80em) {
+@container app (min-width: 80em) {
   .card-row {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

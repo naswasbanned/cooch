@@ -57,8 +57,3 @@
   height: var(--size-icon-md);
 }
 
-@media (min-width: 48em) {
-  .tabbar:not(.tabbar--static) {
-    display: none;
-  }
-}

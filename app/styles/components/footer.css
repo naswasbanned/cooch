@@ -72,7 +72,7 @@
   font-size: var(--text-sm);
 }
 
-@media (max-width: 47.99em) {
+@container app (max-width: 47.99em) {
   .footer__grid {
     text-align: center;
   }
@@ -96,7 +96,7 @@
   }
 }
 
-@media (min-width: 48em) {
+@container app (min-width: 48em) {
   .footer {
     padding-bottom: var(--space-10);
   }

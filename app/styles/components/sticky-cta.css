@@ -38,7 +38,7 @@
   flex: 1;
 }
 
-@media (min-width: 48em) {
+@container app (min-width: 48em) {
   .sticky-cta__info {
     display: block;
   }

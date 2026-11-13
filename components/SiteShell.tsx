@@ -7,7 +7,6 @@ import { MOTION_EASE } from "@/components/motion/Reveal";
 import { useSettings } from "@/lib/settings";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
-import { Tabbar } from "./Tabbar";
 
 /**
  * Page chrome shared by every non-play route. Play screens own their own
@@ -38,7 +37,6 @@ export function SiteShell({
         {children}
       </m.div>
       <Footer noTabbar={!tabbar} />
-      {tabbar ? <Tabbar /> : null}
     </>
   );
 }

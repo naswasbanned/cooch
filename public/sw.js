@@ -3,7 +3,7 @@
  * The app is a client-side demo: game state and settings live in localStorage,
  * so caching the shell is enough to keep a session running offline.
  */
-const CACHE = "cooch-v5";
+const CACHE = "cooch-v6";
 const PRECACHE = [
   "/",
   "/games",

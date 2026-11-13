@@ -1,7 +1,7 @@
 # STATE — Cooch Next.js Demo
 
-- Status: complete (frontend demo + art pass + Motion pass)
-- Last update: 2026-11-12
+- Status: complete (frontend demo + art pass + Motion pass + desktop phone stage)
+- Last update: 2026-11-13
 - Mission: `MISSION.md`
 - Source design: `design/` · Product notes: `PRD.md`, `DESIGN.md`
 
@@ -51,6 +51,22 @@ localStorage persistence, PWA, and no false claims about backend features.
   for future additions; custom categories remain available in Settings.
 - Footer text and link groups are centered below 768px (brand, both link columns, and the
   bottom row), while tablet/desktop keep the left-aligned layout.
+
+### Desktop phone stage (revision)
+- Cooch stays a phone-width app on desktop: `components/DesktopStage.tsx` wraps every route in a
+  physical phone shell at ≥768px instead of stretching the mobile layout across the viewport.
+- A bilingual announcement sits beside the frame at ≥1024px and becomes a compact badge at
+  768–1023px. It explains pass-and-play and offers a copy-link action with a toast.
+- App breakpoints are now container queries keyed to `.phone-screen`, so layouts respond to the
+  phone width rather than the desktop viewport. Viewport media queries remain only for the stage
+  and frame itself.
+- The global tab bar and toast viewport moved into the phone shell, outside the scrolling screen;
+  the tab bar only appears on `/`, `/games`, `/settings`, and `/word-bank`. Route changes reset
+  the phone scroll position.
+- Dialogs are constrained to the phone screen, the stage gets a dark night-theme background, and
+  the compact announcement no longer overlaps the frame at 768px.
+- History stat labels were shortened and the narrow banner was tightened so the decorative icons
+  stay inside their cards at 320px.
 
 ### Art pass
 - Hand-authored 18 SVGs in `public/art/`: 12 game thumbnails (4:3) in
@@ -108,7 +124,7 @@ localStorage persistence, PWA, and no false claims about backend features.
 - localStorage keys in `lib/storage.ts`: settings, favorites, history, active session,
   per-game setup drafts. Clear-local-data removes all `cooch.*` keys.
 - `app/manifest.ts`, `app/icon.svg`, `public/sw.js`; service worker registration only in
-  production. Cache `cooch-v5` precaches the main pages, the three wave SVGs, all 12 game
+  production. Cache `cooch-v6` precaches the main pages, the three wave SVGs, all 12 game
   thumbnails, the empty-state/404 illustrations, `/icon.svg`, and the manifest; offline
   reload is verified after one controlled visit.
 - No accounts, no network calls, no analytics.
@@ -121,6 +137,23 @@ Commands:
 - `npm run build` — pass; all routes prerender/SSG as expected.
 
 Browser checks (Playwright, Chromium, production build at `http://localhost:3100`):
+- 2026-11-13 desktop revision:
+  - `cooch-regression.js` — route sweep at 1440×900 and 390×844, phone frame/mobile stage,
+    no horizontal overflow, phone-scroll and fixed tab bar, route scroll reset, modal fit,
+    toast containment, night stage, short desktop viewports, 320px, nav menu, sticky CTA:
+    **pass**.
+  - `cooch-impostor-flow.js` — setup → deal → clue → discussion → secret vote → result →
+    replay at 1440×900 and 390×844: **pass**.
+  - `cooch-impostor-guess-flow.js` — 9 players/3 impostors, wrong guess → next round →
+    correct guess → evil win, session clear, history entry: **pass**.
+  - `cooch-werewolf-flow.js` — Hunter enabled; reveal → Wolf/Doctor/Seer night → Hunter
+    killed → Hunter shot → day vote → village win → replay at 1440×900 and 390×844:
+    **pass**.
+  - `cooch-fix-check.js` — history stat icons stay inside banners at 1440 and 320; compact
+    and full announcements do not overlap the phone frame at 768/1024: **pass**.
+  - `cooch-pwa-v6.js` — `cooch-v6` cache with 26 precached entries; offline home renders
+    13 cards with no broken art, offline word bank renders 12 categories: **pass**.
+- Earlier checks (2026-11-12):
 - `/tmp/opencode/cooch-impostor-flow.js` — full flow, Chameleon privacy, correct and
   wrong guesses, citizen elimination, history: **pass**.
 - `/tmp/opencode/cooch-werewolf-targeted.js` — pause/alive/peek, night theme reset,
@@ -204,15 +237,23 @@ Browser checks (Playwright, Chromium, production build at `http://localhost:3100
   card gestures, nav/toast transitions, phase changes, and result celebrations.
 - Reduced motion is checked in two layers: MotionConfig skips transform animations, and
   `useMotionReduced()` disables gestures and loops that MotionConfig does not cover.
+- Desktop is intentionally a phone stage, not a wide layout: the app keeps its mobile
+  structure inside a phone frame and tells guests to open it on a real phone. App
+  breakpoints use `@container app` on `.phone-screen`; viewport media queries are reserved
+  for the stage/frame and reduced-motion preferences.
+- The global tab bar and toast stack live outside the phone scroll area so they stay fixed
+  to the shell; the tab bar only mounts on the four routes that opted into it.
 
 ## Blockers
 
-- None.
+- Vercel deployment is live, but the project URL is behind Deployment Protection. Public
+  access needs the user to disable protection or confirm the canonical domain.
 
 ## Next steps (post-demo)
 
-1. Replace the placeholder contact email and review privacy copy for launch.
-2. Add a backend adapter behind the existing game-engine/state boundary if online rooms,
+1. Confirm the Vercel production URL and disable Deployment Protection for public access.
+2. Replace the placeholder contact email and review privacy copy for launch.
+3. Add a backend adapter behind the existing game-engine/state boundary if online rooms,
    accounts, or cross-device history are wanted.
-3. Move the external Playwright checks into the repository and add CI.
-4. Implement one or more “soon” games using the registry + engine pattern.
+4. Move the external Playwright checks into the repository and add CI.
+5. Implement one or more “soon” games using the registry + engine pattern.

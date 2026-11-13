@@ -108,3 +108,21 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
 }
+
+/* At 320px the two-column cards get tight; trim the banner so the label and
+   its decorative icon both stay inside the card. */
+@container app (max-width: 22.5em) {
+  .stat-card {
+    padding-inline: var(--space-2);
+  }
+
+  .stat-card__banner {
+    padding-inline: var(--space-2);
+    font-size: var(--text-base);
+  }
+
+  .stat-card__banner .icon {
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
+  }
+}

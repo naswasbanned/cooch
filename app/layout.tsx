@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import type { ReactNode } from "react";
+import { DesktopStage } from "@/components/DesktopStage";
 import { IconSprite } from "@/components/IconSprite";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { ServiceWorkerRegister } from "@/components/Pwa";
@@ -67,8 +68,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <HistoryProvider>
                 <ToastProvider>
                   <IconSprite />
-                  {children}
-                  <ServiceWorkerRegister />
+                  <DesktopStage>
+                    {children}
+                    <ServiceWorkerRegister />
+                  </DesktopStage>
                 </ToastProvider>
               </HistoryProvider>
             </FavoritesProvider>

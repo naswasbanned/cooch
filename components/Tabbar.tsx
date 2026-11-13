@@ -15,6 +15,15 @@ const ITEMS = [
 export function Tabbar() {
   const pathname = usePathname();
   const { t } = useSettings();
+
+  // The tab bar is global now; these are the routes that opted into it.
+  const show =
+    pathname === "/" ||
+    pathname === "/games" ||
+    pathname === "/settings" ||
+    pathname === "/word-bank";
+  if (!show) return null;
+
   return (
     <nav className="tabbar" aria-label={t("bottomNav")}>
       {ITEMS.map((item) => {

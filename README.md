@@ -10,7 +10,7 @@ Built with Next.js 16 (App Router), React 19, TypeScript, and Motion. It ships w
 
 ## Status
 
-Demo complete. Two live games, ten catalog entries marked “soon”, and a production build that passes typecheck, lint, and all browser regression checks.
+Demo complete. Two live games, ten catalog entries marked “soon”, and a production build that passes typecheck, lint, and all browser regression checks. On desktop the app stays inside a phone frame with a bilingual reminder to open it on a phone.
 
 ## Features
 
@@ -24,6 +24,7 @@ Demo complete. Two live games, ten catalog entries marked “soon”, and a prod
 - **PWA offline shell** — manifest, service worker, precached pages and art, offline home and word-bank search.
 - **Motion with restraint** — page/section reveals, card feedback, nav and toast transitions, phase changes, and result celebrations.
 - **Hand-authored art** — 12 game thumbnails, wave backgrounds, confetti, empty-state, and 404 illustrations in `public/art/`.
+- **Desktop phone stage** — on wide screens Cooch stays at phone width inside a phone mockup, with a bilingual “best on a phone” note and a copy-link action. The app itself remains mobile-first.
 
 ## Quick start
 
@@ -48,6 +49,10 @@ Use a different port if needed:
 ```bash
 npm run start -- -p 3100
 ```
+
+## Desktop view
+
+Cooch is a pass-and-play phone game, so the desktop site does not stretch the mobile layout across the screen. At 768px and wider the app sits inside a phone shell; from 1024px a bilingual note explains that the full experience is on a phone and offers a copy-link button. The app inside the frame is fully interactive, so the demo can still be tried on a desktop. Layout breakpoints are container queries on `.phone-screen`, not viewport media queries.
 
 ## Scripts
 
@@ -95,8 +100,10 @@ Both games save an active session, so a reload can resume the current phase. Fin
 ```text
 app/                    Next.js routes, layout, manifest, global styles
 components/             UI, game screens, setup panels, motion primitives
+components/DesktopStage.tsx  Phone shell, desktop note, route scroll reset
 components/play/        Impostor and Werewolf screen flows
 components/motion/      MotionProvider, Reveal, reduced-motion hook
+app/styles/desktop.css  Stage/frame, fixed tab bar and toast, modal sizing
 lib/game/               Pure typed game engines and state transitions
 lib/                    settings, storage, session, history, favorites, i18n, words
 public/art/             Hand-authored SVG art and backgrounds
@@ -127,21 +134,24 @@ The game engines in `lib/game/` are deliberately pure state transitions. The UI 
 
 - `app/manifest.ts` provides the install metadata and icon.
 - `public/sw.js` precaches the main pages, wave backgrounds, all 12 game thumbnails, empty-state/404 art, the icon, and the manifest.
-- The cache version is `cooch-v5`.
+- The cache version is `cooch-v6`.
 - Registration is production-only. Offline reload works after one controlled online visit; it is not a first-load offline app.
 
 ## Verification snapshot
 
-Verified on 2026-11-12 against the production build:
+Verified on 2026-11-13 against the production build:
 
 - `npm run typecheck` — pass.
 - `npm run lint` — 0 errors, 21 intentional `react-hooks/set-state-in-effect` warnings (localStorage hydration and pass-and-play stage resets).
 - `npm run build` — pass; all routes prerender or render as expected.
-- Browser checks at 390×844 and 320×844 in Indonesian and English: all routes load, no horizontal overflow, and no unexpected console errors.
-- Full Impostor and Werewolf flows, Chameleon privacy, wrong/correct guesses, Hunter, tie/revote, hand-count voting, resume gates, history, favorites, setup drafts, and result screens: pass.
-- PWA offline home, cached card art, wave backgrounds, and offline word-bank search: pass.
-- Motion checks: page reveal settles, card hover lifts, mobile nav opens/closes, toast enters/exits, and reduced-motion disables the hover lift: pass.
-- Art and layout checks at 375px, 390px, and 1440px: pass.
+- Desktop regression at 1440×900, short 1024/768 viewports, and 320×844: phone frame and mobile stage, no horizontal overflow, fixed tab bar, route scroll reset, modal fit, toast containment, night stage, nav menu, and sticky CTA: pass.
+- Full Impostor flow at 1440×900 and 390×844: setup → deal → clue → discussion → secret vote → result → replay: pass.
+- Impostor 9-player/3-impostor guess flow: wrong guess → next round → correct guess → evil win, session clear, and history entry: pass.
+- Full Werewolf flow at 1440×900 and 390×844 with Hunter enabled: reveal → Wolf/Doctor/Seer night → Hunter killed → Hunter shot → day vote → village win → replay: pass.
+- History stat icons stay inside their banners at 1440 and 320; compact and full desktop announcements do not overlap the phone frame at 768/1024: pass.
+- PWA `cooch-v6`: 26 precached entries, offline home with 13 cards and no broken art, offline word bank with 12 categories: pass.
+
+Earlier verification (2026-11-12): PWA offline home, cached card art, wave backgrounds, offline word-bank search, Chameleon privacy, tie/revote, hand-count voting, resume gates, favorites, setup drafts, art, and motion checks: pass.
 
 The Playwright scripts used for these checks live outside the repository and are not committed as an automated test suite.
 
@@ -149,6 +159,7 @@ The Playwright scripts used for these checks live outside the repository and are
 
 - **No backend.** There are no accounts, online rooms, cloud sync, or server-side validation. Clearing site data removes all local progress.
 - **Only two games are playable.** The other ten catalog entries are metadata-only “soon” placeholders.
+- **Desktop is intentionally phone-width.** There is no separate wide-screen layout; the app is shown inside a phone frame with a reminder to use a phone.
 - **PWA offline is not first-load offline.** The service worker must control the page after one online visit and a production build.
 - **Placeholder contact email.** `halo@cooch.example` in the privacy page must be replaced before launch.
 - **Art is hand-authored SVG.** The Gemini image models available during the build returned HTTP 429 with a free-tier quota of 0, so the 18 SVGs are the deliberate fallback.

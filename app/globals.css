@@ -26,6 +26,7 @@
 @import url("./styles/components/toast.css");
 @import url("./styles/components/tooltip.css");
 @import url("./styles/pages.css");
+@import url("./styles/desktop.css");
 
 /* next/font supplies the generated family names. Tokens keep the fallbacks. */
 :root {
@@ -78,14 +79,14 @@
 
 /* Keep the two large sticky-CTA buttons inside narrow viewports. The design
    sheet's 2rem side padding is too wide for 320–430px screens. */
-@media (max-width: 26.875em) {
+@container app (max-width: 26.875em) {
   .sticky-cta__inner > .btn {
     --btn-px: var(--space-4);
     min-width: 0;
   }
 }
 
-@media (max-width: 24em) {
+@container app (max-width: 24em) {
   .sticky-cta__inner {
     gap: var(--space-2);
   }
@@ -95,7 +96,7 @@
   }
 }
 
-@media (max-width: 22.5em) {
+@container app (max-width: 22.5em) {
   .sticky-cta__inner > .btn {
     line-height: 1.1;
     white-space: normal;
@@ -104,7 +105,7 @@
 
 /* At the narrowest phone widths the brand word would push the language switch
    past the viewport; the dice mark still identifies the link. */
-@media (max-width: 21.875em) {
+@container app (max-width: 21.875em) {
   .navbar__brand-text {
     position: absolute;
     width: 1px;
@@ -120,7 +121,7 @@
 
 /* At the narrowest phone widths the composition row (label + stepper) cannot
    fit on one line; wrap the stepper under its label. */
-@media (max-width: 21.875em) {
+@container app (max-width: 21.875em) {
   .composition__row {
     flex-wrap: wrap;
   }
